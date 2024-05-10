@@ -68,8 +68,8 @@ jobs:
           mkdir ./firmware/release/
           arduino-cli compile --fqbn ${{ matrix.fqbn }} ./firmware/firmware.ino --warnings more --output-dir ./firmware/release/
 
-      # upload released assets to Github -- I'm not sure how this interacts with build: strategy: matrix...
-      - uses: AButler/upload-release-assets@v3.0
+      # upload released assets to Github -- not sure how this interacts with build: strategy: matrix
+      - uses: actions/upload-artifact@v4
         with:
-          files: "firmware/release/*"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          name: Build Assets
+          path: ./firmware/release
