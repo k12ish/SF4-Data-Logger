@@ -53,7 +53,7 @@ jobs:
 
       # use the `arduino/setup-arduino-cli` action to install/configure the Arduino CLI
       - name: Setup Arduino CLI
-        uses: arduino/setup-arduino-cli@v1.1.1
+        uses: arduino/setup-arduino-cli@v1.1.2
       
       # We then install the platform, which one will be determined
       # dynamically by the build matrix.
@@ -62,14 +62,13 @@ jobs:
           arduino-cli core update-index
           arduino-cli core install ${{ matrix.arduino-platform }}
 
-      # Finally, we compile the sketch, using the FQBN that was set in the build matrix.
+      # Compile using the FQBN that was set in the build matrix.
       - name: Compile Firmware
         run: |
           mkdir ./firmware/release/
           arduino-cli compile --fqbn ${{ matrix.fqbn }} ./firmware/firmware.ino --warnings more --output-dir ./firmware/release/
 
-      # upload released assets to Github -- not sure how this interacts with build: strategy: matrix
       - uses: actions/upload-artifact@v4
         with:
-          name: Build Assets
+          name: "compiled-firmware-${{ matrix.fqbn }}"
           path: ./firmware/release
