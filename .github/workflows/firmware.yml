@@ -42,6 +42,7 @@ jobs:
           # the variable `fqbn` is set to "arduino:avr:uno".
           - arduino-platform: "arduino:avr"
             fqbn: "arduino:avr:uno"
+            name: "arduino-avr-uno"
 
     runs-on: ubuntu-latest
 
@@ -70,5 +71,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: "compiled-firmware-${{ matrix.fqbn }}"
+          name: "compiled-firmware-${{ matrix.name }}"
           path: ./firmware/release
