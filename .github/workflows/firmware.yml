@@ -7,8 +7,14 @@ name: Build Firmware
 on:
   # Triggers the workflow on push or pull request only for the main branch
   push:
+    paths:
+      - 'firmware/**'
+      - '.github/**'
     branches: [ main ]
   pull_request:
+    paths:
+      - 'firmware/**'
+      - '.github/**'
     branches: [ main ]
 
 # This is the list of jobs that will be run concurrently.
@@ -39,7 +45,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    # full list of steps for "Firmware Build" job
+    # full list of steps for "Build Firmware" job
     steps:
       # First clone the repo using the `checkout` action.
       - name: Checkout
@@ -56,7 +62,14 @@ jobs:
           arduino-cli core update-index
           arduino-cli core install ${{ matrix.arduino-platform }}
 
-      # Finally, we compile the sketch, using the FQBN that was set
-      # in the build matrix.
-      - name: Compile Sketch
-        run: arduino-cli compile --fqbn ${{ matrix.fqbn }} ./firmware/firmware.ino --warnings more
+      # Finally, we compile the sketch, using the FQBN that was set in the build matrix.
+      - name: Compile Firmware
+        run: |
+          mkdir ./firmware/release/
+          arduino-cli compile --fqbn ${{ matrix.fqbn }} ./firmware/firmware.ino --warnings more --output-dir ./firmware/release/
+
+      # upload released assets to Github -- I'm not sure how this interacts with build: strategy: matrix...
+      - uses: AButler/upload-release-assets@v3.0
+        with:
+          files: "firmware/release/*"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
