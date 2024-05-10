@@ -3,18 +3,20 @@ void setup() {
   // put your setup code here, to run once:
 pinMode(13, OUTPUT);
 Serial.begin(9600);
-WaitForRe();
+waitForRe();
+if(Serial.available() > 0){
+    f = int(Serial.parseInt());
+    Serial.println(f);
+  }
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if(Serial.available() > 0){
-    f = int(Serial.read());
-  }
+  
   digitalWrite(13, HIGH);
-  delay(int(1000/f));
+  delay(int(500/f));
   digitalWrite(13, LOW);
-  delay(int(1000/f));
+  delay(int(500/f));
 }
 
 
