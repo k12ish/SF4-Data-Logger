@@ -1,6 +1,20 @@
-<section class="text-center w-full h-screen bg-gradient-to-r from-yellow-200 via-red-300 to-pink-300">
-<h1 class="pt-10 text-7xl">
-  Landing Page
-</h1>
-<div class="font-serif pt-12 text-2xl">Hello World</div>
-</section>
+<script>
+  import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
+</script>
+
+<Navbar>
+  <NavBrand href="/">
+    <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">SF4 Data Logger</span>
+  </NavBrand>
+  <div class="flex md:order-2">
+    <Button size="sm">Get started</Button>
+    <NavHamburger />
+  </div>
+  <NavUl class="order-1">
+    <NavLi href="/" active={true}>Home</NavLi>
+    <NavLi href="/about">About</NavLi>
+    <NavLi href="/docs/components/navbar">Navbar</NavLi>
+    <NavLi href="/pricing">Pricing</NavLi>
+    <NavLi href="/contact">Contact</NavLi>
+  </NavUl>
+</Navbar>
