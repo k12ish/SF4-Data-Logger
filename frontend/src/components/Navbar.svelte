@@ -1,5 +1,5 @@
 <script>
-	import { Navbar, NavBrand, NavHamburger, Button } from 'flowbite-svelte';
+	import { Navbar, NavBrand, Button } from 'flowbite-svelte';
 	export let showButton = true;
 </script>
 
@@ -11,7 +11,6 @@
 	</NavBrand>
 	<div class="flex md:order-2" class:invisible={!showButton}>
 		<Button size="sm" href="/about">Get started</Button>
-		<NavHamburger />
 	</div>
 	<!--
   // NavLi NavUI
@@ -24,3 +23,4 @@
   </NavUl>
   -->
 </Navbar>
+
