@@ -4,7 +4,7 @@
 </script>
 
 <Navbar class="m-4">
-	<NavBrand href="/">
+	<NavBrand href={null}>
 		<button 
 			class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
 			on:click={() => landingPage.update((_) => true)}
