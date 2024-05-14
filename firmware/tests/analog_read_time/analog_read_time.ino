@@ -9,7 +9,8 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Time the read of an analog pin and print both the retrieved value and the time taken to the serial port. Test show and average time taken of
+  // roughly 116 us
   time = micros();
   value = analogRead(A0);
   time2 = micros();
@@ -17,15 +18,4 @@ void loop() {
   Serial.println(value);
   Serial.println(delta);
   delay(500);
-}
-
-//This function runs whenever the serial bus receives a message
-//Code that should run when that happens, such as changes of system states should be called here, currently it just clears the serial buffer
-//to then seemlessly return to the main loop. Be aware that it gets called whenever there is any information in the buffer and that Serial.read
-//only read the first byte!
-void serialEvent(){
-  Serial.print("Serial Event received. Entered interrupt!");
-  while(Serial.available() > 0){
-    int t = Serial.read();
-  }
 }
