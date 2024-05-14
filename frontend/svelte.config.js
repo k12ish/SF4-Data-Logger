@@ -17,6 +17,10 @@ const config = {
       assets: 'build',
       fallback: null
     }),
+    alias: {
+      'components': 'src/components',
+      'lib': 'src/lib',
+    }
   },
 
   preprocess: [

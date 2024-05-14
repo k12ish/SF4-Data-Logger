@@ -1,9 +1,5 @@
 <script>
-	import Navbar from './../components/Navbar.svelte';
-	import Landing from './../components/Landing.svelte';
-	import { landingPage } from '../lib/stores.js';
-
-	landingPage.subscribe(async (val) => {
+	async function onClick(val) {
 		if (!val) {
 			// user clicked "get started"
 			let port = await getArduinoPort();
@@ -23,7 +19,7 @@
 				console.log(value);
 			}
 		}
-	});
+	}
 
 	async function getArduinoPort() {
 		// if (!('serial' in navigator)) {
@@ -41,9 +37,3 @@
 		}
 	}
 </script>
-
-<Navbar />
-
-<div class="container mx-auto" class:hidden={!$landingPage}>
-	<Landing />
-</div>
