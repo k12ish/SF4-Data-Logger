@@ -1,16 +1,31 @@
 <script>
 	import { Navbar, NavBrand, Button } from 'flowbite-svelte';
-	export let showButton = true;
+	import { landingPage } from '../lib/stores.js';
 </script>
 
 <Navbar class="m-4">
 	<NavBrand href="/">
-		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
-			>SF4 Data Logger</span
+		<button 
+			class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
+			on:click={() => landingPage.update((_) => true)}
+			>SF4 Data Logger</button
 		>
 	</NavBrand>
-	<div class="flex md:order-2" class:invisible={!showButton}>
-		<Button size="sm" href="/about">Get started</Button>
+	<div class="flex md:order-2" class:hidden={!$landingPage}>
+		<Button size="sm" 
+			on:click={() => landingPage.update((_) => false)}
+		>
+			Get started
+		</Button>
+	</div>
+	<div class="flex md:order-2" class:hidden={$landingPage}>
+		<Button 
+			size="sm" 
+			on:click={() => landingPage.update((_) => true)}
+			color="alternative"
+		>
+			Back
+		</Button>
 	</div>
 	<!--
   // NavLi NavUI
@@ -23,4 +38,3 @@
   </NavUl>
   -->
 </Navbar>
-
