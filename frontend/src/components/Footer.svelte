@@ -13,16 +13,7 @@
 			Reserved.
 		</span>
     <div class="flex mt-4 space-x-6 rtl:space-x-reverse sm:justify-center sm:mt-0">
-      <FooterIcon href="/">
-        <FacebookSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
-      </FooterIcon>
-      <FooterIcon href="/">
-        <DiscordSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
-      </FooterIcon>
-      <FooterIcon href="/">
-        <TwitterSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
-      </FooterIcon>
-      <FooterIcon href="/">
+      <FooterIcon href="https://github.com/k12ish/SF4-Data-Logger">
         <GithubSolid class="w-5 h-5 text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-white" />
       </FooterIcon>
     </div>
