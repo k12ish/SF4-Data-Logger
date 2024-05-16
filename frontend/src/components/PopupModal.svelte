@@ -1,5 +1,5 @@
 <script>
-	import { Button, Modal } from 'flowbite-svelte';
+	import { Spinner, Button, Modal } from 'flowbite-svelte';
 	import { fade } from 'svelte/transition';
 	import ArduinoConnect from 'lib/arduino-connect.png';
 	import ArduinoUno from 'lib/ArduinoUno.svg.png';
@@ -58,7 +58,14 @@
 			</div>
 			<svelte:fragment slot="footer">
 				<div class="flex w-full justify-center">
-					<Button on:click={() => onClick()}>Done!</Button>
+					{#if popupStage == 'visible-second'}
+						<Button>
+							<Spinner class="me-3" size="4" color="white" />
+							Almost there ...
+						</Button>
+					{:else}
+						<Button on:click={() => onClick()}>Done!</Button>
+					{/if}
 				</div>
 			</svelte:fragment>
 		</Modal>
