@@ -3,7 +3,7 @@
 	export let showGetStarted = true;
 </script>
 
-<Navbar class="m-4">
+<Navbar class="my-4">
 	<NavBrand href="/">
 		<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
 			>SF4 Data Logger</span

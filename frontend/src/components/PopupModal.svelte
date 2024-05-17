@@ -1,17 +1,22 @@
 <script lang="ts">
 	import { Spinner, Button, Modal, Heading, P, A } from 'flowbite-svelte';
 	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	import ConnectDevice from 'lib/assets/undraw_monitor_iqpq.svg';
 	import FailWarning from 'lib/assets/undraw_warning_re_eoyh.svg';
-	let popupStage:
+	import { createEventDispatcher } from 'svelte';
+
+	onMount(() => setTimeout(() => launch(), 400));
+	const dispatch = createEventDispatcher();
+
+	export let popupStage:
 		| 'hidden'
 		| 'visible-first'
 		| 'visible-second'
 		| 'failed-incapable'
-		| 'failed-rejected';
-	popupStage = 'hidden';
+		| 'failed-rejected' = 'hidden';
 
-	export function launch() {
+	function launch() {
 		if (!('serial' in navigator)) {
 			popupStage = 'failed-incapable';
 			return;
@@ -24,12 +29,12 @@
 		let port = await getArduinoPort();
 		if (port === null) {
 			popupStage = 'failed-rejected';
-			return null;
+		} else {
+			setTimeout(() => {
+				popupStage = 'hidden';
+			}, 300);
+			dispatch('gotPort', { port });
 		}
-		setTimeout(() => {
-			popupStage = 'hidden';
-		}, 300);
-		return port;
 	}
 
 	async function getArduinoPort() {

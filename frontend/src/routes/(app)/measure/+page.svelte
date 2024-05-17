@@ -1,33 +1,31 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import PopupModal from 'components/PopupModal.svelte';
 	let data = '';
-
-	let popupModalComponent;
-	// onMount(() => setTimeout(() => (port = popupModalComponent.launch()), 400));
 
 	import { LayerCake, Svg } from 'layercake';
 	import Line from 'components/EKG/Line.svelte';
 	import AxisX from 'components/EKG/AxisX.svelte';
 	import AxisY from 'components/EKG/AxisY.svelte';
 
-	// async function readPort() {
-	// 	console.log(port);
-	// 	await port.open({ baudRate: 115_200 });
-	// 	const reader = port.readable.getReader();
-
-	// 	// Listen to data coming from the serial device.
-	// 	while (true) {
-	// 		const { value, done } = await reader.read();
-	// 		if (done) {
-	// 			// Allow the serial port to be closed later.
-	// 			reader.releaseLock();
-	// 			break;
-	// 		}
-	// 		// value is a Uint8Array.
-	// 		console.log(value);
-	// 		// data = data + '\n' + value.join();
-	// }
+	async function readPort(event) {
+		let port = event.detail.port;
+		await port.open({ baudRate: 115_200 });
+		const reader = port.readable.getReader();
+		try {
+			while (true) {
+				const { value, done } = await reader.read();
+				if (done) {
+					// |reader| has been canceled.
+					break;
+				}
+				console.log(value, done);
+			}
+		} catch (error) {
+			// Handle |error|...
+		} finally {
+			reader.releaseLock();
+		}
+	}
 
 	// Define some data
 	let points = [
@@ -52,7 +50,7 @@
 	}, 100);
 </script>
 
-<div class="chart-container">
+<div class="chart-container mx-auto rounded border p-8">
 	<LayerCake data={points} x="x" y="y">
 		<Svg>
 			<AxisX />
@@ -70,17 +68,12 @@
 	</div>
 </div>
 
-<PopupModal bind:this={popupModalComponent} />
+<PopupModal on:gotPort={readPort} />
 
 <style>
-	/*
-    The wrapper div needs to have an explicit width and height in CSS.
-    It can also be a flexbox child or CSS grid element.
-    The point being it needs dimensions since the <LayerCake> element will
-    expand to fill it.
-  */
+	/* The wrapper div needs to have an explicit width and height in CSS. */
 	.chart-container {
-		width: 100%;
-		height: 300px;
+		width: 96%;
+		height: calc(70vh - 1px);
 	}
 </style>
