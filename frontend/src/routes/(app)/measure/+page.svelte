@@ -4,7 +4,27 @@
 	let data = '';
 
 	let popupModalComponent;
-	onMount(() => setTimeout(() => popupModalComponent.launch(), 400));
+	let port;
+
+	// async function readPort() {
+	// 	console.log(port);
+	// 	await port.open({ baudRate: 115_200 });
+	// 	const reader = port.readable.getReader();
+
+	// 	// Listen to data coming from the serial device.
+	// 	while (true) {
+	// 		const { value, done } = await reader.read();
+	// 		if (done) {
+	// 			// Allow the serial port to be closed later.
+	// 			reader.releaseLock();
+	// 			break;
+	// 		}
+	// 		// value is a Uint8Array.
+	// 		console.log(value);
+	// 		// data = data + '\n' + value.join();
+	// }
+	
+	onMount(() => setTimeout(() => (port = popupModalComponent.launch()), 400));
 
 </script>
 

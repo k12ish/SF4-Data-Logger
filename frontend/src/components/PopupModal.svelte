@@ -1,42 +1,37 @@
-<script>
-	import { Spinner, Button, Modal } from 'flowbite-svelte';
+<script lang="ts">
+	import { Spinner, Button, Modal, Heading, P, A } from 'flowbite-svelte';
 	import { fade } from 'svelte/transition';
-	import ArduinoConnect from 'lib/arduino-connect.png';
-	import ArduinoUno from 'lib/ArduinoUno.svg.png';
+	import ConnectDevice from 'lib/assets/undraw_monitor_iqpq.svg';
+	import FailWarning from 'lib/assets/undraw_warning_re_eoyh.svg';
 
-	let popupStage = 'hidden';
+	let popupStage:
+		| 'hidden'
+		| 'visible-first'
+		| 'visible-second'
+		| 'failed-incapable'
+		| 'failed-rejected';
+	popupStage = 'hidden';
 
 	export function launch() {
+		if (!('serial' in navigator)) {
+			popupStage = 'failed-incapable';
+			return;
+		}
 		popupStage = 'visible-first';
 	}
 
 	async function onClick() {
-		// TODO: better visible-second stage
 		popupStage = 'visible-second';
 		let port = await getArduinoPort();
-		popupStage = 'hidden';
-		console.log(port);
-		await port.open({ baudRate: 115_200 });
-		const reader = port.readable.getReader();
-
-		// Listen to data coming from the serial device.
-		while (true) {
-			const { value, done } = await reader.read();
-			if (done) {
-				// Allow the serial port to be closed later.
-				reader.releaseLock();
-				break;
-			}
-			// value is a Uint8Array.
-			console.log(value);
-			// data = data + '\n' + value.join();
+		if (port === null) {
+			popupStage = 'failed-rejected';
+			return null;
 		}
+		popupStage = 'hidden';
+		return port;
 	}
 
 	async function getArduinoPort() {
-		// if (!('serial' in navigator)) {
-		// 	alert('Use a browser that supports WebSerial!');
-		// }
 		try {
 			// limit selectable ports to only USB devices with Arduino's USB vendor ID
 			const filter = { usbVendorId: 0x2a03 };
@@ -52,19 +47,39 @@
 
 {#if popupStage != 'hidden'}
 	<div transition:fade>
-		<Modal title="Connect your Arduino!" open={popupStage != 'hidden'} dismissable={false}>
-			<div class="flex w-full justify-center">
-				<img src={ArduinoUno} alt="Arduino Connecting over USB to Laptop" />
-			</div>
+		<Modal open={popupStage !== 'hidden'} dismissable={false}>
+			{#if popupStage == 'visible-first' || popupStage == 'visible-second'}
+				<Heading tag="h2" customSize="text-4xl font-bold ">Connect your Arduino!</Heading>
+				<img src={ConnectDevice} class="m-auto max-h-[50vh]" alt="Connect your Arduino" />
+				<P class="my-4 text-gray-500"
+					>Connect your Arduino Uno from the <A
+						href="https://docs.arduino.cc/tutorials/uno-rev3/intro-to-board/">USB-B</A
+					> port located on the side of the Board
+				</P>
+			{:else if popupStage == 'failed-incapable'}
+				<Heading tag="h2" customSize="text-4xl font-bold ">Browser Not Supported :(</Heading>
+				<img src={FailWarning} class="m-auto max-h-[50vh]" alt="Failed to connect Arduino" />
+				<P class="my-4 text-gray-500"
+					>Your browser doesn't allow access to external devices because it doesn't support the <A
+						href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API#browser_compatibility"
+						>WebSerial Protocol</A
+					>.
+				</P>
+			{:else if popupStage == 'failed-rejected'}
+				<Heading tag="h2" customSize="text-4xl font-bold ">Failed to Connect :(</Heading>
+				<img src={FailWarning} class="m-auto max-h-[50vh]" alt="Failed to connect Arduino" />
+			{/if}
 			<svelte:fragment slot="footer">
-				<div class="flex w-full justify-center">
-					{#if popupStage == 'visible-second'}
+				<div class="flex w-full justify-end">
+					{#if popupStage == 'visible-first'}
+						<Button on:click={onClick}>Done!</Button>
+					{:else if popupStage == 'visible-second'}
 						<Button>
 							<Spinner class="me-3" size="4" color="white" />
 							Almost there ...
 						</Button>
 					{:else}
-						<Button on:click={() => onClick()}>Done!</Button>
+						<Button color="red" href="/">Exit</Button>
 					{/if}
 				</div>
 			</svelte:fragment>
