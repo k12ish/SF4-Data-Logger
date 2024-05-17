@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@msgpack/msgpack": "^3.0.0-beta2",
 		"layercake": "^8.1.4"
 	}
 }

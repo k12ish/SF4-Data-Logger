@@ -1,5 +1,7 @@
 <script lang="ts">
 	import PopupModal from 'components/PopupModal.svelte';
+	import { encode } from '@msgpack/msgpack';
+	import { decodeMultiStream } from '@msgpack/msgpack';
 	let data = '';
 
 	import { LayerCake, Svg } from 'layercake';
@@ -10,20 +12,9 @@
 	async function readPort(event) {
 		let port = event.detail.port;
 		await port.open({ baudRate: 115_200 });
-		const reader = port.readable.getReader();
-		try {
-			while (true) {
-				const { value, done } = await reader.read();
-				if (done) {
-					// |reader| has been canceled.
-					break;
-				}
-				console.log(value, done);
-			}
-		} catch (error) {
-			// Handle |error|...
-		} finally {
-			reader.releaseLock();
+		const reader = port.readable;
+		for await (const item of decodeMultiStream(reader)) {
+			console.log(item);
 		}
 	}
 
@@ -48,6 +39,9 @@
 		points[i].y = Math.random() * 20;
 		points = points;
 	}, 100);
+
+	const encoded: Uint8Array = encode({ foo: 'bar' });
+	console.log(encoded);
 </script>
 
 <div class="chart-container mx-auto rounded border p-8">
