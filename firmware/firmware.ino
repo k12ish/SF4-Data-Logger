@@ -1,28 +1,8 @@
-int f = 1;
-void setup() {
-  // put your setup code here, to run once:
-pinMode(13, OUTPUT);
-Serial.begin(9600);
-waitForRe();
-if(Serial.available() > 0){
-    f = int(Serial.parseInt());
-    Serial.println(f);
-  }
-}
+byte message[9] = {129, 163, 102, 111, 111, 163, 98, 97, 114};
+
+void setup() { Serial.begin(115200); }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  
-  digitalWrite(13, HIGH);
-  delay(int(500/f));
-  digitalWrite(13, LOW);
-  delay(int(500/f));
-}
-
-
-void waitForRe() {
-  while (Serial.available() <= 0 ){
-    Serial.println("Please enter flash frequency in Hz!");
-    delay(1000);
-  }
+  Serial.write(message);
+  delay(1000)
 }
