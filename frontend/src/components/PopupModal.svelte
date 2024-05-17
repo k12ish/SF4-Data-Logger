@@ -3,7 +3,6 @@
 	import { fade } from 'svelte/transition';
 	import ConnectDevice from 'lib/assets/undraw_monitor_iqpq.svg';
 	import FailWarning from 'lib/assets/undraw_warning_re_eoyh.svg';
-
 	let popupStage:
 		| 'hidden'
 		| 'visible-first'
@@ -27,7 +26,9 @@
 			popupStage = 'failed-rejected';
 			return null;
 		}
-		popupStage = 'hidden';
+		setTimeout(() => {
+			popupStage = 'hidden';
+		}, 300);
 		return port;
 	}
 
