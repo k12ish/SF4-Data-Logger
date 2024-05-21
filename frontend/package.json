@@ -38,6 +38,8 @@
 	"type": "module",
 	"dependencies": {
 		"@msgpack/msgpack": "^3.0.0-beta2",
-		"layercake": "^8.1.4"
+		"@types/w3c-web-serial": "^1.0.6",
+		"layercake": "^8.1.4",
+		"postcss-load-config": "^5.1.0"
 	}
 }

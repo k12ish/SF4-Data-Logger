@@ -68,8 +68,7 @@
 				<P class="my-4 text-gray-500"
 					>Your browser doesn't allow access to external devices because it doesn't support the <A
 						href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API#browser_compatibility"
-						>WebSerial Protocol</A
-					>.
+						>WebSerial Protocol</A>. Maybe try Chrome?
 				</P>
 			{:else if popupStage == 'failed-rejected'}
 				<Heading tag="h2" customSize="text-4xl font-bold ">Failed to Connect :(</Heading>

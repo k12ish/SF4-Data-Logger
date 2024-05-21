@@ -9,8 +9,11 @@
 	import AxisX from 'components/EKG/AxisX.svelte';
 	import AxisY from 'components/EKG/AxisY.svelte';
 
+	import onMount from 'svelte';
+	import { ArduinoInterface } from 'lib/stores.ts';
+
 	async function readPort(event) {
-		let port = event.detail.port;
+		let port: SerialPort = event.detail.port;
 		await port.open({ baudRate: 115_200 });
 		const reader = port.readable;
 		for await (const item of decodeMultiStream(reader)) {
@@ -40,7 +43,7 @@
 		points = points;
 	}, 100);
 
-	const encoded: Uint8Array = encode({ foo: 'bar' });
+	const encoded: Uint8Array = encode([1024, 1024, 1024, 1024]);
 	console.log(encoded);
 </script>
 
