@@ -612,55 +612,55 @@
 		)
 	)
 	(junction
-		(at 194.31 104.14)
+		(at 201.93 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "194fa07f-2467-4011-a6f7-ccf6f209997d")
 	)
 	(junction
-		(at 140.97 40.64)
+		(at 148.59 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "35c747f7-0da3-4501-89eb-78d165362b08")
 	)
 	(junction
-		(at 140.97 35.56)
+		(at 148.59 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4ae2c549-7913-4dfc-bdd4-ac6141641706")
 	)
 	(junction
-		(at 231.14 40.64)
+		(at 238.76 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4d275459-f216-465c-89b2-e4481bfa5800")
 	)
 	(junction
-		(at 231.14 45.72)
+		(at 238.76 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9cd2ae95-7c62-41e9-a688-47374c14a79c")
 	)
 	(junction
-		(at 194.31 97.79)
+		(at 201.93 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a83d8044-632f-4f42-8e7b-4ec563ab7b4c")
 	)
 	(junction
-		(at 194.31 91.44)
+		(at 201.93 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cd388c68-d4e4-4fc4-9cf4-9d4cf12de607")
 	)
 	(junction
-		(at 140.97 45.72)
+		(at 148.59 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d132dfea-1357-4c43-8b9e-7f88cc1b23ed")
 	)
 	(junction
-		(at 231.14 35.56)
+		(at 238.76 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d328062d-5dda-443b-9e02-e5132dab5f81")
@@ -691,7 +691,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 53.34) (xy 140.97 53.34)
+			(xy 133.35 74.93) (xy 148.59 74.93)
 		)
 		(stroke
 			(width 0)
@@ -701,7 +701,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 48.26) (xy 125.73 53.34)
+			(xy 133.35 69.85) (xy 133.35 74.93)
 		)
 		(stroke
 			(width 0)
@@ -721,7 +721,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 40.64) (xy 140.97 45.72)
+			(xy 148.59 62.23) (xy 148.59 67.31)
 		)
 		(stroke
 			(width 0)
@@ -731,7 +731,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 53.34) (xy 231.14 53.34)
+			(xy 223.52 74.93) (xy 238.76 74.93)
 		)
 		(stroke
 			(width 0)
@@ -741,7 +741,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 35.56) (xy 231.14 40.64)
+			(xy 238.76 57.15) (xy 238.76 62.23)
 		)
 		(stroke
 			(width 0)
@@ -751,7 +751,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 53.34) (xy 231.14 45.72)
+			(xy 238.76 74.93) (xy 238.76 67.31)
 		)
 		(stroke
 			(width 0)
@@ -761,7 +761,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 91.44) (xy 194.31 91.44)
+			(xy 186.69 113.03) (xy 201.93 113.03)
 		)
 		(stroke
 			(width 0)
@@ -771,7 +771,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 111.76) (xy 194.31 111.76)
+			(xy 186.69 133.35) (xy 201.93 133.35)
 		)
 		(stroke
 			(width 0)
@@ -781,7 +781,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 40.64) (xy 231.14 45.72)
+			(xy 238.76 62.23) (xy 238.76 67.31)
 		)
 		(stroke
 			(width 0)
@@ -801,7 +801,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 35.56) (xy 140.97 27.94)
+			(xy 148.59 57.15) (xy 148.59 49.53)
 		)
 		(stroke
 			(width 0)
@@ -811,7 +811,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 86.36) (xy 179.07 91.44)
+			(xy 186.69 107.95) (xy 186.69 113.03)
 		)
 		(stroke
 			(width 0)
@@ -821,7 +821,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 97.79) (xy 194.31 97.79)
+			(xy 213.36 119.38) (xy 201.93 119.38)
 		)
 		(stroke
 			(width 0)
@@ -831,7 +831,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 91.44) (xy 194.31 97.79)
+			(xy 201.93 113.03) (xy 201.93 119.38)
 		)
 		(stroke
 			(width 0)
@@ -841,7 +841,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 57.15) (xy 242.57 57.15)
+			(xy 212.09 78.74) (xy 250.19 78.74)
 		)
 		(stroke
 			(width 0)
@@ -861,7 +861,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 30.48) (xy 125.73 35.56)
+			(xy 133.35 52.07) (xy 133.35 57.15)
 		)
 		(stroke
 			(width 0)
@@ -871,7 +871,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 91.44) (xy 194.31 83.82)
+			(xy 201.93 113.03) (xy 201.93 105.41)
 		)
 		(stroke
 			(width 0)
@@ -881,7 +881,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 25.4) (xy 215.9 25.4)
+			(xy 212.09 46.99) (xy 223.52 46.99)
 		)
 		(stroke
 			(width 0)
@@ -891,7 +891,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 81.28) (xy 179.07 81.28)
+			(xy 176.53 102.87) (xy 186.69 102.87)
 		)
 		(stroke
 			(width 0)
@@ -911,7 +911,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 48.26) (xy 215.9 53.34)
+			(xy 223.52 69.85) (xy 223.52 74.93)
 		)
 		(stroke
 			(width 0)
@@ -931,7 +931,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 43.18) (xy 125.73 43.18)
+			(xy 123.19 64.77) (xy 133.35 64.77)
 		)
 		(stroke
 			(width 0)
@@ -939,9 +939,19 @@
 		)
 		(uuid "90ab7a1d-d642-4c79-a58a-60f106339da6")
 	)
+	(polyline
+		(pts
+			(xy 90.17 166.37) (xy 177.8 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95fcf067-a4a8-4862-ae66-ba6aba0607d2")
+	)
 	(wire
 		(pts
-			(xy 215.9 30.48) (xy 215.9 35.56)
+			(xy 223.52 52.07) (xy 223.52 57.15)
 		)
 		(stroke
 			(width 0)
@@ -951,7 +961,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 35.56) (xy 140.97 40.64)
+			(xy 148.59 57.15) (xy 148.59 62.23)
 		)
 		(stroke
 			(width 0)
@@ -959,9 +969,19 @@
 		)
 		(uuid "99dbfbbe-06d6-4bd6-a773-d81cba31f7e1")
 	)
+	(polyline
+		(pts
+			(xy 90.17 77.47) (xy 90.17 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ba3cb78-a48c-46d3-b4f2-6cecb87c49fa")
+	)
 	(wire
 		(pts
-			(xy 194.31 111.76) (xy 194.31 104.14)
+			(xy 201.93 133.35) (xy 201.93 125.73)
 		)
 		(stroke
 			(width 0)
@@ -971,7 +991,7 @@
 	)
 	(wire
 		(pts
-			(xy 215.9 35.56) (xy 231.14 35.56)
+			(xy 223.52 57.15) (xy 238.76 57.15)
 		)
 		(stroke
 			(width 0)
@@ -981,7 +1001,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 106.68) (xy 179.07 111.76)
+			(xy 186.69 128.27) (xy 186.69 133.35)
 		)
 		(stroke
 			(width 0)
@@ -991,7 +1011,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 25.4) (xy 125.73 25.4)
+			(xy 123.19 46.99) (xy 133.35 46.99)
 		)
 		(stroke
 			(width 0)
@@ -1001,7 +1021,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 115.57) (xy 205.74 115.57)
+			(xy 176.53 137.16) (xy 213.36 137.16)
 		)
 		(stroke
 			(width 0)
@@ -1011,7 +1031,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 40.64) (xy 153.67 40.64)
+			(xy 148.59 62.23) (xy 161.29 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1021,7 +1041,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 40.64) (xy 231.14 40.64)
+			(xy 250.19 62.23) (xy 238.76 62.23)
 		)
 		(stroke
 			(width 0)
@@ -1041,7 +1061,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 35.56) (xy 231.14 27.94)
+			(xy 238.76 57.15) (xy 238.76 49.53)
 		)
 		(stroke
 			(width 0)
@@ -1051,7 +1071,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 53.34) (xy 140.97 45.72)
+			(xy 148.59 74.93) (xy 148.59 67.31)
 		)
 		(stroke
 			(width 0)
@@ -1061,7 +1081,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 35.56) (xy 140.97 35.56)
+			(xy 133.35 57.15) (xy 148.59 57.15)
 		)
 		(stroke
 			(width 0)
@@ -1081,7 +1101,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 101.6) (xy 179.07 101.6)
+			(xy 176.53 123.19) (xy 186.69 123.19)
 		)
 		(stroke
 			(width 0)
@@ -1111,7 +1131,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 97.79) (xy 194.31 104.14)
+			(xy 201.93 119.38) (xy 201.93 125.73)
 		)
 		(stroke
 			(width 0)
@@ -1131,7 +1151,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 57.15) (xy 153.67 57.15)
+			(xy 123.19 78.74) (xy 161.29 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1151,7 +1171,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 43.18) (xy 215.9 43.18)
+			(xy 212.09 64.77) (xy 223.52 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1168,6 +1188,36 @@
 			(type default)
 		)
 		(uuid "f912d9e1-75c0-40a1-9df9-2ad77f89107a")
+	)
+	(text "Connections into multiplexer"
+		(exclude_from_sim no)
+		(at 50.038 16.764 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+		)
+		(uuid "1343b2af-a80f-40c3-8ccd-426d32180c64")
+	)
+	(text "Shorting Buffers"
+		(exclude_from_sim no)
+		(at 185.928 24.892 0)
+		(effects
+			(font
+				(size 5 5)
+			)
+		)
+		(uuid "ba5c5ab6-a04b-47e7-8a9d-813fa0edaddc")
+	)
+	(text "Op-amp power and unused op-amps"
+		(exclude_from_sim no)
+		(at 50.292 82.804 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+		)
+		(uuid "d026fdd6-a04b-4caa-9f96-32b47a5b66f3")
 	)
 	(global_label "Electrode B1"
 		(shape input)
@@ -1193,7 +1243,7 @@
 	)
 	(global_label "Electrode B2"
 		(shape input)
-		(at 168.91 115.57 180)
+		(at 176.53 137.16 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1203,7 +1253,7 @@
 		)
 		(uuid "0473e288-0e60-4251-9abd-e1479df126c4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 153.5878 115.57 0)
+			(at 161.2078 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1259,7 +1309,7 @@
 	)
 	(global_label "Electrode B2"
 		(shape input)
-		(at 115.57 43.18 180)
+		(at 123.19 64.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1269,7 +1319,7 @@
 		)
 		(uuid "315735d8-53c9-4608-b1dc-c6dac0ef858c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 100.2478 43.18 0)
+			(at 107.8678 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1281,7 +1331,7 @@
 	)
 	(global_label "Amp B in 1"
 		(shape input)
-		(at 242.57 57.15 0)
+		(at 250.19 78.74 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1291,7 +1341,7 @@
 		)
 		(uuid "331032b0-8d69-47f5-860a-abad0ade90b7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 256.6222 57.15 0)
+			(at 264.2422 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1303,7 +1353,7 @@
 	)
 	(global_label "Electrode A2"
 		(shape input)
-		(at 204.47 57.15 180)
+		(at 212.09 78.74 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1313,7 +1363,7 @@
 		)
 		(uuid "47000292-8a8e-4de1-be08-077aabf952b2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 189.3292 57.15 0)
+			(at 196.9492 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1325,7 +1375,7 @@
 	)
 	(global_label "Electrode C2"
 		(shape input)
-		(at 204.47 43.18 180)
+		(at 212.09 64.77 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1335,7 +1385,7 @@
 		)
 		(uuid "4da79f68-27e6-43d8-ae81-c88e3e49d874")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 189.1478 43.18 0)
+			(at 196.7678 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1347,7 +1397,7 @@
 	)
 	(global_label "Electrode A2"
 		(shape input)
-		(at 168.91 81.28 180)
+		(at 176.53 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1357,7 +1407,7 @@
 		)
 		(uuid "5159187a-7f8c-4708-8f09-6046a32b5168")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 153.7692 81.28 0)
+			(at 161.3892 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1369,7 +1419,7 @@
 	)
 	(global_label "Amp B in 2"
 		(shape input)
-		(at 242.57 40.64 0)
+		(at 250.19 62.23 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1379,7 +1429,7 @@
 		)
 		(uuid "51bd93a4-80d7-4e34-b9d5-ad49525bb743")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 256.6222 40.64 0)
+			(at 264.2422 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1391,7 +1441,7 @@
 	)
 	(global_label "Electrode B2"
 		(shape input)
-		(at 204.47 25.4 180)
+		(at 212.09 46.99 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1401,7 +1451,7 @@
 		)
 		(uuid "6085fc8f-d1ea-4ed7-9d29-a1b699d11741")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 189.1478 25.4 0)
+			(at 196.7678 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1413,7 +1463,7 @@
 	)
 	(global_label "Electrode A2"
 		(shape input)
-		(at 115.57 25.4 180)
+		(at 123.19 46.99 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1423,7 +1473,7 @@
 		)
 		(uuid "6b583cca-6bd5-436e-9ccd-018c18134cec")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 100.4292 25.4 0)
+			(at 108.0492 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1435,7 +1485,7 @@
 	)
 	(global_label "Electrode C2"
 		(shape input)
-		(at 168.91 101.6 180)
+		(at 176.53 123.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1445,7 +1495,7 @@
 		)
 		(uuid "6d8ea187-814c-4630-a311-1de30f66d93c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 153.5878 101.6 0)
+			(at 161.2078 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1523,7 +1573,7 @@
 	)
 	(global_label "Amp A in 2"
 		(shape input)
-		(at 153.67 57.15 0)
+		(at 161.29 78.74 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1533,7 +1583,7 @@
 		)
 		(uuid "ab65b0bf-b5da-499e-ac8f-10abd696aaa3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 167.5408 57.15 0)
+			(at 175.1608 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1545,7 +1595,7 @@
 	)
 	(global_label "Amp C in 2"
 		(shape input)
-		(at 205.74 115.57 0)
+		(at 213.36 137.16 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1555,7 +1605,7 @@
 		)
 		(uuid "aefc712e-0976-4a1c-ab7c-6a99ae2358db")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 219.7922 115.57 0)
+			(at 227.4122 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1589,7 +1639,7 @@
 	)
 	(global_label "Amp A in 1"
 		(shape input)
-		(at 153.67 40.64 0)
+		(at 161.29 62.23 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1599,7 +1649,7 @@
 		)
 		(uuid "c35ea7d3-e78a-438f-94a2-a95a1aa2f97e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 167.5408 40.64 0)
+			(at 175.1608 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1611,7 +1661,7 @@
 	)
 	(global_label "Amp C in 1"
 		(shape input)
-		(at 205.74 97.79 0)
+		(at 213.36 119.38 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1621,7 +1671,7 @@
 		)
 		(uuid "c9500990-41ea-4999-bcd9-444dd4b93397")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 219.7922 97.79 0)
+			(at 227.4122 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1677,7 +1727,7 @@
 	)
 	(global_label "Electrode C2"
 		(shape input)
-		(at 115.57 57.15 180)
+		(at 123.19 78.74 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1687,7 +1737,7 @@
 		)
 		(uuid "dcd2477b-d8ed-4efe-9f5c-2c49ab8d5c4a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 100.2478 57.15 0)
+			(at 107.8678 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1869,7 +1919,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
-		(at 186.69 104.14 0)
+		(at 194.31 125.73 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1878,7 +1928,7 @@
 		(fields_autoplaced yes)
 		(uuid "115d51d0-e236-4dcb-bca1-c740c82460a7")
 		(property "Reference" "U6"
-			(at 186.69 93.98 0)
+			(at 194.31 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1886,7 +1936,7 @@
 			)
 		)
 		(property "Value" "MCP6004"
-			(at 186.69 96.52 0)
+			(at 194.31 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1894,7 +1944,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 185.42 101.6 0)
+			(at 193.04 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1903,7 +1953,7 @@
 			)
 		)
 		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
-			(at 187.96 99.06 0)
+			(at 195.58 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1912,7 +1962,7 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
-			(at 186.69 104.14 0)
+			(at 194.31 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1921,46 +1971,46 @@
 			)
 		)
 		(pin "4"
-			(uuid "31652979-23bb-4f51-9342-f81036991714")
+			(uuid "31652979-23bb-4f51-9342-f81036991715")
 		)
 		(pin "3"
-			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb71")
+			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb72")
 		)
 		(pin "13"
-			(uuid "84db39a5-fd0c-44b1-ba10-80ee68257968")
+			(uuid "84db39a5-fd0c-44b1-ba10-80ee68257969")
 		)
 		(pin "8"
-			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b69")
+			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b6a")
 		)
 		(pin "12"
-			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3b")
+			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3c")
 		)
 		(pin "2"
-			(uuid "dcad514b-54ff-4200-9c61-64156502d949")
+			(uuid "dcad514b-54ff-4200-9c61-64156502d94a")
 		)
 		(pin "7"
-			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a1")
+			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a2")
 		)
 		(pin "14"
-			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e3")
+			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e4")
 		)
 		(pin "1"
-			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae43")
+			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae44")
 		)
 		(pin "5"
-			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5b")
+			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5c")
 		)
 		(pin "11"
-			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad3ff")
+			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad400")
 		)
 		(pin "6"
-			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0cfd")
+			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0cfe")
 		)
 		(pin "9"
-			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b66")
+			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b67")
 		)
 		(pin "10"
-			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303dd")
+			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303de")
 		)
 		(instances
 			(project "SF4-hardware"
@@ -2027,46 +2077,46 @@
 			)
 		)
 		(pin "4"
-			(uuid "31652979-23bb-4f51-9342-f81036991714")
+			(uuid "31652979-23bb-4f51-9342-f81036991716")
 		)
 		(pin "3"
-			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb71")
+			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb73")
 		)
 		(pin "13"
-			(uuid "84db39a5-fd0c-44b1-ba10-80ee68257968")
+			(uuid "84db39a5-fd0c-44b1-ba10-80ee6825796a")
 		)
 		(pin "8"
-			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b69")
+			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b6b")
 		)
 		(pin "12"
-			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3b")
+			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3d")
 		)
 		(pin "2"
-			(uuid "dcad514b-54ff-4200-9c61-64156502d949")
+			(uuid "dcad514b-54ff-4200-9c61-64156502d94b")
 		)
 		(pin "7"
-			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a1")
+			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a3")
 		)
 		(pin "14"
-			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e3")
+			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e5")
 		)
 		(pin "1"
-			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae43")
+			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae45")
 		)
 		(pin "5"
-			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5b")
+			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5d")
 		)
 		(pin "11"
-			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad3ff")
+			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad401")
 		)
 		(pin "6"
-			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0cfd")
+			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0cff")
 		)
 		(pin "9"
-			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b66")
+			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b68")
 		)
 		(pin "10"
-			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303dd")
+			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303df")
 		)
 		(instances
 			(project "SF4-hardware"
@@ -2079,7 +2129,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
-		(at 186.69 83.82 0)
+		(at 194.31 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2088,7 +2138,7 @@
 		(fields_autoplaced yes)
 		(uuid "35ea92df-d108-4932-8cbe-762b08a23bdf")
 		(property "Reference" "U6"
-			(at 186.69 73.66 0)
+			(at 194.31 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2096,7 +2146,7 @@
 			)
 		)
 		(property "Value" "MCP6004"
-			(at 186.69 76.2 0)
+			(at 194.31 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2104,7 +2154,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 185.42 81.28 0)
+			(at 193.04 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2113,7 +2163,7 @@
 			)
 		)
 		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
-			(at 187.96 78.74 0)
+			(at 195.58 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2122,7 +2172,7 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
-			(at 186.69 83.82 0)
+			(at 194.31 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2131,46 +2181,46 @@
 			)
 		)
 		(pin "4"
-			(uuid "31652979-23bb-4f51-9342-f81036991714")
+			(uuid "31652979-23bb-4f51-9342-f81036991717")
 		)
 		(pin "3"
-			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb71")
+			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb74")
 		)
 		(pin "13"
-			(uuid "84db39a5-fd0c-44b1-ba10-80ee68257968")
+			(uuid "84db39a5-fd0c-44b1-ba10-80ee6825796b")
 		)
 		(pin "8"
-			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b69")
+			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b6c")
 		)
 		(pin "12"
-			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3b")
+			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3e")
 		)
 		(pin "2"
-			(uuid "dcad514b-54ff-4200-9c61-64156502d949")
+			(uuid "dcad514b-54ff-4200-9c61-64156502d94c")
 		)
 		(pin "7"
-			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a1")
+			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a4")
 		)
 		(pin "14"
-			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e3")
+			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e6")
 		)
 		(pin "1"
-			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae43")
+			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae46")
 		)
 		(pin "5"
-			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5b")
+			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5e")
 		)
 		(pin "11"
-			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad3ff")
+			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad402")
 		)
 		(pin "6"
-			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0cfd")
+			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0d00")
 		)
 		(pin "9"
-			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b66")
+			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b69")
 		)
 		(pin "10"
-			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303dd")
+			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303e0")
 		)
 		(instances
 			(project "SF4-hardware"
@@ -2191,7 +2241,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "576e427f-6ffd-46f4-8305-137c7408a35b")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR022"
 			(at 55.88 99.06 0)
 			(effects
 				(font
@@ -2241,7 +2291,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "#PWR023")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -2355,7 +2405,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
-		(at 223.52 45.72 0)
+		(at 231.14 67.31 0)
 		(unit 4)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2364,7 +2414,7 @@
 		(fields_autoplaced yes)
 		(uuid "5ec1e376-cd76-4623-b297-093f18bea9c1")
 		(property "Reference" "U5"
-			(at 223.52 35.56 0)
+			(at 231.14 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2372,7 +2422,7 @@
 			)
 		)
 		(property "Value" "MCP6004"
-			(at 223.52 38.1 0)
+			(at 231.14 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2380,7 +2430,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 222.25 43.18 0)
+			(at 229.87 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2389,7 +2439,7 @@
 			)
 		)
 		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
-			(at 224.79 40.64 0)
+			(at 232.41 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2398,7 +2448,7 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
-			(at 223.52 45.72 0)
+			(at 231.14 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2407,46 +2457,46 @@
 			)
 		)
 		(pin "13"
-			(uuid "fe048d7e-ed3d-4c63-b61a-a5677b0ed84f")
+			(uuid "fe048d7e-ed3d-4c63-b61a-a5677b0ed850")
 		)
 		(pin "5"
-			(uuid "11c07d43-3d33-4407-8238-a6e95bd7db92")
+			(uuid "11c07d43-3d33-4407-8238-a6e95bd7db93")
 		)
 		(pin "12"
-			(uuid "4fbe3f23-b62c-41c2-9861-bacb9e2ce7ba")
+			(uuid "4fbe3f23-b62c-41c2-9861-bacb9e2ce7bb")
 		)
 		(pin "6"
-			(uuid "52cf1808-c632-4d33-9212-e198344b2107")
+			(uuid "52cf1808-c632-4d33-9212-e198344b2108")
 		)
 		(pin "1"
-			(uuid "1fa34cde-f1c5-4270-a044-03e2b2503bdd")
+			(uuid "1fa34cde-f1c5-4270-a044-03e2b2503bde")
 		)
 		(pin "11"
-			(uuid "ee8caa79-9ba5-47c7-aadf-3da882dccbe6")
+			(uuid "ee8caa79-9ba5-47c7-aadf-3da882dccbe7")
 		)
 		(pin "2"
-			(uuid "857f1501-4e95-42ab-9d0a-e2b69ace96bc")
+			(uuid "857f1501-4e95-42ab-9d0a-e2b69ace96bd")
 		)
 		(pin "4"
-			(uuid "77ca7c5d-4225-474c-810c-f7b8c59fdfe1")
+			(uuid "77ca7c5d-4225-474c-810c-f7b8c59fdfe2")
 		)
 		(pin "7"
-			(uuid "8f461f83-f322-4837-b6cd-228c0bcb639d")
+			(uuid "8f461f83-f322-4837-b6cd-228c0bcb639e")
 		)
 		(pin "3"
-			(uuid "cb231644-5ae0-422d-951a-739a348ae291")
+			(uuid "cb231644-5ae0-422d-951a-739a348ae292")
 		)
 		(pin "9"
-			(uuid "e8631e41-73cb-42ff-ad69-7a88fa1a0192")
+			(uuid "e8631e41-73cb-42ff-ad69-7a88fa1a0193")
 		)
 		(pin "8"
-			(uuid "5d05998a-34bc-44a0-8edf-2e2e62ad10ba")
+			(uuid "5d05998a-34bc-44a0-8edf-2e2e62ad10bb")
 		)
 		(pin "10"
-			(uuid "771ca66b-0c87-457c-9f12-17490e154b28")
+			(uuid "771ca66b-0c87-457c-9f12-17490e154b29")
 		)
 		(pin "14"
-			(uuid "b7ec8d2d-1712-467e-bd7c-be6357f95279")
+			(uuid "b7ec8d2d-1712-467e-bd7c-be6357f9527a")
 		)
 		(instances
 			(project "SF4-hardware"
@@ -2459,7 +2509,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
-		(at 133.35 45.72 0)
+		(at 140.97 67.31 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2468,7 +2518,7 @@
 		(fields_autoplaced yes)
 		(uuid "6719605f-5fe1-495a-afef-a54238c24042")
 		(property "Reference" "U5"
-			(at 133.35 35.56 0)
+			(at 140.97 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2476,7 +2526,7 @@
 			)
 		)
 		(property "Value" "MCP6004"
-			(at 133.35 38.1 0)
+			(at 140.97 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2484,7 +2534,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 43.18 0)
+			(at 139.7 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2493,7 +2543,7 @@
 			)
 		)
 		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
-			(at 134.62 40.64 0)
+			(at 142.24 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2502,7 +2552,7 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
-			(at 133.35 45.72 0)
+			(at 140.97 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2511,46 +2561,46 @@
 			)
 		)
 		(pin "13"
-			(uuid "fe048d7e-ed3d-4c63-b61a-a5677b0ed84f")
+			(uuid "fe048d7e-ed3d-4c63-b61a-a5677b0ed851")
 		)
 		(pin "5"
-			(uuid "11c07d43-3d33-4407-8238-a6e95bd7db92")
+			(uuid "11c07d43-3d33-4407-8238-a6e95bd7db94")
 		)
 		(pin "12"
-			(uuid "4fbe3f23-b62c-41c2-9861-bacb9e2ce7ba")
+			(uuid "4fbe3f23-b62c-41c2-9861-bacb9e2ce7bc")
 		)
 		(pin "6"
-			(uuid "52cf1808-c632-4d33-9212-e198344b2107")
+			(uuid "52cf1808-c632-4d33-9212-e198344b2109")
 		)
 		(pin "1"
-			(uuid "1fa34cde-f1c5-4270-a044-03e2b2503bdd")
+			(uuid "1fa34cde-f1c5-4270-a044-03e2b2503bdf")
 		)
 		(pin "11"
-			(uuid "ee8caa79-9ba5-47c7-aadf-3da882dccbe6")
+			(uuid "ee8caa79-9ba5-47c7-aadf-3da882dccbe8")
 		)
 		(pin "2"
-			(uuid "857f1501-4e95-42ab-9d0a-e2b69ace96bc")
+			(uuid "857f1501-4e95-42ab-9d0a-e2b69ace96be")
 		)
 		(pin "4"
-			(uuid "77ca7c5d-4225-474c-810c-f7b8c59fdfe1")
+			(uuid "77ca7c5d-4225-474c-810c-f7b8c59fdfe3")
 		)
 		(pin "7"
-			(uuid "8f461f83-f322-4837-b6cd-228c0bcb639d")
+			(uuid "8f461f83-f322-4837-b6cd-228c0bcb639f")
 		)
 		(pin "3"
-			(uuid "cb231644-5ae0-422d-951a-739a348ae291")
+			(uuid "cb231644-5ae0-422d-951a-739a348ae293")
 		)
 		(pin "9"
-			(uuid "e8631e41-73cb-42ff-ad69-7a88fa1a0192")
+			(uuid "e8631e41-73cb-42ff-ad69-7a88fa1a0194")
 		)
 		(pin "8"
-			(uuid "5d05998a-34bc-44a0-8edf-2e2e62ad10ba")
+			(uuid "5d05998a-34bc-44a0-8edf-2e2e62ad10bc")
 		)
 		(pin "10"
-			(uuid "771ca66b-0c87-457c-9f12-17490e154b28")
+			(uuid "771ca66b-0c87-457c-9f12-17490e154b2a")
 		)
 		(pin "14"
-			(uuid "b7ec8d2d-1712-467e-bd7c-be6357f95279")
+			(uuid "b7ec8d2d-1712-467e-bd7c-be6357f9527b")
 		)
 		(instances
 			(project "SF4-hardware"
@@ -2563,7 +2613,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
-		(at 133.35 27.94 0)
+		(at 140.97 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2572,7 +2622,7 @@
 		(fields_autoplaced yes)
 		(uuid "6f030233-5b6d-4a30-9c75-f7a9728ecac2")
 		(property "Reference" "U5"
-			(at 133.35 17.78 0)
+			(at 140.97 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2580,7 +2630,7 @@
 			)
 		)
 		(property "Value" "MCP6004"
-			(at 133.35 20.32 0)
+			(at 140.97 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2588,7 +2638,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 25.4 0)
+			(at 139.7 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2597,7 +2647,7 @@
 			)
 		)
 		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
-			(at 134.62 22.86 0)
+			(at 142.24 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2606,7 +2656,7 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
-			(at 133.35 27.94 0)
+			(at 140.97 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2615,46 +2665,46 @@
 			)
 		)
 		(pin "13"
-			(uuid "fe048d7e-ed3d-4c63-b61a-a5677b0ed84f")
+			(uuid "fe048d7e-ed3d-4c63-b61a-a5677b0ed852")
 		)
 		(pin "5"
-			(uuid "11c07d43-3d33-4407-8238-a6e95bd7db92")
+			(uuid "11c07d43-3d33-4407-8238-a6e95bd7db95")
 		)
 		(pin "12"
-			(uuid "4fbe3f23-b62c-41c2-9861-bacb9e2ce7ba")
+			(uuid "4fbe3f23-b62c-41c2-9861-bacb9e2ce7bd")
 		)
 		(pin "6"
-			(uuid "52cf1808-c632-4d33-9212-e198344b2107")
+			(uuid "52cf1808-c632-4d33-9212-e198344b210a")
 		)
 		(pin "1"
-			(uuid "1fa34cde-f1c5-4270-a044-03e2b2503bdd")
+			(uuid "1fa34cde-f1c5-4270-a044-03e2b2503be0")
 		)
 		(pin "11"
-			(uuid "ee8caa79-9ba5-47c7-aadf-3da882dccbe6")
+			(uuid "ee8caa79-9ba5-47c7-aadf-3da882dccbe9")
 		)
 		(pin "2"
-			(uuid "857f1501-4e95-42ab-9d0a-e2b69ace96bc")
+			(uuid "857f1501-4e95-42ab-9d0a-e2b69ace96bf")
 		)
 		(pin "4"
-			(uuid "77ca7c5d-4225-474c-810c-f7b8c59fdfe1")
+			(uuid "77ca7c5d-4225-474c-810c-f7b8c59fdfe4")
 		)
 		(pin "7"
-			(uuid "8f461f83-f322-4837-b6cd-228c0bcb639d")
+			(uuid "8f461f83-f322-4837-b6cd-228c0bcb63a0")
 		)
 		(pin "3"
-			(uuid "cb231644-5ae0-422d-951a-739a348ae291")
+			(uuid "cb231644-5ae0-422d-951a-739a348ae294")
 		)
 		(pin "9"
-			(uuid "e8631e41-73cb-42ff-ad69-7a88fa1a0192")
+			(uuid "e8631e41-73cb-42ff-ad69-7a88fa1a0195")
 		)
 		(pin "8"
-			(uuid "5d05998a-34bc-44a0-8edf-2e2e62ad10ba")
+			(uuid "5d05998a-34bc-44a0-8edf-2e2e62ad10bd")
 		)
 		(pin "10"
-			(uuid "771ca66b-0c87-457c-9f12-17490e154b28")
+			(uuid "771ca66b-0c87-457c-9f12-17490e154b2b")
 		)
 		(pin "14"
-			(uuid "b7ec8d2d-1712-467e-bd7c-be6357f95279")
+			(uuid "b7ec8d2d-1712-467e-bd7c-be6357f9527c")
 		)
 		(instances
 			(project "SF4-hardware"
@@ -2675,7 +2725,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "71b58bb7-02b8-44da-8c36-9ceabed5e974")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR020"
 			(at 34.29 99.06 0)
 			(effects
 				(font
@@ -2725,7 +2775,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "#PWR021")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -2741,7 +2791,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7845aa6d-3252-45f6-94b5-844f3a361aa0")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR021"
 			(at 34.29 121.92 0)
 			(effects
 				(font
@@ -2791,7 +2841,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "#PWR020")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -2851,46 +2901,46 @@
 			)
 		)
 		(pin "4"
-			(uuid "31652979-23bb-4f51-9342-f81036991714")
+			(uuid "31652979-23bb-4f51-9342-f81036991718")
 		)
 		(pin "3"
-			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb71")
+			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb75")
 		)
 		(pin "13"
-			(uuid "84db39a5-fd0c-44b1-ba10-80ee68257968")
+			(uuid "84db39a5-fd0c-44b1-ba10-80ee6825796c")
 		)
 		(pin "8"
-			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b69")
+			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b6d")
 		)
 		(pin "12"
-			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3b")
+			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3f")
 		)
 		(pin "2"
-			(uuid "dcad514b-54ff-4200-9c61-64156502d949")
+			(uuid "dcad514b-54ff-4200-9c61-64156502d94d")
 		)
 		(pin "7"
-			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a1")
+			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a5")
 		)
 		(pin "14"
-			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e3")
+			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e7")
 		)
 		(pin "1"
-			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae43")
+			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae47")
 		)
 		(pin "5"
-			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5b")
+			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5f")
 		)
 		(pin "11"
-			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad3ff")
+			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad403")
 		)
 		(pin "6"
-			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0cfd")
+			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0d01")
 		)
 		(pin "9"
-			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b66")
+			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b6a")
 		)
 		(pin "10"
-			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303dd")
+			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303e1")
 		)
 		(instances
 			(project "SF4-hardware"
@@ -2911,7 +2961,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a7710a84-d4e0-4e8b-b3f4-f18cc3d22317")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR023"
 			(at 55.88 121.92 0)
 			(effects
 				(font
@@ -2961,7 +3011,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "#PWR022")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -2969,7 +3019,7 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
-		(at 223.52 27.94 0)
+		(at 231.14 49.53 0)
 		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2978,7 +3028,7 @@
 		(fields_autoplaced yes)
 		(uuid "bdcc3173-b22c-4b14-856c-d43286a4929c")
 		(property "Reference" "U5"
-			(at 223.52 17.78 0)
+			(at 231.14 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2986,7 +3036,7 @@
 			)
 		)
 		(property "Value" "MCP6004"
-			(at 223.52 20.32 0)
+			(at 231.14 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2994,7 +3044,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 222.25 25.4 0)
+			(at 229.87 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3003,7 +3053,7 @@
 			)
 		)
 		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
-			(at 224.79 22.86 0)
+			(at 232.41 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3012,7 +3062,7 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
-			(at 223.52 27.94 0)
+			(at 231.14 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3021,46 +3071,46 @@
 			)
 		)
 		(pin "13"
-			(uuid "fe048d7e-ed3d-4c63-b61a-a5677b0ed84f")
+			(uuid "fe048d7e-ed3d-4c63-b61a-a5677b0ed853")
 		)
 		(pin "5"
-			(uuid "11c07d43-3d33-4407-8238-a6e95bd7db92")
+			(uuid "11c07d43-3d33-4407-8238-a6e95bd7db96")
 		)
 		(pin "12"
-			(uuid "4fbe3f23-b62c-41c2-9861-bacb9e2ce7ba")
+			(uuid "4fbe3f23-b62c-41c2-9861-bacb9e2ce7be")
 		)
 		(pin "6"
-			(uuid "52cf1808-c632-4d33-9212-e198344b2107")
+			(uuid "52cf1808-c632-4d33-9212-e198344b210b")
 		)
 		(pin "1"
-			(uuid "1fa34cde-f1c5-4270-a044-03e2b2503bdd")
+			(uuid "1fa34cde-f1c5-4270-a044-03e2b2503be1")
 		)
 		(pin "11"
-			(uuid "ee8caa79-9ba5-47c7-aadf-3da882dccbe6")
+			(uuid "ee8caa79-9ba5-47c7-aadf-3da882dccbea")
 		)
 		(pin "2"
-			(uuid "857f1501-4e95-42ab-9d0a-e2b69ace96bc")
+			(uuid "857f1501-4e95-42ab-9d0a-e2b69ace96c0")
 		)
 		(pin "4"
-			(uuid "77ca7c5d-4225-474c-810c-f7b8c59fdfe1")
+			(uuid "77ca7c5d-4225-474c-810c-f7b8c59fdfe5")
 		)
 		(pin "7"
-			(uuid "8f461f83-f322-4837-b6cd-228c0bcb639d")
+			(uuid "8f461f83-f322-4837-b6cd-228c0bcb63a1")
 		)
 		(pin "3"
-			(uuid "cb231644-5ae0-422d-951a-739a348ae291")
+			(uuid "cb231644-5ae0-422d-951a-739a348ae295")
 		)
 		(pin "9"
-			(uuid "e8631e41-73cb-42ff-ad69-7a88fa1a0192")
+			(uuid "e8631e41-73cb-42ff-ad69-7a88fa1a0196")
 		)
 		(pin "8"
-			(uuid "5d05998a-34bc-44a0-8edf-2e2e62ad10ba")
+			(uuid "5d05998a-34bc-44a0-8edf-2e2e62ad10be")
 		)
 		(pin "10"
-			(uuid "771ca66b-0c87-457c-9f12-17490e154b28")
+			(uuid "771ca66b-0c87-457c-9f12-17490e154b2c")
 		)
 		(pin "14"
-			(uuid "b7ec8d2d-1712-467e-bd7c-be6357f95279")
+			(uuid "b7ec8d2d-1712-467e-bd7c-be6357f9527d")
 		)
 		(instances
 			(project "SF4-hardware"
