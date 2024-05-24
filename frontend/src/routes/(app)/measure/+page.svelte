@@ -12,17 +12,15 @@
 	import { onMount } from 'svelte';
 	import { ArduinoInterface } from 'lib/stores.ts';
 
-	async function readPort(event) {
+	let ard = new ArduinoInterface();
+
+	async function readPort(event: any) {
 		let port: SerialPort = event.detail.port;
 		await port.open({ baudRate: 115_200 });
-		const reader = port.readable;
-
-		if (reader) {
-			let ard = new ArduinoInterface(reader, new WritableStream());
-			ard.readToCompletion();
-		}
+		ard.readStream()
+		// @ts-ignore
+		ard.updateStreams(port.readable, port.writable)
 	}
-
 
 	// Define some data
 	let points = [
@@ -33,7 +31,6 @@
 		{ x: 20, y: 40 }
 	];
 
-	let idx = 0;
 	function getRandomInt(min: number, max: number): number {
 		min = Math.ceil(min);
 		max = Math.floor(max);

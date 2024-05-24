@@ -3,36 +3,41 @@ import { encode, decodeMultiStream } from '@msgpack/msgpack';
 
 
 export class ArduinoInterface {
-  private readDecoded: AsyncGenerator<any>;
+  private writeStream = new WritableStream();
+  private readDecoded = decodeMultiStream(new ReadableStream());
 
-  public constructor(
-    readStream: ReadableStream<Uint8Array>,
-    private writeStream: WritableStream<Uint8Array>,
-  ) {
-    this.readDecoded = decodeMultiStream(readStream);
-  }
-
-  public async readToCompletion() {
+  public async readStream() {
+    console.log('Waiting..')
     for await (const item of this.readDecoded) {
-      this.write(item);
+      console.log('cout', item)
     }
+    console.log('No More Waiting.')
   }
 
-  public setSerial(
+  public async updateStreams(
     read: ReadableStream<Uint8Array>,
     write: WritableStream<Uint8Array>,
   ) {
-    this.readDecoded.return("complete");
+    this.readDecoded.return();
     this.readDecoded = decodeMultiStream(read);
     this.writeStream = write;
+    
+    console.log("writing `hello`")
+    await this.write("hello");
+    console.log("fin `hello`")
+
+    console.log("next")
+    console.log(await this.readDecoded.next())
+    console.log(await this.readDecoded.next())
+    console.log("fin `next`")
+
   }
 
-  public write(val: any) {
+  public async write(val: any) {
     let buffer = encode(val, { sortKeys: true });
     let writer = this.writeStream.getWriter();
-    writer.ready.then(
+    return writer.ready.then(
       () => writer.write(buffer)
     ).then(() => writer.releaseLock())
   }
-
 }
