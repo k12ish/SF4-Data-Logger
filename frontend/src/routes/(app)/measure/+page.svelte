@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PopupModal from 'components/PopupModal.svelte';
+	import { Button } from 'flowbite-svelte';
 	import { encode } from '@msgpack/msgpack';
 	import { decodeMultiStream } from '@msgpack/msgpack';
 	let data = '';
@@ -17,9 +18,8 @@
 	async function readPort(event: any) {
 		let port: SerialPort = event.detail.port;
 		await port.open({ baudRate: 115_200 });
-		ard.readStream()
-		// @ts-ignore
-		ard.updateStreams(port.readable, port.writable)
+		// @ts-ignore: lets pretend everything is readable/writable...
+		await ard.updateStreams(port.readable, port.writable);
 	}
 
 	// Define some data
@@ -54,13 +54,9 @@
 	</LayerCake>
 </div>
 
-<div class="relative mx-auto mt-24 max-w-2xl">
-	<div class="rounded-md bg-gray-900 p-4 text-white">
-		<div class="overflow-x-auto">
-			<pre id="code" class="text-gray-300">{data}</pre>
-		</div>
-	</div>
-</div>
+<Button on:click={() => ard.updateStreams(new ReadableStream(), new WritableStream())}>
+	Default
+</Button>
 
 <PopupModal on:gotPort={readPort} />
 

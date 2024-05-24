@@ -1,18 +1,16 @@
 import { writable } from 'svelte/store';
 import { encode, decodeMultiStream } from '@msgpack/msgpack';
 
+import Joi from 'joi';
+
+// check that packet is of length 4, containing 10 bit ints
+const PACKET_VALIDATOR = Joi.array().length(4).items(
+  Joi.number().integer().min(0).max(2 ** 10 - 1)
+);
 
 export class ArduinoInterface {
   private writeStream = new WritableStream();
   private readDecoded = decodeMultiStream(new ReadableStream());
-
-  public async readStream() {
-    console.log('Waiting..')
-    for await (const item of this.readDecoded) {
-      console.log('cout', item)
-    }
-    console.log('No More Waiting.')
-  }
 
   public async updateStreams(
     read: ReadableStream<Uint8Array>,
@@ -21,16 +19,22 @@ export class ArduinoInterface {
     this.readDecoded.return();
     this.readDecoded = decodeMultiStream(read);
     this.writeStream = write;
-    
-    console.log("writing `hello`")
-    await this.write("hello");
-    console.log("fin `hello`")
 
-    console.log("next")
-    console.log(await this.readDecoded.next())
-    console.log(await this.readDecoded.next())
-    console.log("fin `next`")
+    while (true) {
+      // JS issue: we have to request the nextSymbol BEFORE we write bytes
+      // otherwise we loose the first response packet!!
+      let nextSymbol = this.readDecoded.next();
+      await this.write("hello");
+      let result = PACKET_VALIDATOR.validate((await nextSymbol).value);
+      if (!result.error) { break }
+    }
 
+    for await (const item of this.readDecoded) {
+      console.log(
+        PACKET_VALIDATOR.validate(item)
+      )
+    }
+    console.log('No More Waiting.')
   }
 
   public async write(val: any) {
