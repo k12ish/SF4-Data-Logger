@@ -9,23 +9,30 @@ const PACKET_VALIDATOR = Joi.array().length(4).items(
 );
 
 export class ArduinoInterface {
-  private writeStream = new WritableStream();
-  private readDecoded = decodeMultiStream(new ReadableStream());
+  private writeStream: WritableStream;
+  // private readDecoded = decodeMultiStream(new ReadableStream());
+  private readDecoded: AsyncGenerator;
 
-  public async updateStreams(
+  constructor(
     read: ReadableStream<Uint8Array>,
     write: WritableStream<Uint8Array>,
   ) {
-    this.readDecoded.return();
     this.readDecoded = decodeMultiStream(read);
     this.writeStream = write;
+  }
 
+  public async run() {
     while (true) {
-      // JS issue: we have to request the nextSymbol BEFORE we write bytes
-      // otherwise we loose the first response packet!!
+      // HACK: omfg these lines have caused me so much pain
+      // for some reason, `readDecoded` likes to take it's time?
       let nextSymbol = this.readDecoded.next();
-      await this.write("hello");
+      console.log("next() called")
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      await this.write("i");
+      console.log("write() called")
+
       let result = PACKET_VALIDATOR.validate((await nextSymbol).value);
+      console.log("Yay, the code worked!")
       if (!result.error) { break }
     }
 
@@ -34,10 +41,9 @@ export class ArduinoInterface {
         PACKET_VALIDATOR.validate(item)
       )
     }
-    console.log('No More Waiting.')
   }
 
-  public async write(val: any) {
+  private async write(val: any) {
     let buffer = encode(val, { sortKeys: true });
     let writer = this.writeStream.getWriter();
     return writer.ready.then(

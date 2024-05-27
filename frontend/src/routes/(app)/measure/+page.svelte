@@ -13,13 +13,14 @@
 	import { onMount } from 'svelte';
 	import { ArduinoInterface } from 'lib/stores.ts';
 
-	let ard = new ArduinoInterface();
+	let ard: ArduinoInterface;
 
 	async function readPort(event: any) {
 		let port: SerialPort = event.detail.port;
 		await port.open({ baudRate: 115_200 });
-		// @ts-ignore: lets pretend everything is readable/writable...
-		await ard.updateStreams(port.readable, port.writable);
+		// @ts-ignore port.readable is assumed to always be a stream!
+		ard = new ArduinoInterface(port.readable, port.writable);
+		await ard.run();
 	}
 
 	// Define some data
@@ -53,10 +54,6 @@
 		</Svg>
 	</LayerCake>
 </div>
-
-<Button on:click={() => ard.updateStreams(new ReadableStream(), new WritableStream())}>
-	Default
-</Button>
 
 <PopupModal on:gotPort={readPort} />
 
