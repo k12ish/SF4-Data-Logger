@@ -8,9 +8,21 @@ const PACKET_VALIDATOR = Joi.array().length(4).items(
   Joi.number().integer().min(0).max(2 ** 10 - 1)
 );
 
+// Taken from https://advancedweb.hu/how-to-add-timeout-to-a-promise-in-javascript/
+const timeout = (prom: Promise<IteratorResult<unknown, any>>, time: number, exception: any): Promise<any> => {
+	let timer;
+	return Promise.race([
+		prom,
+		new Promise((_r, rej) => timer = setTimeout(rej, time, exception))
+	]).finally(() => clearTimeout(timer));
+}
+
+type setModeProgress = 'timeout' | 'invalid-response' | 'done';
+type SetModeCallback = (progress: setModeProgress) => void;
+
+
 export class ArduinoInterface {
   private writeStream: WritableStream;
-  // private readDecoded = decodeMultiStream(new ReadableStream());
   private readDecoded: AsyncGenerator;
 
   constructor(
@@ -21,21 +33,31 @@ export class ArduinoInterface {
     this.writeStream = write;
   }
 
-  public async run() {
+  public async setMode(callback: SetModeCallback) {
+    const timeoutError = Symbol();
+    let nextMessage = this.readDecoded.next();
+    let message;
+
     while (true) {
-      // HACK: omfg these lines have caused me so much pain
-      // for some reason, `readDecoded` likes to take it's time?
-      let nextSymbol = this.readDecoded.next();
-      console.log("next() called")
-      await new Promise(resolve => setTimeout(resolve, 3000));
       await this.write("i");
-      console.log("write() called")
-
-      let result = PACKET_VALIDATOR.validate((await nextSymbol).value);
-      console.log("Yay, the code worked!")
-      if (!result.error) { break }
+      try {
+        message = await timeout(nextMessage, 1000, timeoutError);
+      } catch (e) {
+        e === timeoutError ? callback('timeout') : console.log(e);
+        continue
+      }
+      let result = PACKET_VALIDATOR.validate(message.value);
+      if (result.error) {
+        console.log("error:", result)
+        nextMessage = this.readDecoded.next()
+      } else {
+        break;
+      }
     }
+  }
 
+  public async run() {
+    await this.setMode(console.log);
     for await (const item of this.readDecoded) {
       console.log(
         PACKET_VALIDATOR.validate(item)
