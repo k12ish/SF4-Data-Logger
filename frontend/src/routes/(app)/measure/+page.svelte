@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button, Dropdown, DropdownItem, Spinner } from 'flowbite-svelte';
-	import { ChevronDownOutline } from 'flowbite-svelte-icons';
+	import { ChevronDownOutline, PlayOutline , StopSolid } from 'flowbite-svelte-icons';
 
 	import Navbar from 'components/Navbar.svelte';
 	import PopupModal from 'components/PopupModal.svelte';
@@ -82,6 +82,10 @@
 		<DropdownItem on:click={() => dropdownClick('Regular')}>Regular</DropdownItem>
 		<DropdownItem on:click={() => dropdownClick('Augmented')}>Augmented</DropdownItem>
 	</Dropdown>
+	<div class="px-2"/>
+	<Button color="light" on:click={() => ard.run()}>
+		<PlayOutline/>
+	</Button>
 </Navbar>
 
 <div class="chart-container mx-auto rounded border p-8">

@@ -7,16 +7,16 @@ import Joi from 'joi';
 export type arduinoModes = 'Regular' | 'Augmented';
 // check that packet is of length 4, containing 10 bit ints
 const PACKET_VALIDATOR = Joi.array().length(4).items(
-  Joi.number().integer().min(0).max(2 ** 10 - 1)
+  Joi.number().integer().min(0)
 );
 
 // Taken from https://advancedweb.hu/how-to-add-timeout-to-a-promise-in-javascript/
 const timeout = (prom: Promise<IteratorResult<unknown, any>>, time: number, exception: any): Promise<any> => {
-	let timer;
-	return Promise.race([
-		prom,
-		new Promise((_r, rej) => timer = setTimeout(rej, time, exception))
-	]).finally(() => clearTimeout(timer));
+  let timer;
+  return Promise.race([
+    prom,
+    new Promise((_r, rej) => timer = setTimeout(rej, time, exception))
+  ]).finally(() => clearTimeout(timer));
 }
 
 export type setModeProgress = 'timeout' | 'invalid-response' | 'ioerror';
@@ -40,11 +40,12 @@ export class ArduinoInterface {
     let nextMessage = this.readDecoded.next();
     let message;
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10; i++) {
+      await this.write(mode);
       try {
-        await this.write(mode);
         message = await timeout(nextMessage, 1000, timeoutError);
       } catch (e) {
+        console.log(e)
         if (e == timeoutError) {
           callback('timeout')
         } else {
@@ -55,7 +56,7 @@ export class ArduinoInterface {
       let result = PACKET_VALIDATOR.validate(message.value);
       if (result.error) {
         callback('invalid-response');
-        console.log("error:", result)
+        console.log("invalid:", message.value)
         nextMessage = this.readDecoded.next()
       } else {
         break;
@@ -71,10 +72,9 @@ export class ArduinoInterface {
     }
   }
 
-  private async write(val: any) {
-    let buffer = encode(val, { sortKeys: true });
+  private async write(val: string) {
     console.log("Writing", JSON.stringify(val))
-    console.log(buffer)
+    let buffer = new TextEncoder().encode(val);
     let writer = this.writeStream.getWriter();
     return writer.ready.then(
       () => writer.write(buffer)
