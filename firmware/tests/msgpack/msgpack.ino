@@ -14,6 +14,7 @@ void setup() {
     // Wait for start message to be sent
     while (Serial.available()==0){
     }
+}
 
 void loop() {
     prev = micros();

@@ -6,6 +6,7 @@ int prev;
 int timer;
 String mode;
 
+
 void setup() {
     Serial.begin(115200);
     pinMode(A0, INPUT);
@@ -17,47 +18,52 @@ void setup() {
     pinMode(5, OUTPUT);
     digitalWrite(5, HIGH);
     // Wait for start message to be sent
-    while (Serial.available()==0){
-
-    }
-    if (Serial.available() != 0){
+    while (Serial.available()==0){}
+    if (Serial.available() != 0){         // Initilise IO for first readings
       mode = Serial.readString();
       enable_io(mode);
     }
     
 }
 
+
 void loop() {
-    prev = micros();
-    v[0] = analogRead(A0);
+    timer = micros()-prev;                      // Calculate time step for next sample point
+    prev = micros();                            // Save initial time point
+    v[0] = analogRead(A0);                      // Read ports
     v[1] = analogRead(A1);
     v[2] = analogRead(A2);
     v[3] = timer;
-    MsgPack::Packer packer;
-    packer.serialize(v);
-    Serial.write(packer.data(), packer.size());
-    timer = micros()-prev;
-    if (Serial.available() != 0){
-      mode = Serial.readString();
-      enable_io(mode);
+    MsgPack::Packer packer;                     // Package data
+    packer.serialize(v);                        // Serialise data
+    Serial.write(packer.data(), packer.size()); // Send data
+    // Serial.println(v[3]);
+    if (Serial.available() != 0){               // Check for message from host computer
+      mode = Serial.readString();               // Read change in mode
+      enable_io(mode);                          // Execute change in mode
     }
-    delay(2000);
+    delayMicroseconds(300);                     // Adjust timing to roughly 1 kHz sampling
+    
 }
 
 
+// Function to change IO states
 void enable_io(String mode){
-  digitalWrite(5, HIGH);
-  if (mode == "Regular"){
+  digitalWrite(5, HIGH);                        // Turn off inputs
+  if (mode == "Regular"){                       // Turn on routing for regular lead positions
+    // Serial.println("Regular");
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
     digitalWrite(5, LOW);
+    // delay(1000);
   }
-  else if (mode == "Augmented"){
+  else if (mode == "Augmented"){                // Turn on routing for augmented lead positions
+    // Serial.println("Augmented");
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, HIGH);
     digitalWrite(5, LOW);
+    // delay(1000);
   }
-
 }
