@@ -15,11 +15,8 @@
 
 	let ard: ArduinoInterface;
 
-	async function readPort(event: any) {
-		let port: SerialPort = event.detail.port;
-		await port.open({ baudRate: 115_200 });
-		// @ts-ignore port.readable is assumed to always be a stream!
-		ard = new ArduinoInterface(port.readable, port.writable);
+	async function gotArduino(event: CustomEvent) {
+		ard = event.detail.ard;
 		await ard.run();
 	}
 
@@ -55,7 +52,7 @@
 	</LayerCake>
 </div>
 
-<PopupModal on:gotPort={readPort} />
+<PopupModal on:gotArduino={gotArduino} />
 
 <style>
 	/* The wrapper div needs to have an explicit width and height in CSS. */
