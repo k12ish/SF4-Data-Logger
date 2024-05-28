@@ -5,6 +5,395 @@
 	(uuid "84bc3932-8e9d-4403-9393-5a2cede833be")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Amplifier_Operational:LM324"
+			(pin_names
+				(offset 0.127)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "LM324"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
+				(at 1.27 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "quad opamp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x8.7mm*P1.27mm* DIP*W7.62mm* TSSOP*4.4x5mm*P0.65mm* SSOP*5.3x6.2mm*P0.65mm* MSOP*3x3mm*P0.5mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "LM324_1_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM324_2_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM324_3_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM324_4_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM324_5_1"
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Amplifier_Operational:MCP6004"
 			(pin_names
 				(offset 0.127)
@@ -394,6 +783,127 @@
 				)
 			)
 		)
+		(symbol "Device:R"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:+5V"
 			(power)
 			(pin_numbers hide)
@@ -510,6 +1020,222 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+				)
+			)
+		)
+		(symbol "power:+5VA"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5VA"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5VA\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5VA_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5VA_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:-5VA"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "-5VA"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"-5VA\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "-5VA_0_0"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "-5VA_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy 0.762 1.27) (xy 0 2.54) (xy -0.762 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
 					)
 				)
 			)
@@ -648,6 +1374,12 @@
 		(uuid "a83d8044-632f-4f42-8e7b-4ec563ab7b4c")
 	)
 	(junction
+		(at 45.72 175.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c699f7ab-d966-4906-a174-55d34edcb79c")
+	)
+	(junction
 		(at 201.93 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -660,33 +1392,75 @@
 		(uuid "d132dfea-1357-4c43-8b9e-7f88cc1b23ed")
 	)
 	(junction
+		(at 21.59 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d1735469-b72d-4369-b9fc-b1a91d713cd3")
+	)
+	(junction
 		(at 238.76 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d328062d-5dda-443b-9e02-e5132dab5f81")
 	)
 	(no_connect
-		(at 35.56 167.64)
+		(at 58.42 181.61)
+		(uuid "14569dce-6073-496c-8011-1421d2ec0900")
+	)
+	(no_connect
+		(at 107.95 184.15)
+		(uuid "1950fe9c-974d-4184-a1e2-90af2215e17a")
+	)
+	(no_connect
+		(at 36.83 153.67)
 		(uuid "29ec3871-671a-4471-ad20-1d14c57eb077")
 	)
 	(no_connect
-		(at 35.56 162.56)
+		(at 92.71 181.61)
+		(uuid "3e000e51-6fc8-4b6e-a3b0-f593da5cbdee")
+	)
+	(no_connect
+		(at 73.66 184.15)
+		(uuid "44697324-532e-4b29-b28c-9c21dda0da16")
+	)
+	(no_connect
+		(at 120.65 186.69)
+		(uuid "44730ee8-21a2-45e2-82fe-5799e7f89087")
+	)
+	(no_connect
+		(at 92.71 186.69)
+		(uuid "53193535-44b8-41f5-b507-a2e9ff4cbb5f")
+	)
+	(no_connect
+		(at 36.83 148.59)
 		(uuid "567bc1a6-18c5-4a78-98df-6251b5fb23e3")
 	)
 	(no_connect
-		(at 35.56 139.7)
+		(at 36.83 125.73)
 		(uuid "7a536188-bf11-4943-8aba-34c6a1c1c4b0")
 	)
 	(no_connect
-		(at 35.56 144.78)
+		(at 120.65 181.61)
+		(uuid "93786185-4bc3-49a2-9d34-a941424540d7")
+	)
+	(no_connect
+		(at 36.83 130.81)
 		(uuid "962b3c46-599c-4df7-9c73-d5b2841ca07b")
 	)
 	(no_connect
-		(at 50.8 165.1)
+		(at 52.07 151.13)
 		(uuid "b3c66a12-ad29-40a7-9895-88768344fc5b")
 	)
 	(no_connect
-		(at 50.8 142.24)
+		(at 135.89 184.15)
+		(uuid "d0c68e75-3e6f-4e97-ae08-31cc01a71e08")
+	)
+	(no_connect
+		(at 58.42 186.69)
+		(uuid "e98f2211-2352-4fa4-bce7-f1f18c59353d")
+	)
+	(no_connect
+		(at 52.07 128.27)
 		(uuid "f2eb7d96-32c7-4227-9b28-2f57e212af1b")
 	)
 	(wire
@@ -698,6 +1472,26 @@
 			(type default)
 		)
 		(uuid "00a99280-15ac-4fc4-ad86-62a83a2cc801")
+	)
+	(wire
+		(pts
+			(xy 21.59 171.45) (xy 21.59 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01da8e9d-f7bb-4f3f-920e-4164344b4c21")
+	)
+	(wire
+		(pts
+			(xy 21.59 162.56) (xy 21.59 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05c8474c-bb9f-4cdd-91a7-c6716c9983ce")
 	)
 	(wire
 		(pts
@@ -741,6 +1535,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 172.72) (xy 160.02 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1462fefd-8e08-4cf8-b48b-332f11821e61")
+	)
+	(wire
+		(pts
 			(xy 238.76 57.15) (xy 238.76 62.23)
 		)
 		(stroke
@@ -751,6 +1555,16 @@
 	)
 	(wire
 		(pts
+			(xy 34.29 118.11) (xy 39.37 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b14de64-e222-45fe-a95e-483bdaa54922")
+	)
+	(wire
+		(pts
 			(xy 238.76 74.93) (xy 238.76 67.31)
 		)
 		(stroke
@@ -758,6 +1572,16 @@
 			(type default)
 		)
 		(uuid "1bd3ed0d-9f3a-4160-8c0c-d284983a09ce")
+	)
+	(wire
+		(pts
+			(xy 55.88 118.11) (xy 60.96 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c24bfc6-712b-4820-a0ae-4d547c769dbb")
 	)
 	(wire
 		(pts
@@ -778,6 +1602,16 @@
 			(type default)
 		)
 		(uuid "237e17d5-3335-4e40-957d-5204ed38af54")
+	)
+	(wire
+		(pts
+			(xy 45.72 175.26) (xy 49.53 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23f651aa-5053-4e2a-87e6-65a0aa528b08")
 	)
 	(wire
 		(pts
@@ -821,6 +1655,16 @@
 	)
 	(wire
 		(pts
+			(xy 21.59 181.61) (xy 21.59 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a5cdc52-aa11-423a-9c82-ed54191467d4")
+	)
+	(wire
+		(pts
 			(xy 213.36 119.38) (xy 201.93 119.38)
 		)
 		(stroke
@@ -828,6 +1672,16 @@
 			(type default)
 		)
 		(uuid "3cb4dbec-e29b-4f80-8698-86c36e8455ef")
+	)
+	(wire
+		(pts
+			(xy 39.37 115.57) (xy 39.37 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45b243d7-1018-48c2-ab03-f986db32f9a8")
 	)
 	(wire
 		(pts
@@ -851,13 +1705,13 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 113.03) (xy 34.29 115.57)
+			(xy 55.88 113.03) (xy 55.88 118.11)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5c83c7c2-e837-4cd8-b9e5-1ab0898340c5")
+		(uuid "59df6cd2-3332-4f2e-b07c-0bdbdefe2047")
 	)
 	(wire
 		(pts
@@ -868,6 +1722,26 @@
 			(type default)
 		)
 		(uuid "63232f4d-be9d-4750-89a1-5c6a0a97d461")
+	)
+	(wire
+		(pts
+			(xy 60.96 115.57) (xy 60.96 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65e10e1f-7032-4a67-ae5b-7d10b92dc423")
+	)
+	(wire
+		(pts
+			(xy 21.59 172.72) (xy 30.48 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c6cb41e-fcf9-481d-9be4-8858da8ab4f1")
 	)
 	(wire
 		(pts
@@ -919,6 +1793,16 @@
 		)
 		(uuid "80f8d9ec-536f-4e79-ab9f-fccc3bb24619")
 	)
+	(wire
+		(pts
+			(xy 29.21 182.88) (xy 45.72 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "830fbecc-df00-49d0-80a4-976a5406fb8c")
+	)
 	(polyline
 		(pts
 			(xy 90.17 12.7) (xy 90.17 77.47)
@@ -931,6 +1815,16 @@
 	)
 	(wire
 		(pts
+			(xy 30.48 177.8) (xy 29.21 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "881e13fb-f08b-4e7d-b7f9-2f7a43421d64")
+	)
+	(wire
+		(pts
 			(xy 123.19 64.77) (xy 133.35 64.77)
 		)
 		(stroke
@@ -938,6 +1832,16 @@
 			(type default)
 		)
 		(uuid "90ab7a1d-d642-4c79-a58a-60f106339da6")
+	)
+	(wire
+		(pts
+			(xy 45.72 175.26) (xy 45.72 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91e566ef-eba4-40e5-a74d-0e1206992d6f")
 	)
 	(polyline
 		(pts
@@ -1021,6 +1925,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 190.5) (xy 160.02 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab6486b7-3778-46e0-9c80-9e9246808a85")
+	)
+	(wire
+		(pts
 			(xy 176.53 137.16) (xy 213.36 137.16)
 		)
 		(stroke
@@ -1048,6 +1962,16 @@
 			(type default)
 		)
 		(uuid "b2e7dbfd-c2b7-42c9-9051-3184ca12319d")
+	)
+	(wire
+		(pts
+			(xy 34.29 113.03) (xy 34.29 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b492a68e-5283-4a57-9aca-5bf0542dae78")
 	)
 	(polyline
 		(pts
@@ -1091,6 +2015,16 @@
 	)
 	(wire
 		(pts
+			(xy 21.59 172.72) (xy 21.59 173.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c581b6b6-f8ef-4b2e-a0ec-85a2d573a17b")
+	)
+	(wire
+		(pts
 			(xy 44.45 50.8) (xy 55.88 50.8)
 		)
 		(stroke
@@ -1121,16 +2055,6 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 113.03) (xy 55.88 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e1057b91-9774-4126-94b8-db0810f02370")
-	)
-	(wire
-		(pts
 			(xy 201.93 119.38) (xy 201.93 125.73)
 		)
 		(stroke
@@ -1148,6 +2072,16 @@
 			(type default)
 		)
 		(uuid "eba5fb50-b1f3-4974-9ef4-94266429c7a4")
+	)
+	(wire
+		(pts
+			(xy 29.21 177.8) (xy 29.21 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee206fd6-f5f3-42e3-b17d-2fe664c3d41f")
 	)
 	(wire
 		(pts
@@ -1259,6 +2193,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "vref"
+		(shape input)
+		(at 49.53 175.26 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0bc2316b-894b-4820-aa44-937b946d475a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 56.0833 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -1814,25 +2770,26 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:MCP6004")
-		(at 43.18 165.1 0)
-		(unit 4)
+		(lib_id "power:+5VA")
+		(at 34.29 95.25 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "0d9802b6-1eac-4749-8551-c7c3fc12efba")
-		(property "Reference" "U6"
-			(at 43.18 154.94 0)
+		(uuid "038712d1-c769-4e2a-8611-6dc771e81ee2")
+		(property "Reference" "#PWR024"
+			(at 34.29 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "MCP6004"
-			(at 43.18 157.48 0)
+		(property "Value" "+5VA"
+			(at 34.29 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1840,7 +2797,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 41.91 162.56 0)
+			(at 34.29 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1848,8 +2805,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
-			(at 44.45 160.02 0)
+		(property "Datasheet" ""
+			(at 34.29 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1857,8 +2814,73 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
-			(at 43.18 165.1 0)
+		(property "Description" "Power symbol creates a global label with name \"+5VA\""
+			(at 34.29 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e74b377d-5672-412b-bad2-9c8cb626e6cd")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:LM324")
+		(at 44.45 151.13 0)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0d9802b6-1eac-4749-8551-c7c3fc12efba")
+		(property "Reference" "U7"
+			(at 44.45 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LM324"
+			(at 44.45 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
+			(at 45.72 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
+			(at 44.45 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1911,14 +2933,14 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "U6")
+					(reference "U7")
 					(unit 4)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:MCP6004")
+		(lib_id "Amplifier_Operational:LM324")
 		(at 194.31 125.73 0)
 		(unit 2)
 		(exclude_from_sim no)
@@ -1927,7 +2949,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "115d51d0-e236-4dcb-bca1-c740c82460a7")
-		(property "Reference" "U6"
+		(property "Reference" "U7"
 			(at 194.31 115.57 0)
 			(effects
 				(font
@@ -1935,7 +2957,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6004"
+		(property "Value" "LM324"
 			(at 194.31 118.11 0)
 			(effects
 				(font
@@ -1952,7 +2974,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
 			(at 195.58 120.65 0)
 			(effects
 				(font
@@ -1961,7 +2983,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
 			(at 194.31 125.73 0)
 			(effects
 				(font
@@ -2015,14 +3037,14 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "U6")
+					(reference "U7")
 					(unit 2)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:MCP6004")
+		(lib_id "Amplifier_Operational:LM324")
 		(at 58.42 105.41 0)
 		(unit 5)
 		(exclude_from_sim no)
@@ -2031,7 +3053,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1ef04db7-5391-4509-a896-bd904a9b6b97")
-		(property "Reference" "U6"
+		(property "Reference" "U7"
 			(at 57.15 104.1399 0)
 			(effects
 				(font
@@ -2040,7 +3062,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MCP6004"
+		(property "Value" "LM324"
 			(at 57.15 106.6799 0)
 			(effects
 				(font
@@ -2058,7 +3080,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
 			(at 59.69 100.33 0)
 			(effects
 				(font
@@ -2067,7 +3089,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
 			(at 58.42 105.41 0)
 			(effects
 				(font
@@ -2121,14 +3143,188 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "U6")
+					(reference "U7")
 					(unit 5)
 				)
 			)
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 21.59 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2c0c8908-075a-4ce4-8635-0f3a640080ff")
+		(property "Reference" "R37"
+			(at 24.13 166.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22k"
+			(at 24.13 168.9099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 19.812 167.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 21.59 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 21.59 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cca21b0d-f3be-4c70-b52c-6bc2cdbae784")
+		)
+		(pin "1"
+			(uuid "7f10c705-44b4-4620-9b5a-f22be93a0cb8")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "R37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
+		(at 128.27 184.15 0)
+		(unit 4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2fa1cd83-7869-4f31-8969-5a92d16c96f7")
+		(property "Reference" "U6"
+			(at 128.27 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MCP6004"
+			(at 128.27 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+			(at 129.54 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+			(at 128.27 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288c")
+		)
+		(pin "9"
+			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b84")
+		)
+		(pin "2"
+			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf1")
+		)
+		(pin "13"
+			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdb")
+		)
+		(pin "5"
+			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d09")
+		)
+		(pin "7"
+			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b858")
+		)
+		(pin "6"
+			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69a9")
+		)
+		(pin "3"
+			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607d")
+		)
+		(pin "4"
+			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9814")
+		)
+		(pin "1"
+			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c89")
+		)
+		(pin "12"
+			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edc")
+		)
+		(pin "10"
+			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ed")
+		)
+		(pin "14"
+			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982463")
+		)
+		(pin "8"
+			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de6")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "U6")
+					(unit 4)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:LM324")
 		(at 194.31 105.41 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2137,7 +3333,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "35ea92df-d108-4932-8cbe-762b08a23bdf")
-		(property "Reference" "U6"
+		(property "Reference" "U7"
 			(at 194.31 95.25 0)
 			(effects
 				(font
@@ -2145,7 +3341,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6004"
+		(property "Value" "LM324"
 			(at 194.31 97.79 0)
 			(effects
 				(font
@@ -2162,7 +3358,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
 			(at 195.58 100.33 0)
 			(effects
 				(font
@@ -2171,7 +3367,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
 			(at 194.31 105.41 0)
 			(effects
 				(font
@@ -2225,80 +3421,14 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "U6")
+					(reference "U7")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 55.88 95.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "576e427f-6ffd-46f4-8305-137c7408a35b")
-		(property "Reference" "#PWR022"
-			(at 55.88 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 55.88 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 55.88 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 55.88 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 55.88 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8a4010dc-3e6a-4f8f-b18f-71eef630871f")
-		)
-		(instances
-			(project "SF4-hardware"
-				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:MCP6004")
+		(lib_id "Amplifier_Operational:LM324")
 		(at 36.83 105.41 0)
 		(unit 5)
 		(exclude_from_sim no)
@@ -2316,7 +3446,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MCP6004"
+		(property "Value" "LM324"
 			(at 35.56 106.6799 0)
 			(effects
 				(font
@@ -2334,7 +3464,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
 			(at 38.1 100.33 0)
 			(effects
 				(font
@@ -2343,7 +3473,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
 			(at 36.83 105.41 0)
 			(effects
 				(font
@@ -2405,6 +3535,112 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
+		(at 162.56 182.88 0)
+		(unit 5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "57dffc0a-9bf4-498d-ab56-898b9b0a696a")
+		(property "Reference" "U6"
+			(at 161.29 181.6099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MCP6004"
+			(at 161.29 184.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 161.29 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+			(at 163.83 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+			(at 162.56 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288c")
+		)
+		(pin "9"
+			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b84")
+		)
+		(pin "2"
+			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf1")
+		)
+		(pin "13"
+			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdb")
+		)
+		(pin "5"
+			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d09")
+		)
+		(pin "7"
+			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b858")
+		)
+		(pin "6"
+			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69a9")
+		)
+		(pin "3"
+			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607d")
+		)
+		(pin "4"
+			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9814")
+		)
+		(pin "1"
+			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c89")
+		)
+		(pin "12"
+			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edc")
+		)
+		(pin "10"
+			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ed")
+		)
+		(pin "14"
+			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982463")
+		)
+		(pin "8"
+			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de6")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "U6")
+					(unit 5)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:LM324")
 		(at 231.14 67.31 0)
 		(unit 4)
 		(exclude_from_sim no)
@@ -2421,7 +3657,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6004"
+		(property "Value" "LM324"
 			(at 231.14 59.69 0)
 			(effects
 				(font
@@ -2438,7 +3674,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
 			(at 232.41 62.23 0)
 			(effects
 				(font
@@ -2447,7 +3683,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
 			(at 231.14 67.31 0)
 			(effects
 				(font
@@ -2508,7 +3744,73 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:MCP6004")
+		(lib_id "power:-5VA")
+		(at 60.96 115.57 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "65d65309-2805-4dcc-8624-0828c72fa626")
+		(property "Reference" "#PWR027"
+			(at 60.96 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-5VA"
+			(at 60.96 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"-5VA\""
+			(at 60.96 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "570533e3-4f9a-4106-9904-e3902238955b")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:LM324")
 		(at 140.97 67.31 0)
 		(unit 2)
 		(exclude_from_sim no)
@@ -2525,7 +3827,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6004"
+		(property "Value" "LM324"
 			(at 140.97 59.69 0)
 			(effects
 				(font
@@ -2542,7 +3844,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
 			(at 142.24 62.23 0)
 			(effects
 				(font
@@ -2551,7 +3853,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
 			(at 140.97 67.31 0)
 			(effects
 				(font
@@ -2612,7 +3914,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:MCP6004")
+		(lib_id "Amplifier_Operational:LM324")
 		(at 140.97 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2629,7 +3931,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6004"
+		(property "Value" "LM324"
 			(at 140.97 41.91 0)
 			(effects
 				(font
@@ -2646,7 +3948,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
 			(at 142.24 44.45 0)
 			(effects
 				(font
@@ -2655,7 +3957,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
 			(at 140.97 49.53 0)
 			(effects
 				(font
@@ -2716,83 +4018,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 34.29 95.25 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "71b58bb7-02b8-44da-8c36-9ceabed5e974")
-		(property "Reference" "#PWR020"
-			(at 34.29 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 34.29 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 34.29 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 34.29 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 34.29 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a34d2b3e-6240-4f3f-ab2b-5714d6855c57")
-		)
-		(instances
-			(project "SF4-hardware"
-				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 34.29 115.57 0)
+		(at 21.59 182.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "7845aa6d-3252-45f6-94b5-844f3a361aa0")
-		(property "Reference" "#PWR021"
-			(at 34.29 121.92 0)
+		(uuid "712cd64c-07b0-4560-b6b5-638a5195affe")
+		(property "Reference" "#PWR023"
+			(at 21.59 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2801,7 +4037,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 34.29 120.65 0)
+			(at 21.59 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2809,7 +4045,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 34.29 115.57 0)
+			(at 21.59 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2818,7 +4054,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 34.29 115.57 0)
+			(at 21.59 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2827,7 +4063,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 34.29 115.57 0)
+			(at 21.59 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2836,37 +4072,38 @@
 			)
 		)
 		(pin "1"
-			(uuid "a11fc2fb-84cd-412a-939e-5398a28fd74d")
+			(uuid "66b5a4fb-e491-4842-a773-50e2f560ffba")
 		)
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "#PWR021")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Amplifier_Operational:MCP6004")
-		(at 43.18 142.24 0)
-		(unit 3)
+		(lib_id "power:-5VA")
+		(at 39.37 115.57 0)
+		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "932b7df9-15e8-4449-9d1e-3fcb3a5d1d39")
-		(property "Reference" "U6"
-			(at 43.18 132.08 0)
+		(uuid "795dc9e8-11a3-4835-82f3-850fd430896f")
+		(property "Reference" "#PWR025"
+			(at 39.37 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "MCP6004"
-			(at 43.18 134.62 0)
+		(property "Value" "-5VA"
+			(at 39.37 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2874,7 +4111,72 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 41.91 139.7 0)
+			(at 39.37 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 39.37 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"-5VA\""
+			(at 39.37 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b2c48c7f-7be3-4495-aded-5655e6277ac7")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:MCP6004")
+		(at 100.33 184.15 0)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8aff1944-d61e-4a76-915c-79f564cc208d")
+		(property "Reference" "U6"
+			(at 100.33 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MCP6004"
+			(at 100.33 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 99.06 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2883,7 +4185,7 @@
 			)
 		)
 		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
-			(at 44.45 137.16 0)
+			(at 101.6 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2892,7 +4194,111 @@
 			)
 		)
 		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
-			(at 43.18 142.24 0)
+			(at 100.33 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288c")
+		)
+		(pin "9"
+			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b84")
+		)
+		(pin "2"
+			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf1")
+		)
+		(pin "13"
+			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdb")
+		)
+		(pin "5"
+			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d09")
+		)
+		(pin "7"
+			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b858")
+		)
+		(pin "6"
+			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69a9")
+		)
+		(pin "3"
+			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607d")
+		)
+		(pin "4"
+			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9814")
+		)
+		(pin "1"
+			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c89")
+		)
+		(pin "12"
+			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edc")
+		)
+		(pin "10"
+			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ed")
+		)
+		(pin "14"
+			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982463")
+		)
+		(pin "8"
+			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de6")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "U6")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:LM324")
+		(at 44.45 128.27 0)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "932b7df9-15e8-4449-9d1e-3fcb3a5d1d39")
+		(property "Reference" "U7"
+			(at 44.45 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LM324"
+			(at 44.45 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
+			(at 45.72 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
+			(at 44.45 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2945,24 +4351,24 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "U6")
+					(reference "U7")
 					(unit 3)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 55.88 115.57 0)
+		(lib_id "power:+5VA")
+		(at 55.88 95.25 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "a7710a84-d4e0-4e8b-b3f4-f18cc3d22317")
-		(property "Reference" "#PWR023"
-			(at 55.88 121.92 0)
+		(uuid "94bbecb6-6873-4808-b32c-1c4cf259a808")
+		(property "Reference" "#PWR026"
+			(at 55.88 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2970,8 +4376,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 55.88 120.65 0)
+		(property "Value" "+5VA"
+			(at 55.88 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2979,7 +4385,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 55.88 115.57 0)
+			(at 55.88 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2988,7 +4394,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 55.88 115.57 0)
+			(at 55.88 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2996,8 +4402,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 55.88 115.57 0)
+		(property "Description" "Power symbol creates a global label with name \"+5VA\""
+			(at 55.88 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3006,12 +4412,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "252dbd50-484d-4619-a76f-bc7ec0a2c99e")
+			(uuid "ad7d30a7-d252-4bb4-853e-4db2bbc0b0e8")
 		)
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "#PWR023")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -3019,6 +4425,110 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:MCP6004")
+		(at 38.1 175.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a533f96b-6e1a-4386-a354-6269f4d8da78")
+		(property "Reference" "U6"
+			(at 38.1 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MCP6004"
+			(at 38.1 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 36.83 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+			(at 39.37 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+			(at 38.1 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288c")
+		)
+		(pin "9"
+			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b84")
+		)
+		(pin "2"
+			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf1")
+		)
+		(pin "13"
+			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdb")
+		)
+		(pin "5"
+			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d09")
+		)
+		(pin "7"
+			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b858")
+		)
+		(pin "6"
+			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69a9")
+		)
+		(pin "3"
+			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607d")
+		)
+		(pin "4"
+			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9814")
+		)
+		(pin "1"
+			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c89")
+		)
+		(pin "12"
+			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edc")
+		)
+		(pin "10"
+			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ed")
+		)
+		(pin "14"
+			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982463")
+		)
+		(pin "8"
+			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de6")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "U6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:LM324")
 		(at 231.14 49.53 0)
 		(unit 3)
 		(exclude_from_sim no)
@@ -3035,7 +4545,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6004"
+		(property "Value" "LM324"
 			(at 231.14 41.91 0)
 			(effects
 				(font
@@ -3052,7 +4562,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
 			(at 232.41 44.45 0)
 			(effects
 				(font
@@ -3061,7 +4571,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
 			(at 231.14 49.53 0)
 			(effects
 				(font
@@ -3117,6 +4627,378 @@
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
 					(reference "U5")
 					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 21.59 177.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "be38ec86-8cb6-4690-a658-f99b5555b793")
+		(property "Reference" "R38"
+			(at 24.13 176.5299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22k"
+			(at 24.13 179.0699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 19.812 177.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 21.59 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 21.59 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6f8b3ea8-e55d-4603-a518-3b29f7c55cff")
+		)
+		(pin "1"
+			(uuid "13a2fcb3-f217-4df0-b3c1-c2b417fce125")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "R38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:MCP6004")
+		(at 66.04 184.15 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "befd2be1-f91d-4a5f-8fb8-90af2eac15ef")
+		(property "Reference" "U6"
+			(at 66.04 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MCP6004"
+			(at 66.04 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 64.77 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf"
+			(at 67.31 179.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1MHz, Low-Power Op Amp, DIP-14/SOIC-14/TSSOP-14"
+			(at 66.04 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "11"
+			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288c")
+		)
+		(pin "9"
+			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b84")
+		)
+		(pin "2"
+			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf1")
+		)
+		(pin "13"
+			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdb")
+		)
+		(pin "5"
+			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d09")
+		)
+		(pin "7"
+			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b858")
+		)
+		(pin "6"
+			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69a9")
+		)
+		(pin "3"
+			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607d")
+		)
+		(pin "4"
+			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9814")
+		)
+		(pin "1"
+			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c89")
+		)
+		(pin "12"
+			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edc")
+		)
+		(pin "10"
+			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ed")
+		)
+		(pin "14"
+			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982463")
+		)
+		(pin "8"
+			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de6")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "U6")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 160.02 172.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c57b7af9-601d-489f-a1ec-42d678b15b43")
+		(property "Reference" "#PWR028"
+			(at 160.02 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 160.02 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 160.02 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "82f9079d-9c9f-4184-9c6e-66e3d5bbb25a")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 21.59 162.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eb68fb85-78d4-4a56-868f-65c0197945af")
+		(property "Reference" "#PWR022"
+			(at 21.59 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 21.59 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 21.59 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 21.59 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 21.59 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "06c9302b-d397-480e-ac49-d1cc57888973")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 160.02 191.77 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f3eff4b5-3273-4b00-bce3-6a189548fd14")
+		(property "Reference" "#PWR029"
+			(at 160.02 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 160.02 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 160.02 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0a8a1b9f-bd6b-4465-84b1-acc70b9c3520")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
+					(reference "#PWR029")
+					(unit 1)
 				)
 			)
 		)

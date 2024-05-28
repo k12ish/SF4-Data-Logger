@@ -1096,6 +1096,229 @@
 				)
 			)
 		)
+		(symbol "Converter_DCDC:IA0505S"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "PS"
+				(at -7.62 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "IA0505S"
+				(at 1.27 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Converter_DCDC:Converter_DCDC_XP_POWER-IAxxxxS_THT"
+				(at -26.67 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.xppower.com/pdfs/SF_IA.pdf"
+				(at 26.67 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "XP Power 1W, 1000 VDC Isolated DC/DC Converter Module, Dual Output Voltage ±5V, ±100mA, 5V Input Voltage, SIP"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "XP_POWER DC/DC isolated Converter module"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*XP?POWER?IAxxxxS*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "IA0505S_0_0"
+				(pin power_in line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "+Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "-Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "-Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "0V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "+Vout"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "IA0505S_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 5.08) (xy 0 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 		(symbol "MCU_Module:Arduino_UNO_R3"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1876,6 +2099,222 @@
 				)
 			)
 		)
+		(symbol "power:+5VA"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5VA"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5VA\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5VA_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5VA_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:-5VA"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "-5VA"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"-5VA\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "-5VA_0_0"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "-5VA_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy 0.762 1.27) (xy 0 2.54) (xy -0.762 1.27) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -2105,6 +2544,16 @@
 	)
 	(wire
 		(pts
+			(xy 179.07 138.43) (xy 179.07 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b2c613f-f92e-443d-9ba4-9fa7d993aee4")
+	)
+	(wire
+		(pts
 			(xy 74.93 60.96) (xy 77.47 60.96)
 		)
 		(stroke
@@ -2135,6 +2584,36 @@
 	)
 	(wire
 		(pts
+			(xy 213.36 139.7) (xy 213.36 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e23a667-1941-4e94-9a42-2c23b26a36cd")
+	)
+	(wire
+		(pts
+			(xy 179.07 133.35) (xy 184.15 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f504ff6-b5e0-4c62-9942-e2ae414d481e")
+	)
+	(wire
+		(pts
+			(xy 207.01 139.7) (xy 213.36 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ffe4bd9-906e-49e1-ad7a-ce3df6d04639")
+	)
+	(wire
+		(pts
 			(xy 218.44 67.31) (xy 231.14 67.31)
 		)
 		(stroke
@@ -2152,6 +2631,16 @@
 			(type default)
 		)
 		(uuid "4936cf0a-f831-4210-978c-2a5418b7ecd3")
+	)
+	(wire
+		(pts
+			(xy 204.47 133.35) (xy 207.01 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a24ecee-375e-422f-bf00-1dbb93b9cd78")
 	)
 	(wire
 		(pts
@@ -2225,6 +2714,16 @@
 	)
 	(wire
 		(pts
+			(xy 213.36 124.46) (xy 213.36 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9299da92-08e6-4f01-9d63-fc5a658faa27")
+	)
+	(wire
+		(pts
 			(xy 62.23 76.2) (xy 62.23 78.74)
 		)
 		(stroke
@@ -2242,6 +2741,26 @@
 			(type default)
 		)
 		(uuid "9d2eb698-094b-4beb-ad9a-b7487565b036")
+	)
+	(wire
+		(pts
+			(xy 184.15 128.27) (xy 179.07 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e06451b-3523-4dd1-9234-9fbb20b456b6")
+	)
+	(wire
+		(pts
+			(xy 179.07 128.27) (xy 179.07 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a03caa20-e96a-4179-84b6-72b59692d986")
 	)
 	(wire
 		(pts
@@ -2325,6 +2844,16 @@
 	)
 	(wire
 		(pts
+			(xy 204.47 128.27) (xy 213.36 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf9fe807-a27a-4aab-b35c-469cdab490b8")
+	)
+	(wire
+		(pts
 			(xy 205.74 92.71) (xy 205.74 96.52)
 		)
 		(stroke
@@ -2332,6 +2861,26 @@
 			(type default)
 		)
 		(uuid "d859884d-617b-4170-af0a-8c5a2097b61b")
+	)
+	(wire
+		(pts
+			(xy 224.79 133.35) (xy 224.79 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db39134d-b114-4051-b678-cee42d4cce74")
+	)
+	(wire
+		(pts
+			(xy 204.47 130.81) (xy 224.79 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd530567-2268-4358-a5e8-e18693d1df2a")
 	)
 	(wire
 		(pts
@@ -2362,6 +2911,16 @@
 			(type default)
 		)
 		(uuid "f2c3e3ba-99f2-4555-bce5-c75743967952")
+	)
+	(wire
+		(pts
+			(xy 207.01 133.35) (xy 207.01 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f5ee606a-aeb4-433b-bf53-3967e6ed589a")
 	)
 	(text "Input switch"
 		(exclude_from_sim no)
@@ -2833,7 +3392,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0465cd76-9268-49a1-a5f0-4f09f46a3366")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR06"
 			(at 210.82 39.37 0)
 			(effects
 				(font
@@ -2883,7 +3442,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384"
-					(reference "#PWR03")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -3296,6 +3855,138 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5VA")
+		(at 213.36 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6a9a646b-84e2-40a2-873a-bbc5698e280f")
+		(property "Reference" "#PWR07"
+			(at 213.36 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5VA"
+			(at 213.36 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VA\""
+			(at 213.36 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9aab528b-d10e-4a11-b1ed-3362241f64f6")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 224.79 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7cff3a1b-9c64-4081-a064-44ecf2f3b58a")
+		(property "Reference" "#PWR09"
+			(at 224.79 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 224.79 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 224.79 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed663c5e-6f00-4143-a655-bc634da6e93f")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 205.74 96.52 0)
 		(unit 1)
@@ -3305,7 +3996,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9a02aeb5-0ef3-4288-a753-7ad9c2fbbb41")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR05"
 			(at 205.74 102.87 0)
 			(effects
 				(font
@@ -3355,6 +4046,283 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 179.07 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9d75498c-a165-4693-b73d-9a66fc80f0ce")
+		(property "Reference" "#PWR03"
+			(at 179.07 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 179.07 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 179.07 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 179.07 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 179.07 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b09d2e35-3a36-472b-ab6b-518dfb6dac45")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384"
+					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Converter_DCDC:IA0505S")
+		(at 194.31 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c57bf9f3-4353-4ed7-8d1f-f7fa992b8f0c")
+		(property "Reference" "PS1"
+			(at 194.31 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "IA0505S"
+			(at 194.31 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Converter_DCDC:Converter_DCDC_XP_POWER-IAxxxxS_THT"
+			(at 167.64 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.xppower.com/pdfs/SF_IA.pdf"
+			(at 220.98 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Description" "XP Power 1W, 1000 VDC Isolated DC/DC Converter Module, Dual Output Voltage ±5V, ±100mA, 5V Input Voltage, SIP"
+			(at 194.31 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6dfb3bec-d608-42ef-8792-c1119d711cea")
+		)
+		(pin "6"
+			(uuid "d26902de-1e1e-40cb-874d-34491299d60e")
+		)
+		(pin "4"
+			(uuid "88c33519-e851-4843-bd67-568c161cad4c")
+		)
+		(pin "5"
+			(uuid "ce429c46-43fe-436c-b1f6-3c6315ce5549")
+		)
+		(pin "2"
+			(uuid "a34cc28a-0859-4bd1-8e32-7cb7a73653d9")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384"
+					(reference "PS1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:-5VA")
+		(at 213.36 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cba5446c-5f94-4763-87b6-5af4cb5afedf")
+		(property "Reference" "#PWR08"
+			(at 213.36 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-5VA"
+			(at 213.36 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"-5VA\""
+			(at 213.36 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1900c406-2b4e-486d-a4e5-29f912d7ea54")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384"
+					(reference "#PWR08")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 179.07 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "db4e0470-0af5-411f-bfae-b8a24a8072f5")
+		(property "Reference" "#PWR04"
+			(at 179.07 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 179.07 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 179.07 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 179.07 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 179.07 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4c727eae-2260-410d-96e5-fedd4456f21c")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384"
 					(reference "#PWR04")
 					(unit 1)
 				)
@@ -3362,7 +4330,7 @@
 		)
 	)
 	(sheet
-		(at 36.83 139.7)
+		(at 24.13 139.7)
 		(size 38.1 17.78)
 		(fields_autoplaced yes)
 		(stroke
@@ -3374,7 +4342,7 @@
 		)
 		(uuid "0654de70-4bfe-40e6-9ef4-c1ace9cf1466")
 		(property "Sheetname" "Amplifiers"
-			(at 36.83 138.9884 0)
+			(at 24.13 138.9884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3383,7 +4351,7 @@
 			)
 		)
 		(property "Sheetfile" "amplifiers.kicad_sch"
-			(at 36.83 158.0646 0)
+			(at 24.13 158.0646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3400,7 +4368,7 @@
 		)
 	)
 	(sheet
-		(at 107.95 139.7)
+		(at 73.66 139.7)
 		(size 34.29 17.78)
 		(fields_autoplaced yes)
 		(stroke
@@ -3412,7 +4380,7 @@
 		)
 		(uuid "771a61c7-b176-4389-83a8-1da0552c5a31")
 		(property "Sheetname" "Multiplexer Connections"
-			(at 107.95 138.9884 0)
+			(at 73.66 138.9884 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3421,7 +4389,7 @@
 			)
 		)
 		(property "Sheetfile" "multiplexer.kicad_sch"
-			(at 107.95 158.0646 0)
+			(at 73.66 158.0646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
