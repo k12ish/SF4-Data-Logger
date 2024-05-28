@@ -1,7 +1,7 @@
 #include <MsgPack.h>
 
 // input to msgpack
-MsgPack::arr_t<int> v {1, 2, 3, 4}; // std::vector or arx::stdx::vector
+MsgPack::arr_t<int> v {1, 2, 3, 4};             // Data stored as {reading1, reading2, reading3, time passed}
 int prev;
 int timer;
 String mode;
@@ -19,7 +19,7 @@ void setup() {
     digitalWrite(5, HIGH);
     // Wait for start message to be sent
     while (Serial.available()==0){}
-    if (Serial.available() != 0){         // Initilise IO for first readings
+    if (Serial.available() != 0){               // Initilise IO for first readings
       mode = Serial.readString();
       enable_io(mode);
     }
