@@ -1,9 +1,9 @@
 <script lang="ts">
+	import { Button, Dropdown, DropdownItem, Spinner } from 'flowbite-svelte';
+	import { ChevronDownOutline } from 'flowbite-svelte-icons';
+
+	import Navbar from 'components/Navbar.svelte';
 	import PopupModal from 'components/PopupModal.svelte';
-	import { Button } from 'flowbite-svelte';
-	import { encode } from '@msgpack/msgpack';
-	import { decodeMultiStream } from '@msgpack/msgpack';
-	let data = '';
 
 	import { LayerCake, Svg } from 'layercake';
 	import Line from 'components/EKG/Line.svelte';
@@ -12,12 +12,13 @@
 
 	import { onMount } from 'svelte';
 	import { ArduinoInterface } from 'lib/stores.ts';
+	import type { setModeProgress, arduinoModes } from 'lib/stores.ts';
 
 	let ard: ArduinoInterface;
 
 	async function gotArduino(event: CustomEvent) {
 		ard = event.detail.ard;
-		await ard.run();
+		// await ard.run();
 	}
 
 	// Define some data
@@ -30,8 +31,6 @@
 	];
 
 	function getRandomInt(min: number, max: number): number {
-		min = Math.ceil(min);
-		max = Math.floor(max);
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
@@ -40,7 +39,50 @@
 		points[i].y = Math.random() * 20;
 		points = points;
 	}, 100);
+
+	type dropdownItem = arduinoModes | '';
+	let selectedDropdown: dropdownItem = '';
+	let dropdownSideText = '';
+	let dropdownOpen = false;
+	async function dropdownClick(mode: arduinoModes) {
+		dropdownOpen = false;
+		let errnum: number = 0;
+		if (mode == selectedDropdown) {
+			return;
+		}
+		const callback = (val: setModeProgress) => {
+			errnum += 1;
+			if (val == 'timeout') {
+				dropdownSideText = 'Response Timeout';
+			} else if (val == 'invalid-response') {
+				dropdownSideText = 'Invalid Response';
+			} else if (val == 'ioerror') {
+				dropdownSideText = 'I/O Error';
+			}
+			if (errnum > 1) {
+				dropdownSideText += '(' + errnum + ')';
+			}
+		};
+		dropdownSideText = 'Connecting';
+		await ard.setMode(mode, callback);
+		selectedDropdown = mode;
+		dropdownSideText = '';
+	}
 </script>
+
+<Navbar>
+	{#if dropdownSideText}
+		<span class="self-center px-2"> {dropdownSideText} <Spinner size="4" /> </span>
+	{/if}
+	<Button on:click={() => (dropdownOpen = true)}>
+		Measurement Mode {selectedDropdown}
+		<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+	</Button>
+	<Dropdown open={dropdownOpen}>
+		<DropdownItem on:click={() => dropdownClick('Regular')}>Regular</DropdownItem>
+		<DropdownItem on:click={() => dropdownClick('Augmented')}>Augmented</DropdownItem>
+	</Dropdown>
+</Navbar>
 
 <div class="chart-container mx-auto rounded border p-8">
 	<LayerCake data={points} x="x" y="y">

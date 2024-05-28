@@ -4,7 +4,7 @@
 	import Navbar from 'components/Navbar.svelte';
 </script>
 
-<Navbar showGetStarted={true} />
+<Navbar/>
 
 <slot />
 

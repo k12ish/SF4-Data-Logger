@@ -3,6 +3,8 @@ import { encode, decodeMultiStream } from '@msgpack/msgpack';
 
 import Joi from 'joi';
 
+
+export type arduinoModes = 'Regular' | 'Augmented';
 // check that packet is of length 4, containing 10 bit ints
 const PACKET_VALIDATOR = Joi.array().length(4).items(
   Joi.number().integer().min(0).max(2 ** 10 - 1)
@@ -17,8 +19,8 @@ const timeout = (prom: Promise<IteratorResult<unknown, any>>, time: number, exce
 	]).finally(() => clearTimeout(timer));
 }
 
-type setModeProgress = 'timeout' | 'invalid-response' | 'done';
-type SetModeCallback = (progress: setModeProgress) => void;
+export type setModeProgress = 'timeout' | 'invalid-response' | 'ioerror';
+export type SetModeCallback = (progress: setModeProgress) => void;
 
 
 export class ArduinoInterface {
@@ -33,21 +35,26 @@ export class ArduinoInterface {
     this.writeStream = write;
   }
 
-  public async setMode(callback: SetModeCallback) {
+  public async setMode(mode: arduinoModes, callback: SetModeCallback) {
     const timeoutError = Symbol();
     let nextMessage = this.readDecoded.next();
     let message;
 
-    while (true) {
-      await this.write("i");
+    for (let i = 0; i < 100; i++) {
       try {
+        await this.write(mode);
         message = await timeout(nextMessage, 1000, timeoutError);
       } catch (e) {
-        e === timeoutError ? callback('timeout') : console.log(e);
+        if (e == timeoutError) {
+          callback('timeout')
+        } else {
+          callback('ioerror');
+        }
         continue
       }
       let result = PACKET_VALIDATOR.validate(message.value);
       if (result.error) {
+        callback('invalid-response');
         console.log("error:", result)
         nextMessage = this.readDecoded.next()
       } else {
@@ -57,7 +64,6 @@ export class ArduinoInterface {
   }
 
   public async run() {
-    await this.setMode(console.log);
     for await (const item of this.readDecoded) {
       console.log(
         PACKET_VALIDATOR.validate(item)
@@ -67,6 +73,8 @@ export class ArduinoInterface {
 
   private async write(val: any) {
     let buffer = encode(val, { sortKeys: true });
+    console.log("Writing", JSON.stringify(val))
+    console.log(buffer)
     let writer = this.writeStream.getWriter();
     return writer.ready.then(
       () => writer.write(buffer)
