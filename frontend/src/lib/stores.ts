@@ -64,12 +64,20 @@ export class ArduinoInterface {
     }
   }
 
-  public async run() {
-    for await (const item of this.readDecoded) {
-      console.log(
-        PACKET_VALIDATOR.validate(item)
-      )
+   /**
+   * Reads items for a minimum number of milliseconds.
+   */
+  public async batchRead(millis: number): Promise<Array<any>> {
+    // read repeatedly from this.readDecoded for `millis` number of ms
+    let items: Array<any> = [];
+    const endTime = Date.now() + millis;
+
+    while (Date.now() < endTime) {
+      const result = await this.readDecoded.next();
+      if (result.done) { break; }
+      items.push(result)
     }
+    return items
   }
 
   private async write(val: string) {

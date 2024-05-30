@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button, Dropdown, DropdownItem, Spinner } from 'flowbite-svelte';
-	import { ChevronDownOutline, PlayOutline , StopSolid } from 'flowbite-svelte-icons';
+	import { ChevronDownOutline, PlayOutline, StopSolid } from 'flowbite-svelte-icons';
 
 	import Navbar from 'components/Navbar.svelte';
 	import PopupModal from 'components/PopupModal.svelte';
@@ -44,6 +44,7 @@
 	let selectedDropdown: dropdownItem = '';
 	let dropdownSideText = '';
 	let dropdownOpen = false;
+
 	async function dropdownClick(mode: arduinoModes) {
 		dropdownOpen = false;
 		let errnum: number = 0;
@@ -82,9 +83,16 @@
 		<DropdownItem on:click={() => dropdownClick('Regular')}>Regular</DropdownItem>
 		<DropdownItem on:click={() => dropdownClick('Augmented')}>Augmented</DropdownItem>
 	</Dropdown>
-	<div class="px-2"/>
-	<Button color="light" on:click={() => ard.run()}>
-		<PlayOutline/>
+	<div class="px-2" />
+	<Button
+		color="light"
+		on:click={async () => {
+			while (true) {
+				console.log(await ard.batchRead(100));
+			}
+		}}
+	>
+		<PlayOutline />
 	</Button>
 </Navbar>
 
