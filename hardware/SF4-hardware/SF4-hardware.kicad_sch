@@ -4405,6 +4405,44 @@
 			)
 		)
 	)
+	(sheet
+		(at 120.65 139.7)
+		(size 27.94 17.78)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "d0b5bf38-31c9-420e-ac6a-20770fc26324")
+		(property "Sheetname" "ECG circuit"
+			(at 120.65 138.9884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ecg_circuit.kicad_sch"
+			(at 120.65 158.0646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384"
+					(page "4")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

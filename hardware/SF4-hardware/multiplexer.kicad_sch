@@ -1412,10 +1412,6 @@
 		(uuid "1950fe9c-974d-4184-a1e2-90af2215e17a")
 	)
 	(no_connect
-		(at 36.83 153.67)
-		(uuid "29ec3871-671a-4471-ad20-1d14c57eb077")
-	)
-	(no_connect
 		(at 92.71 181.61)
 		(uuid "3e000e51-6fc8-4b6e-a3b0-f593da5cbdee")
 	)
@@ -1432,24 +1428,8 @@
 		(uuid "53193535-44b8-41f5-b507-a2e9ff4cbb5f")
 	)
 	(no_connect
-		(at 36.83 148.59)
-		(uuid "567bc1a6-18c5-4a78-98df-6251b5fb23e3")
-	)
-	(no_connect
-		(at 36.83 125.73)
-		(uuid "7a536188-bf11-4943-8aba-34c6a1c1c4b0")
-	)
-	(no_connect
 		(at 120.65 181.61)
 		(uuid "93786185-4bc3-49a2-9d34-a941424540d7")
-	)
-	(no_connect
-		(at 36.83 130.81)
-		(uuid "962b3c46-599c-4df7-9c73-d5b2841ca07b")
-	)
-	(no_connect
-		(at 52.07 151.13)
-		(uuid "b3c66a12-ad29-40a7-9895-88768344fc5b")
 	)
 	(no_connect
 		(at 135.89 184.15)
@@ -1458,10 +1438,6 @@
 	(no_connect
 		(at 58.42 186.69)
 		(uuid "e98f2211-2352-4fa4-bce7-f1f18c59353d")
-	)
-	(no_connect
-		(at 52.07 128.27)
-		(uuid "f2eb7d96-32c7-4227-9b28-2f57e212af1b")
 	)
 	(wire
 		(pts
@@ -2837,110 +2813,6 @@
 	)
 	(symbol
 		(lib_id "Amplifier_Operational:LM324")
-		(at 44.45 151.13 0)
-		(unit 4)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0d9802b6-1eac-4749-8551-c7c3fc12efba")
-		(property "Reference" "U7"
-			(at 44.45 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LM324"
-			(at 44.45 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 43.18 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
-			(at 45.72 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
-			(at 44.45 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "31652979-23bb-4f51-9342-f81036991714")
-		)
-		(pin "3"
-			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb71")
-		)
-		(pin "13"
-			(uuid "84db39a5-fd0c-44b1-ba10-80ee68257968")
-		)
-		(pin "8"
-			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b69")
-		)
-		(pin "12"
-			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3b")
-		)
-		(pin "2"
-			(uuid "dcad514b-54ff-4200-9c61-64156502d949")
-		)
-		(pin "7"
-			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a1")
-		)
-		(pin "14"
-			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e3")
-		)
-		(pin "1"
-			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae43")
-		)
-		(pin "5"
-			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5b")
-		)
-		(pin "11"
-			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad3ff")
-		)
-		(pin "6"
-			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0cfd")
-		)
-		(pin "9"
-			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b66")
-		)
-		(pin "10"
-			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303dd")
-		)
-		(instances
-			(project "SF4-hardware"
-				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "U7")
-					(unit 4)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:LM324")
 		(at 194.31 125.73 0)
 		(unit 2)
 		(exclude_from_sim no)
@@ -3589,46 +3461,46 @@
 			)
 		)
 		(pin "11"
-			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288c")
+			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288d")
 		)
 		(pin "9"
-			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b84")
+			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b85")
 		)
 		(pin "2"
-			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf1")
+			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf2")
 		)
 		(pin "13"
-			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdb")
+			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdc")
 		)
 		(pin "5"
-			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d09")
+			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d0a")
 		)
 		(pin "7"
-			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b858")
+			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b859")
 		)
 		(pin "6"
-			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69a9")
+			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69aa")
 		)
 		(pin "3"
-			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607d")
+			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607e")
 		)
 		(pin "4"
-			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9814")
+			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9815")
 		)
 		(pin "1"
-			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c89")
+			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c8a")
 		)
 		(pin "12"
-			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edc")
+			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edd")
 		)
 		(pin "10"
-			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ed")
+			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ee")
 		)
 		(pin "14"
-			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982463")
+			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982464")
 		)
 		(pin "8"
-			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de6")
+			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de7")
 		)
 		(instances
 			(project "SF4-hardware"
@@ -4203,155 +4075,51 @@
 			)
 		)
 		(pin "11"
-			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288c")
+			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288e")
 		)
 		(pin "9"
-			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b84")
+			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b86")
 		)
 		(pin "2"
-			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf1")
+			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf3")
 		)
 		(pin "13"
-			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdb")
+			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdd")
 		)
 		(pin "5"
-			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d09")
+			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d0b")
 		)
 		(pin "7"
-			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b858")
+			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b85a")
 		)
 		(pin "6"
-			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69a9")
+			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69ab")
 		)
 		(pin "3"
-			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607d")
+			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607f")
 		)
 		(pin "4"
-			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9814")
+			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9816")
 		)
 		(pin "1"
-			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c89")
+			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c8b")
 		)
 		(pin "12"
-			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edc")
+			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4ede")
 		)
 		(pin "10"
-			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ed")
+			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ef")
 		)
 		(pin "14"
-			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982463")
+			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982465")
 		)
 		(pin "8"
-			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de6")
+			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de8")
 		)
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
 					(reference "U6")
-					(unit 3)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Amplifier_Operational:LM324")
-		(at 44.45 128.27 0)
-		(unit 3)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "932b7df9-15e8-4449-9d1e-3fcb3a5d1d39")
-		(property "Reference" "U7"
-			(at 44.45 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LM324"
-			(at 44.45 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 43.18 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
-			(at 45.72 123.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
-			(at 44.45 128.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "31652979-23bb-4f51-9342-f81036991718")
-		)
-		(pin "3"
-			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb75")
-		)
-		(pin "13"
-			(uuid "84db39a5-fd0c-44b1-ba10-80ee6825796c")
-		)
-		(pin "8"
-			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b6d")
-		)
-		(pin "12"
-			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3f")
-		)
-		(pin "2"
-			(uuid "dcad514b-54ff-4200-9c61-64156502d94d")
-		)
-		(pin "7"
-			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a5")
-		)
-		(pin "14"
-			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e7")
-		)
-		(pin "1"
-			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae47")
-		)
-		(pin "5"
-			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5f")
-		)
-		(pin "11"
-			(uuid "951b7e77-0df2-4b62-ad07-b87c268ad403")
-		)
-		(pin "6"
-			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0d01")
-		)
-		(pin "9"
-			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b6a")
-		)
-		(pin "10"
-			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303e1")
-		)
-		(instances
-			(project "SF4-hardware"
-				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/771a61c7-b176-4389-83a8-1da0552c5a31"
-					(reference "U7")
 					(unit 3)
 				)
 			)
@@ -4477,46 +4245,46 @@
 			)
 		)
 		(pin "11"
-			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288c")
+			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288f")
 		)
 		(pin "9"
-			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b84")
+			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b87")
 		)
 		(pin "2"
-			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf1")
+			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf4")
 		)
 		(pin "13"
-			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdb")
+			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bde")
 		)
 		(pin "5"
-			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d09")
+			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d0c")
 		)
 		(pin "7"
-			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b858")
+			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b85b")
 		)
 		(pin "6"
-			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69a9")
+			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69ac")
 		)
 		(pin "3"
-			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607d")
+			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da6080")
 		)
 		(pin "4"
-			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9814")
+			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9817")
 		)
 		(pin "1"
-			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c89")
+			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c8c")
 		)
 		(pin "12"
-			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edc")
+			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edf")
 		)
 		(pin "10"
-			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ed")
+			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2f0")
 		)
 		(pin "14"
-			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982463")
+			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982466")
 		)
 		(pin "8"
-			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de6")
+			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de9")
 		)
 		(instances
 			(project "SF4-hardware"
@@ -4755,46 +4523,46 @@
 			)
 		)
 		(pin "11"
-			(uuid "fa7f610d-0a4a-4f1a-a207-534b6100288c")
+			(uuid "fa7f610d-0a4a-4f1a-a207-534b61002890")
 		)
 		(pin "9"
-			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b84")
+			(uuid "85590fe5-c192-4a31-a57e-e014ef1c1b88")
 		)
 		(pin "2"
-			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf1")
+			(uuid "5a51194f-450c-4d06-b30c-f3fef33becf5")
 		)
 		(pin "13"
-			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdb")
+			(uuid "7890093e-4f2a-4614-a8f5-8705e4dd2bdf")
 		)
 		(pin "5"
-			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d09")
+			(uuid "ebf923ee-0cd4-4166-b616-5f44f4901d0d")
 		)
 		(pin "7"
-			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b858")
+			(uuid "cf397a1e-df70-4fac-857c-fe5b6fb2b85c")
 		)
 		(pin "6"
-			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69a9")
+			(uuid "d7728fa0-06a9-4162-ac74-2a0597af69ad")
 		)
 		(pin "3"
-			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da607d")
+			(uuid "70bc57f0-5669-41e4-b4d1-3b03f6da6081")
 		)
 		(pin "4"
-			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9814")
+			(uuid "f6c416ba-2d59-4a75-8e35-b56c0d9d9818")
 		)
 		(pin "1"
-			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c89")
+			(uuid "3e1ddc49-4bd2-449e-abc7-d648cb9e1c8d")
 		)
 		(pin "12"
-			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4edc")
+			(uuid "265e7a51-88a0-48ea-87be-a5f08f8b4ee0")
 		)
 		(pin "10"
-			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2ed")
+			(uuid "13b7eec0-3d8d-43c8-b7a6-acfc1423a2f1")
 		)
 		(pin "14"
-			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982463")
+			(uuid "4dc4fda0-4ffa-499f-86a6-e218a9982467")
 		)
 		(pin "8"
-			(uuid "b5e34ca6-192d-4789-ba19-060ecada7de6")
+			(uuid "b5e34ca6-192d-4789-ba19-060ecada7dea")
 		)
 		(instances
 			(project "SF4-hardware"

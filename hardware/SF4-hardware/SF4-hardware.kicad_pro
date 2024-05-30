@@ -592,6 +592,10 @@
     [
       "771a61c7-b176-4389-83a8-1da0552c5a31",
       "Multiplexer Connections"
+    ],
+    [
+      "d0b5bf38-31c9-420e-ac6a-20770fc26324",
+      "ECG circuit"
     ]
   ],
   "text_variables": {}
