@@ -1529,6 +1529,16 @@
 	)
 	(wire
 		(pts
+			(xy 212.09 57.15) (xy 212.09 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "319ccb2f-b6f6-4412-b080-6da12efb19e8")
+	)
+	(wire
+		(pts
 			(xy 68.58 26.67) (xy 68.58 36.83)
 		)
 		(stroke
@@ -1929,6 +1939,16 @@
 	)
 	(wire
 		(pts
+			(xy 212.09 39.37) (xy 212.09 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9760db85-d675-489b-9a58-78247546c57e")
+	)
+	(wire
+		(pts
 			(xy 68.58 50.8) (xy 68.58 58.42)
 		)
 		(stroke
@@ -1956,6 +1976,16 @@
 			(type default)
 		)
 		(uuid "9c4226d6-2b29-49fb-887e-9f66ba0c1e2c")
+	)
+	(wire
+		(pts
+			(xy 212.09 62.23) (xy 217.17 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c5602e8-3663-4309-b892-4febe6851675")
 	)
 	(wire
 		(pts
@@ -2319,6 +2349,16 @@
 	)
 	(wire
 		(pts
+			(xy 217.17 59.69) (xy 217.17 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3bf7d6d-d4ad-4c28-954c-0d9b14bf770b")
+	)
+	(wire
+		(pts
 			(xy 182.88 102.87) (xy 179.07 102.87)
 		)
 		(stroke
@@ -2599,7 +2639,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "01822af9-ebb7-46c0-b6d2-d8f39a6db697")
-		(property "Reference" "C"
+		(property "Reference" "C3"
 			(at 72.39 60.9599 0)
 			(effects
 				(font
@@ -2653,7 +2693,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "C")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -2669,7 +2709,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0a247070-3b21-4cd3-b601-9244de061499")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR024"
 			(at 111.76 43.18 0)
 			(effects
 				(font
@@ -2719,7 +2759,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "#PWR033")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -2735,7 +2775,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "17811e21-5778-4d7a-a294-e5227ea123e6")
-		(property "Reference" "D6"
+		(property "Reference" "D4"
 			(at 114.3 55.8799 90)
 			(effects
 				(font
@@ -2789,7 +2829,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "D6")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -2805,7 +2845,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1b9fdc8c-585a-4b80-a30d-bdcdc0156556")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR019"
 			(at 67.31 168.91 0)
 			(effects
 				(font
@@ -2855,7 +2895,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "#PWR032")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -2871,7 +2911,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1cf71099-557a-484b-9b9c-1623ef633420")
-		(property "Reference" "R57"
+		(property "Reference" "R19"
 			(at 257.81 121.9199 0)
 			(effects
 				(font
@@ -2925,7 +2965,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R57")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -2941,7 +2981,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "21194ad1-d250-4014-af7d-a5dd888ee958")
-		(property "Reference" "C8"
+		(property "Reference" "C2"
 			(at 72.39 41.9099 0)
 			(effects
 				(font
@@ -2995,7 +3035,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "C8")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -3011,7 +3051,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "228fe15e-36b5-4a9d-8936-bbe4e717adb1")
-		(property "Reference" "R44"
+		(property "Reference" "R4"
 			(at 53.34 44.45 90)
 			(effects
 				(font
@@ -3063,7 +3103,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R44")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -3079,7 +3119,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41533587-c3f2-414f-93f9-2868bf542adb")
-		(property "Reference" "D5"
+		(property "Reference" "D2"
 			(at 93.98 40.6399 90)
 			(effects
 				(font
@@ -3133,7 +3173,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "D5")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -3149,7 +3189,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43fc060c-1516-4c98-b448-7b7cba8ac0ec")
-		(property "Reference" "R47"
+		(property "Reference" "R9"
 			(at 140.97 105.4099 0)
 			(effects
 				(font
@@ -3203,7 +3243,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R47")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -3219,7 +3259,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "467d91bb-8a43-4c20-9ba6-961581413ba9")
-		(property "Reference" "R41"
+		(property "Reference" "R5"
 			(at 66.04 148.59 90)
 			(effects
 				(font
@@ -3271,7 +3311,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R41")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -3287,7 +3327,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "54bf97f4-9071-4355-8847-0df1851f9c6a")
-		(property "Reference" "R48"
+		(property "Reference" "R10"
 			(at 152.4 90.17 90)
 			(effects
 				(font
@@ -3339,7 +3379,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R48")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -3355,7 +3395,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5f5e8aa3-c576-4e77-be0f-7fa1c6a8809e")
-		(property "Reference" "D7"
+		(property "Reference" "D3"
 			(at 114.3 44.4499 90)
 			(effects
 				(font
@@ -3409,7 +3449,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "D7")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -3425,7 +3465,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "627e9462-c3c4-4c9a-86b1-16db653a295c")
-		(property "Reference" "U8"
+		(property "Reference" "U5"
 			(at 250.19 110.49 0)
 			(effects
 				(font
@@ -3513,7 +3553,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "U8")
+					(reference "U5")
 					(unit 4)
 				)
 			)
@@ -3529,7 +3569,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62f6bdfc-5eda-4144-9486-4f26221d0c55")
-		(property "Reference" "R52"
+		(property "Reference" "R14"
 			(at 184.15 124.46 90)
 			(effects
 				(font
@@ -3581,7 +3621,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R52")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -3597,7 +3637,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "669fda9f-1161-42aa-8386-2f907842af3a")
-		(property "Reference" "C11"
+		(property "Reference" "C6"
 			(at 246.38 78.74 90)
 			(effects
 				(font
@@ -3649,7 +3689,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "C11")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -3665,7 +3705,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c403095-bf80-4c01-b507-68a28da5f252")
-		(property "Reference" "R50"
+		(property "Reference" "R12"
 			(at 170.18 80.01 90)
 			(effects
 				(font
@@ -3717,7 +3757,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R50")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -3733,7 +3773,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c93b8b2-0464-464c-ad5e-10ecfc17d262")
-		(property "Reference" "D8"
+		(property "Reference" "D5"
 			(at 265.43 109.2199 90)
 			(effects
 				(font
@@ -3787,7 +3827,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "D8")
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -3803,7 +3843,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ce056c3-f739-42bb-8a1e-cfc807dba675")
-		(property "Reference" "R56"
+		(property "Reference" "R18"
 			(at 257.81 109.2199 0)
 			(effects
 				(font
@@ -3857,7 +3897,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R56")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -3873,7 +3913,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b97c71e-ee5a-409c-98f2-dc01db862732")
-		(property "Reference" "C9"
+		(property "Reference" "C5"
 			(at 233.68 109.2199 0)
 			(effects
 				(font
@@ -3927,7 +3967,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "C9")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -3943,7 +3983,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7f9b7b28-7481-4d8c-94dc-0626eae0a0ca")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR026"
 			(at 262.89 124.46 0)
 			(effects
 				(font
@@ -3993,7 +4033,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "#PWR038")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -4009,7 +4049,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "82c7fd11-6286-45fe-bef9-2a671d095ef2")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR023"
 			(at 105.41 67.31 0)
 			(effects
 				(font
@@ -4059,7 +4099,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "#PWR034")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -4075,7 +4115,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8b040a52-cc25-4ac5-9c29-8dfe20e81594")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR020"
 			(at 68.58 73.66 0)
 			(effects
 				(font
@@ -4125,7 +4165,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "#PWR030")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -4141,7 +4181,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f85c82a-7c4c-498a-8d83-3dc27c42a6d4")
-		(property "Reference" "R54"
+		(property "Reference" "R16"
 			(at 205.74 93.98 90)
 			(effects
 				(font
@@ -4193,7 +4233,139 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R54")
+					(reference "R16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5VA")
+		(at 212.09 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "93213e8d-8903-4c95-89a5-ccef06b9859f")
+		(property "Reference" "#PWR027"
+			(at 212.09 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5VA"
+			(at 212.09 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 212.09 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 212.09 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VA\""
+			(at 212.09 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "081cb297-c0bd-4ba6-96de-7fe7c1d6e4f7")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:-5VA")
+		(at 217.17 59.69 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "957ae3b0-ba4f-41d1-b05d-25c4fd0ae01b")
+		(property "Reference" "#PWR028"
+			(at 217.17 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "-5VA"
+			(at 217.17 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 217.17 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"-5VA\""
+			(at 217.17 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "013b8b15-f1fa-4600-b7e6-ba48186690c4")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -4209,7 +4381,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9838c1d6-23fb-4378-865f-462930e6a06d")
-		(property "Reference" "D4"
+		(property "Reference" "D1"
 			(at 93.98 29.2099 90)
 			(effects
 				(font
@@ -4263,7 +4435,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "D4")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -4279,7 +4451,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "991954c6-749b-4da1-9660-e69dd3eea380")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR025"
 			(at 229.87 139.7 0)
 			(effects
 				(font
@@ -4329,7 +4501,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "#PWR037")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -4346,7 +4518,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a0836840-527c-4041-a1fb-2477a4a5113d")
-		(property "Reference" "U8"
+		(property "Reference" "U5"
 			(at 190.5 90.17 0)
 			(effects
 				(font
@@ -4434,7 +4606,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "U8")
+					(reference "U5")
 					(unit 3)
 				)
 			)
@@ -4450,7 +4622,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a6605728-cff2-41cb-a7ed-e12f4578b9a1")
-		(property "Reference" "U8"
+		(property "Reference" "U5"
 			(at 152.4 76.2 0)
 			(effects
 				(font
@@ -4538,7 +4710,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "U8")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -4554,7 +4726,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b62cca7e-9b8a-41bf-8c82-42bfaeb34bcd")
-		(property "Reference" "R49"
+		(property "Reference" "R11"
 			(at 152.4 100.33 90)
 			(effects
 				(font
@@ -4606,7 +4778,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R49")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -4622,7 +4794,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b77979ff-cc22-475f-be87-9f4e49716409")
-		(property "Reference" "C7"
+		(property "Reference" "C1"
 			(at 72.39 21.5899 0)
 			(effects
 				(font
@@ -4676,7 +4848,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "C7")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -4692,7 +4864,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bb6fb147-f16b-48f3-b72b-b95f3a384640")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR021"
 			(at 85.09 50.8 0)
 			(effects
 				(font
@@ -4742,7 +4914,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "#PWR035")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -4758,7 +4930,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bf596f4c-9edb-4c54-9342-1dd33c29801e")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR018"
 			(at 60.96 25.4 0)
 			(effects
 				(font
@@ -4808,7 +4980,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "#PWR031")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -4824,7 +4996,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c37cd666-4b52-484d-8916-20b8e775daf0")
-		(property "Reference" "R43"
+		(property "Reference" "R7"
 			(at 97.79 151.13 90)
 			(effects
 				(font
@@ -4876,7 +5048,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R43")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -4892,7 +5064,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c49cb208-5b82-4c06-8438-0c34194954fd")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR022"
 			(at 91.44 26.67 0)
 			(effects
 				(font
@@ -4942,8 +5114,114 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "#PWR036")
+					(reference "#PWR022")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:LM324")
+		(at 214.63 49.53 0)
+		(unit 5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c826f1ac-55e3-4f77-a22b-1cc8bb48b44f")
+		(property "Reference" "U5"
+			(at 213.36 48.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LM324"
+			(at 213.36 50.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm2902-n.pdf"
+			(at 215.9 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Low-Power, Quad-Operational Amplifiers, DIP-14/SOIC-14/SSOP-14"
+			(at 214.63 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "70848eb2-5241-4b42-a0b8-3c33e7d5a271")
+		)
+		(pin "3"
+			(uuid "6ba8adea-a305-450b-a897-fdfafd49bb73")
+		)
+		(pin "13"
+			(uuid "84db39a5-fd0c-44b1-ba10-80ee6825796a")
+		)
+		(pin "8"
+			(uuid "9479f5d9-1591-4da9-bb1d-e533b4a10b6b")
+		)
+		(pin "12"
+			(uuid "3c0f989a-a846-4fae-98bd-a075ab498f3d")
+		)
+		(pin "2"
+			(uuid "dcad514b-54ff-4200-9c61-64156502d94b")
+		)
+		(pin "7"
+			(uuid "96fbcadf-a3e9-473d-bbb0-3484084428a3")
+		)
+		(pin "14"
+			(uuid "536e30ae-0943-48f5-ac48-5b1f53b126e5")
+		)
+		(pin "1"
+			(uuid "e8a5dc5e-b083-4e0e-aef0-b98d34e0ae45")
+		)
+		(pin "5"
+			(uuid "f0ca5bbf-034f-434d-ae14-7fa3f0524a5d")
+		)
+		(pin "11"
+			(uuid "ecb772c4-ea36-405a-88c8-c9e7811b2f77")
+		)
+		(pin "6"
+			(uuid "43a5e118-211f-4e49-ac35-e3ddc96d0cff")
+		)
+		(pin "9"
+			(uuid "53ff80b2-70f2-48e4-b21a-99d891018b68")
+		)
+		(pin "10"
+			(uuid "c444f95c-3784-4d17-87a3-e86cfcd303df")
+		)
+		(instances
+			(project "SF4-hardware"
+				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
+					(reference "U5")
+					(unit 5)
 				)
 			)
 		)
@@ -4958,7 +5236,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cbcc5aa8-da62-4723-8b35-c58e273a08d4")
-		(property "Reference" "R42"
+		(property "Reference" "R6"
 			(at 80.01 135.89 90)
 			(effects
 				(font
@@ -4966,7 +5244,7 @@
 				)
 			)
 		)
-		(property "Value" "866k"
+		(property "Value" "270"
 			(at 80.01 138.43 90)
 			(effects
 				(font
@@ -5010,7 +5288,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R42")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -5026,7 +5304,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d3e631ef-deea-4134-8fcf-720f782e6ac7")
-		(property "Reference" "R53"
+		(property "Reference" "R15"
 			(at 187.96 80.01 90)
 			(effects
 				(font
@@ -5078,7 +5356,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R53")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -5094,7 +5372,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d8a63d2a-3dbf-4576-8675-2611c65b9d3b")
-		(property "Reference" "U7"
+		(property "Reference" "U4"
 			(at 49.53 144.78 0)
 			(effects
 				(font
@@ -5182,7 +5460,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "U7")
+					(reference "U4")
 					(unit 3)
 				)
 			)
@@ -5198,7 +5476,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d97bcf65-977a-4dfe-8a50-b36d30614194")
-		(property "Reference" "C10"
+		(property "Reference" "C4"
 			(at 80.01 124.46 90)
 			(effects
 				(font
@@ -5206,7 +5484,7 @@
 				)
 			)
 		)
-		(property "Value" "68p"
+		(property "Value" "22n"
 			(at 80.01 127 90)
 			(effects
 				(font
@@ -5250,7 +5528,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "C10")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -5266,7 +5544,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc71f0db-38c2-4288-a854-b1f54e57bd2d")
-		(property "Reference" "R46"
+		(property "Reference" "R8"
 			(at 140.97 93.9799 0)
 			(effects
 				(font
@@ -5320,7 +5598,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R46")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -5336,7 +5614,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e1111815-df91-47e9-825e-8caa70093926")
-		(property "Reference" "R45"
+		(property "Reference" "R3"
 			(at 53.34 30.48 90)
 			(effects
 				(font
@@ -5388,7 +5666,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R45")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -5404,7 +5682,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e4628a98-f6f0-42f1-a8e4-1a9d5e35946b")
-		(property "Reference" "R51"
+		(property "Reference" "R13"
 			(at 170.18 110.49 90)
 			(effects
 				(font
@@ -5456,7 +5734,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R51")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -5472,7 +5750,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e6f26ad5-1071-436c-84ad-a4e7f0d9125d")
-		(property "Reference" "U8"
+		(property "Reference" "U5"
 			(at 152.4 127 0)
 			(effects
 				(font
@@ -5560,7 +5838,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "U8")
+					(reference "U5")
 					(unit 2)
 				)
 			)
@@ -5576,7 +5854,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e9f8a23e-552a-4275-8b83-773fe6a779a1")
-		(property "Reference" "R55"
+		(property "Reference" "R17"
 			(at 223.52 93.98 90)
 			(effects
 				(font
@@ -5628,7 +5906,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "R55")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -5645,7 +5923,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f9e60539-83ba-48b0-be0c-e4c49d26c03e")
-		(property "Reference" "U7"
+		(property "Reference" "U4"
 			(at 81.28 167.64 0)
 			(effects
 				(font
@@ -5733,7 +6011,7 @@
 		(instances
 			(project "SF4-hardware"
 				(path "/ef5111bd-e8db-4b6d-9a36-6e7b6428b384/d0b5bf38-31c9-420e-ac6a-20770fc26324"
-					(reference "U7")
+					(reference "U4")
 					(unit 4)
 				)
 			)
