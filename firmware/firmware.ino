@@ -12,7 +12,6 @@ void setup() {
     pinMode(2, OUTPUT);
     pinMode(3, OUTPUT);
     pinMode(4, OUTPUT);
-    pinMode(5, OUTPUT);
     digitalWrite(5, HIGH);
     // Wait for start message to be sent
     while (Serial.available()==0){}
@@ -37,8 +36,6 @@ void loop() {
       mode = Serial.readString();               // Read change in mode
       enable_io(mode);                          // Execute change in mode
     }
-    delayMicroseconds(300);                     // Adjust timing to roughly 1 kHz sampling
-    
 }
 
 
@@ -50,10 +47,9 @@ void enable_io(String mode){
     MsgPack::Packer packer;
     packer.serialize(s);                        // Serialise data
     Serial.write(packer.data(), packer.size()); // Send data
-    digitalWrite(2, LOW);
+    digitalWrite(2, HIGH);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
-    digitalWrite(5, LOW);
     idle = false;
     // delay(1000);
   }
@@ -62,10 +58,9 @@ void enable_io(String mode){
     MsgPack::Packer packer;
     packer.serialize(s);                        // Serialise data
     Serial.write(packer.data(), packer.size()); // Send data
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
+    digitalWrite(2, LOW);
+    digitalWrite(3, LOW);
     digitalWrite(4, HIGH);
-    digitalWrite(5, LOW);
     idle = false;
     // delay(1000);
   }
@@ -77,7 +72,6 @@ void enable_io(String mode){
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, HIGH);
-    digitalWrite(5, LOW);
     idle = false;
     // delay(1000);
   }
@@ -86,9 +80,6 @@ void enable_io(String mode){
     MsgPack::Packer packer;
     packer.serialize(s);                        // Serialise data
     Serial.write(packer.data(), packer.size()); // Send data
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
     digitalWrite(5, HIGH);
     idle = true;
     // delay(1000);
