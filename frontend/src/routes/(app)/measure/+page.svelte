@@ -2,6 +2,8 @@
 	import { Button, Dropdown, DropdownItem, Spinner } from 'flowbite-svelte';
 	import { ChevronDownOutline, PlayOutline, StopSolid } from 'flowbite-svelte-icons';
 
+	import { onMount } from 'svelte';
+
 	import Navbar from 'components/Navbar.svelte';
 	import PopupModal from 'components/PopupModal.svelte';
 
@@ -17,21 +19,11 @@
 
 	async function gotArduino(event: CustomEvent) {
 		ard = event.detail.ard;
-		// await ard.run();
 	}
 
 	// Define some data
 	let points = [
-		{ x: 0, y: 0 },
-		{ x: 5, y: 10 },
-		{ x: 10, y: 20 },
-		{ x: 15, y: 30 },
-		{ x: 20, y: 40 }
 	];
-
-	// function getRandomInt(min: number, max: number): number {
-	// 	return Math.floor(Math.random() * (max - min + 1)) + min;
-	// }
 
 	// setInterval(() => {
 	// 	const i = getRandomInt(0, points.length - 1);
@@ -39,14 +31,16 @@
 	// 	points = points;
 	// }, 100);
 
-	let selectedDropdown: arduinoModes = 'IDLE';
+	let isRecording = false;
+
+	let dropdownMode: arduinoModes = 'IDLE';
 	let dropdownSideText = '';
 	let dropdownOpen = false;
 
 	async function dropdownClick(mode: arduinoModes) {
 		dropdownOpen = false;
 		let errnum: number = 0;
-		if (mode == selectedDropdown) {
+		if (mode == dropdownMode) {
 			return;
 		}
 		dropdownSideText = 'Connecting';
@@ -63,8 +57,9 @@
 				dropdownSideText += '(' + errnum + ')';
 			}
 		});
-		selectedDropdown = mode;
+		dropdownMode = mode;
 		dropdownSideText = '';
+		await plot();
 	}
 
 	const dropdownMapping: { name: string; code: arduinoModes }[] = [
@@ -73,32 +68,57 @@
 		{ code: 'RALL', name: 'Right Arm, Left Leg' },
 		{ code: 'LARA', name: 'Left Arm, Right Arm' }
 	];
+
+	async function plot() {
+		const reference = Date.now() * 1_000;
+		const divisor = Math.pow(2, 16);
+		let prev_modulus = -(2 ** 15);
+		let quotient = 0;
+
+		while (true) {
+			for (const arr of await ard.batchRead(20)) {
+				let [y, modulus] = arr;
+				if (modulus < prev_modulus) { quotient += 1 }
+				prev_modulus = modulus;
+				const x = reference + modulus + (divisor * quotient);
+				points.push({x,y})
+			}
+			points = points.slice(Math.max(points.length - 5_000, 1));
+		}
+	}
+
+	function recordClick() {
+		dropdownOpen = false;
+	}
+	function stopClick() {}
 </script>
 
 <Navbar>
 	{#if dropdownSideText}
 		<span class="self-center px-2"> {dropdownSideText} <Spinner size="4" /> </span>
 	{/if}
-	<Button on:click={() => (dropdownOpen = true)}>
-		Measurement Mode {dropdownMapping.find((item) => item.code === selectedDropdown)?.name ||
-			'Not Found'}
+	<Button on:click={() => (dropdownOpen = !dropdownOpen)} disabled={isRecording}>
+		{dropdownMapping.find((item) => item.code === dropdownMode)?.name || 'Not Found'}
 		<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
+		<Dropdown open={dropdownOpen}>
+			{#each dropdownMapping as mode}
+				<DropdownItem on:click={() => dropdownClick(mode.code)}>{mode.name}</DropdownItem>
+			{/each}
+		</Dropdown>
 	</Button>
-	<Dropdown open={dropdownOpen}>
-		{#each dropdownMapping as mode}
-			<DropdownItem on:click={() => dropdownClick(mode.code)}>{mode.name}</DropdownItem>
-		{/each}
-	</Dropdown>
 	<div class="px-2" />
 	<Button
 		color="light"
-		on:click={async () => {
-			while (true) {
-				console.log(await ard.batchRead(1000));
-			}
+		enable={dropdownMode != 'IDLE'}
+		on:click={() => {
+			isRecording ? recordClick() : stopClick();
 		}}
 	>
-		<PlayOutline />
+		{#if isRecording}
+			<StopSolid />
+		{:else}
+			<PlayOutline />
+		{/if}
 	</Button>
 </Navbar>
 

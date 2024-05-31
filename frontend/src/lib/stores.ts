@@ -71,9 +71,10 @@ export class ArduinoInterface {
     const endTime = Date.now() + millis;
 
     while (Date.now() < endTime) {
-      const result = await this.readDecoded.next();
-      if (result.done) { break; }
-      items.push(result)
+      const message = await this.readDecoded.next();
+      if (message.done) { break; }
+      const parse = DATA_VALIDATOR.validate(message.value)
+      if (!parse.error) { items.push(parse.value) }
     }
     return items
   }
