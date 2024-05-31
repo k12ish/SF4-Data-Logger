@@ -10,9 +10,8 @@
 	import AxisX from 'components/EKG/AxisX.svelte';
 	import AxisY from 'components/EKG/AxisY.svelte';
 
-	import { onMount } from 'svelte';
 	import { ArduinoInterface } from 'lib/stores.ts';
-	import type { setModeProgress, arduinoModes } from 'lib/stores.ts';
+	import type { arduinoModes } from 'lib/stores.ts';
 
 	let ard: ArduinoInterface;
 
@@ -30,18 +29,17 @@
 		{ x: 20, y: 40 }
 	];
 
-	function getRandomInt(min: number, max: number): number {
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
+	// function getRandomInt(min: number, max: number): number {
+	// 	return Math.floor(Math.random() * (max - min + 1)) + min;
+	// }
 
-	setInterval(() => {
-		const i = getRandomInt(0, points.length - 1);
-		points[i].y = Math.random() * 20;
-		points = points;
-	}, 100);
+	// setInterval(() => {
+	// 	const i = getRandomInt(0, points.length - 1);
+	// 	points[i].y = Math.random() * 20;
+	// 	points = points;
+	// }, 100);
 
-	type dropdownItem = arduinoModes | '';
-	let selectedDropdown: dropdownItem = '';
+	let selectedDropdown: arduinoModes = 'IDLE';
 	let dropdownSideText = '';
 	let dropdownOpen = false;
 
@@ -51,7 +49,8 @@
 		if (mode == selectedDropdown) {
 			return;
 		}
-		const callback = (val: setModeProgress) => {
+		dropdownSideText = 'Connecting';
+		await ard.setMode(mode, (val) => {
 			errnum += 1;
 			if (val == 'timeout') {
 				dropdownSideText = 'Response Timeout';
@@ -63,12 +62,17 @@
 			if (errnum > 1) {
 				dropdownSideText += '(' + errnum + ')';
 			}
-		};
-		dropdownSideText = 'Connecting';
-		await ard.setMode(mode, callback);
+		});
 		selectedDropdown = mode;
 		dropdownSideText = '';
 	}
+
+	const dropdownMapping: { name: string; code: arduinoModes }[] = [
+		{ code: 'IDLE', name: 'Idle' },
+		{ code: 'LALL', name: 'Left Arm, Left Leg' },
+		{ code: 'RALL', name: 'Right Arm, Left Leg' },
+		{ code: 'LARA', name: 'Left Arm, Right Arm' }
+	];
 </script>
 
 <Navbar>
@@ -76,19 +80,21 @@
 		<span class="self-center px-2"> {dropdownSideText} <Spinner size="4" /> </span>
 	{/if}
 	<Button on:click={() => (dropdownOpen = true)}>
-		Measurement Mode {selectedDropdown}
+		Measurement Mode {dropdownMapping.find((item) => item.code === selectedDropdown)?.name ||
+			'Not Found'}
 		<ChevronDownOutline class="ms-2 h-6 w-6 text-white dark:text-white" />
 	</Button>
 	<Dropdown open={dropdownOpen}>
-		<DropdownItem on:click={() => dropdownClick('Regular')}>Regular</DropdownItem>
-		<DropdownItem on:click={() => dropdownClick('Augmented')}>Augmented</DropdownItem>
+		{#each dropdownMapping as mode}
+			<DropdownItem on:click={() => dropdownClick(mode.code)}>{mode.name}</DropdownItem>
+		{/each}
 	</Dropdown>
 	<div class="px-2" />
 	<Button
 		color="light"
 		on:click={async () => {
 			while (true) {
-				console.log(await ard.batchRead(100));
+				console.log(await ard.batchRead(1000));
 			}
 		}}
 	>

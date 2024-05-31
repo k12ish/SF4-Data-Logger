@@ -1,26 +1,24 @@
-import { writable } from 'svelte/store';
-import { encode, decodeMultiStream } from '@msgpack/msgpack';
+import { decodeMultiStream } from '@msgpack/msgpack';
 
 import Joi from 'joi';
 
 
-export type arduinoModes = 'Regular' | 'Augmented';
-// check that packet is of length 4, containing 10 bit ints
-const PACKET_VALIDATOR = Joi.array().length(4).items(
-  Joi.number().integer().min(0)
+export type arduinoModes = 'IDLE' | 'LALL' | 'RALL' | 'LARA';
+
+// check that packet is of length 2, containing 10 bit ints
+const DATA_VALIDATOR = Joi.array().length(2).items(
+  Joi.number().integer()
 );
 
 // Taken from https://advancedweb.hu/how-to-add-timeout-to-a-promise-in-javascript/
 const timeout = (prom: Promise<IteratorResult<unknown, any>>, time: number, exception: any): Promise<any> => {
-  let timer;
+  let timer: any;
   return Promise.race([
     prom,
     new Promise((_r, rej) => timer = setTimeout(rej, time, exception))
   ]).finally(() => clearTimeout(timer));
-}
 
-export type setModeProgress = 'timeout' | 'invalid-response' | 'ioerror';
-export type SetModeCallback = (progress: setModeProgress) => void;
+}
 
 
 export class ArduinoInterface {
@@ -35,12 +33,13 @@ export class ArduinoInterface {
     this.writeStream = write;
   }
 
-  public async setMode(mode: arduinoModes, callback: SetModeCallback) {
+  public async setMode(mode: arduinoModes,
+    callback: (progress: 'timeout' | 'invalid-response' | 'ioerror') => void) {
     const timeoutError = Symbol();
     let nextMessage = this.readDecoded.next();
     let message;
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 1_000; i++) {
       await this.write(mode);
       try {
         message = await timeout(nextMessage, 1000, timeoutError);
@@ -53,8 +52,7 @@ export class ArduinoInterface {
         }
         continue
       }
-      let result = PACKET_VALIDATOR.validate(message.value);
-      if (result.error) {
+      if (message.value !== mode) {
         callback('invalid-response');
         console.log("invalid:", message.value)
         nextMessage = this.readDecoded.next()
@@ -64,9 +62,9 @@ export class ArduinoInterface {
     }
   }
 
-   /**
-   * Reads items for a minimum number of milliseconds.
-   */
+  /**
+  * Reads items for a minimum number of milliseconds.
+  */
   public async batchRead(millis: number): Promise<Array<any>> {
     // read repeatedly from this.readDecoded for `millis` number of ms
     let items: Array<any> = [];
