@@ -53,7 +53,7 @@ void enable_io(String mode){
     idle = false;
     // delay(1000);
   }
-  else if (mode == "RALL"){                // Turn on routing for augmented lead positions
+  else if (mode == "RALL"){                // Turn on routing for right arm - left leg lead positions
     MsgPack::str_t s = "RALL";
     MsgPack::Packer packer;
     packer.serialize(s);                        // Serialise data
@@ -64,7 +64,7 @@ void enable_io(String mode){
     idle = false;
     // delay(1000);
   }
-  else if (mode == "LARA"){                // Turn on routing for augmented lead positions
+  else if (mode == "LARA"){                // Turn on routing for left arm - right arm lead positions
     MsgPack::str_t s = "LARA";
     MsgPack::Packer packer;
     packer.serialize(s);                        // Serialise data
@@ -75,12 +75,12 @@ void enable_io(String mode){
     idle = false;
     // delay(1000);
   }
-  else if (mode == "IDLE"){                // Turn on routing for augmented lead positions
+  else if (mode == "IDLE"){                // Go to idle mode
     MsgPack::str_t s = "IDLE";
     MsgPack::Packer packer;
     packer.serialize(s);                        // Serialise data
     Serial.write(packer.data(), packer.size()); // Send data
-    digitalWrite(5, HIGH);
+    digitalWrite(4, LOW);
     idle = true;
     // delay(1000);
   }
