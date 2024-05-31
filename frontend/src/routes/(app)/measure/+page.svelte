@@ -22,8 +22,7 @@
 	}
 
 	// Define some data
-	let points = [
-	];
+	let points = [{ x: 0, y: 0 }];
 
 	// setInterval(() => {
 	// 	const i = getRandomInt(0, points.length - 1);
@@ -44,6 +43,7 @@
 			return;
 		}
 		dropdownSideText = 'Connecting';
+		dropdownMode = mode;
 		await ard.setMode(mode, (val) => {
 			errnum += 1;
 			if (val == 'timeout') {
@@ -57,9 +57,10 @@
 				dropdownSideText += '(' + errnum + ')';
 			}
 		});
-		dropdownMode = mode;
 		dropdownSideText = '';
-		await plot();
+		if (dropdownMode != 'IDLE') {
+			await plot();
+		}
 	}
 
 	const dropdownMapping: { name: string; code: arduinoModes }[] = [
@@ -76,19 +77,25 @@
 		let quotient = 0;
 
 		while (true) {
+			if (dropdownMode == 'IDLE') {
+				return;
+			}
 			for (const arr of await ard.batchRead(20)) {
 				let [y, modulus] = arr;
-				if (modulus < prev_modulus) { quotient += 1 }
+				if (modulus < prev_modulus) {
+					quotient += 1;
+				}
 				prev_modulus = modulus;
-				const x = reference + modulus + (divisor * quotient);
-				points.push({x,y})
+				const x = reference + modulus + divisor * quotient;
+				points.push({ x, y });
 			}
-			points = points.slice(Math.max(points.length - 5_000, 1));
+			points = points.slice(Math.max(points.length - 4_000, 1));
 		}
 	}
 
 	function recordClick() {
 		dropdownOpen = false;
+		isRecording = true;
 	}
 	function stopClick() {}
 </script>
@@ -125,11 +132,19 @@
 <div class="chart-container mx-auto rounded border p-8">
 	<LayerCake data={points} x="x" y="y">
 		<Svg>
-			<AxisX />
+			<AxisX ticks={6} format={(t) => new Date(t / 1000).toLocaleTimeString()} />
 			<AxisY ticks={4} />
 			<Line />
 		</Svg>
 	</LayerCake>
+</div>
+
+<div class="mx-auto p-8">
+	{points.length} Measurements
+	<br />
+	{(1e-6 * (points[points.length - 1].x - points[0].x)).toFixed(4)}s Duration
+	<br />
+	{((1e6 * points.length) / (points[points.length - 1].x - points[0].x)).toFixed(2)}Hz Frequency
 </div>
 
 <PopupModal on:gotArduino={gotArduino} />
@@ -138,6 +153,6 @@
 	/* The wrapper div needs to have an explicit width and height in CSS. */
 	.chart-container {
 		width: 96%;
-		height: calc(70vh - 1px);
+		height: calc(80vh - 1px);
 	}
 </style>
