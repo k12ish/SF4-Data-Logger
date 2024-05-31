@@ -1,17 +1,14 @@
 #include <MsgPack.h>
 
 // input to msgpack
-MsgPack::arr_t<int> v {1, 2, 3, 4};             // Data stored as {reading1, reading2, reading3, time passed}
-int prev;
-int timer;
+MsgPack::arr_t<int> v {1, 2};             // Data stored as {reading1, reading2, reading3, time passed}
 String mode;
+bool idle = true;
 
 
 void setup() {
     Serial.begin(115200);
     pinMode(A0, INPUT);
-    pinMode(A1, INPUT);
-    pinMode(A2, INPUT);
     pinMode(2, OUTPUT);
     pinMode(3, OUTPUT);
     pinMode(4, OUTPUT);
@@ -28,15 +25,13 @@ void setup() {
 
 
 void loop() {
-    timer = micros()-prev;                      // Calculate time step for next sample point
-    prev = micros();                            // Save initial time point
-    v[0] = analogRead(A0);                      // Read ports
-    v[1] = analogRead(A1);
-    v[2] = analogRead(A2);
-    v[3] = timer;
-    MsgPack::Packer packer;                     // Package data
-    packer.serialize(v);                        // Serialise data
-    Serial.write(packer.data(), packer.size()); // Send data
+    if(!idle){
+      v[0] = analogRead(A0);                      // Read ports
+      v[1] = (unsigned int)micros();
+      MsgPack::Packer packer;                     // Package data
+      packer.serialize(v);                        // Serialise data
+      Serial.write(packer.data(), packer.size()); // Send data
+    }
     // Serial.println(v[3]);
     if (Serial.available() != 0){               // Check for message from host computer
       mode = Serial.readString();               // Read change in mode
@@ -50,20 +45,52 @@ void loop() {
 // Function to change IO states
 void enable_io(String mode){
   digitalWrite(5, HIGH);                        // Turn off inputs
-  if (mode == "Regular"){                       // Turn on routing for regular lead positions
-    // Serial.println("Regular");
+  if (mode == "LALL"){                       // Turn on routing for regular lead positions
+    MsgPack::str_t s = "LALL";
+    MsgPack::Packer packer;
+    packer.serialize(s);                        // Serialise data
+    Serial.write(packer.data(), packer.size()); // Send data
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
     digitalWrite(5, LOW);
+    idle = false;
     // delay(1000);
   }
-  else if (mode == "Augmented"){                // Turn on routing for augmented lead positions
-    // Serial.println("Augmented");
+  else if (mode == "RALL"){                // Turn on routing for augmented lead positions
+    MsgPack::str_t s = "RALL";
+    MsgPack::Packer packer;
+    packer.serialize(s);                        // Serialise data
+    Serial.write(packer.data(), packer.size()); // Send data
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, HIGH);
     digitalWrite(5, LOW);
+    idle = false;
+    // delay(1000);
+  }
+  else if (mode == "LARA"){                // Turn on routing for augmented lead positions
+    MsgPack::str_t s = "LARA";
+    MsgPack::Packer packer;
+    packer.serialize(s);                        // Serialise data
+    Serial.write(packer.data(), packer.size()); // Send data
+    digitalWrite(2, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, LOW);
+    idle = false;
+    // delay(1000);
+  }
+  else if (mode == "IDLE"){                // Turn on routing for augmented lead positions
+    MsgPack::str_t s = "IDLE";
+    MsgPack::Packer packer;
+    packer.serialize(s);                        // Serialise data
+    Serial.write(packer.data(), packer.size()); // Send data
+    digitalWrite(2, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(5, HIGH);
+    idle = true;
     // delay(1000);
   }
 }
