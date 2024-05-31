@@ -11,7 +11,7 @@ const DATA_VALIDATOR = Joi.array().length(2).items(
 );
 
 // Taken from https://advancedweb.hu/how-to-add-timeout-to-a-promise-in-javascript/
-const timeout = (prom: Promise<IteratorResult<unknown, any>>, time: number, exception: any): Promise<any> => {
+const timeout = (prom: Promise<any>, time: number, exception: any): Promise<any> => {
   let timer: any;
   return Promise.race([
     prom,
@@ -33,16 +33,18 @@ export class ArduinoInterface {
     this.writeStream = write;
   }
 
-  public async setMode(mode: arduinoModes,
-    callback: (progress: 'timeout' | 'invalid-response' | 'ioerror') => void) {
+  public async setMode(
+    mode: arduinoModes,
+    callback: (progress: 'timeout' | 'invalid-response' | 'ioerror') => void
+  ) {
     const timeoutError = Symbol();
-    let nextMessage = this.readDecoded.next();
     let message;
+    let nextMessage = this.readDecoded.next();
 
-    for (let i = 0; i < 1_000; i++) {
+    for (let i = 0; i < 10_000; i++) {
       await this.write(mode);
       try {
-        message = await timeout(nextMessage, 1000, timeoutError);
+        message = await timeout(nextMessage, 3000, timeoutError);
       } catch (e) {
         console.log(e)
         if (e == timeoutError) {

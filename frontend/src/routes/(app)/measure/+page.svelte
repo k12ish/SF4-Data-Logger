@@ -59,7 +59,7 @@
 		});
 		dropdownSideText = '';
 		if (dropdownMode != 'IDLE') {
-			await plot();
+			await plot(dropdownMode);
 		}
 	}
 
@@ -70,17 +70,16 @@
 		{ code: 'LARA', name: 'Left Arm, Right Arm' }
 	];
 
-	async function plot() {
+	async function plot(context: arduinoModes) {
 		const reference = Date.now() * 1_000;
 		const divisor = Math.pow(2, 16);
 		let prev_modulus = -(2 ** 15);
 		let quotient = 0;
 
+		points = [{x: reference, y:0}]
+
 		while (true) {
-			if (dropdownMode == 'IDLE') {
-				return;
-			}
-			for (const arr of await ard.batchRead(20)) {
+			for (const arr of await ard.batchRead(10)) {
 				let [y, modulus] = arr;
 				if (modulus < prev_modulus) {
 					quotient += 1;
@@ -89,7 +88,10 @@
 				const x = reference + modulus + divisor * quotient;
 				points.push({ x, y });
 			}
-			points = points.slice(Math.max(points.length - 4_000, 1));
+			points = points.slice(Math.max(points.length - 5000, 1));
+			if (dropdownMode != context) {
+				return;
+			}
 		}
 	}
 
@@ -140,11 +142,13 @@
 </div>
 
 <div class="mx-auto p-8">
+	{#if points.length > 10}
 	{points.length} Measurements
 	<br />
 	{(1e-6 * (points[points.length - 1].x - points[0].x)).toFixed(4)}s Duration
 	<br />
 	{((1e6 * points.length) / (points[points.length - 1].x - points[0].x)).toFixed(2)}Hz Frequency
+	{/if}
 </div>
 
 <PopupModal on:gotArduino={gotArduino} />
