@@ -22,7 +22,10 @@
 	}
 
 	// Define some data
-	let points = [{ x: 0, y: 0 }];
+	let data: { x: number; y: number }[] = [];
+	let view: { x: number; y: number }[] = [];
+	let max_view = 5000;
+	let view_factor = 1;
 
 	// setInterval(() => {
 	// 	const i = getRandomInt(0, points.length - 1);
@@ -44,11 +47,10 @@
 		}
 		dropdownSideText = 'Connecting';
 		dropdownMode = mode;
-		await ard.setMode(mode, (val) => {
+		await ard.setMode(mode, (val, details) => {
+			console.log(val, details);
 			errnum += 1;
-			if (val == 'timeout') {
-				dropdownSideText = 'Response Timeout';
-			} else if (val == 'invalid-response') {
+			if (val == 'invalid-response') {
 				dropdownSideText = 'Invalid Response';
 			} else if (val == 'ioerror') {
 				dropdownSideText = 'I/O Error';
@@ -76,9 +78,11 @@
 		let prev_modulus = -(2 ** 15);
 		let quotient = 0;
 
-		points = [{x: reference, y:0}]
+		data = [];
+		view = [];
 
 		while (true) {
+			let i = 0;
 			for (const arr of await ard.batchRead(10)) {
 				let [y, modulus] = arr;
 				if (modulus < prev_modulus) {
@@ -86,9 +90,15 @@
 				}
 				prev_modulus = modulus;
 				const x = reference + modulus + divisor * quotient;
-				points.push({ x, y });
+
+				if (i % view_factor === 0) {
+					view.push({ x, y });
+				}
+				data.push({ x, y });
+				i += 1
 			}
-			points = points.slice(Math.max(points.length - 5000, 1));
+			view = view.slice(Math.max(view.length - max_view, 0))
+			data = data.slice(Math.max(data.length - max_view * view_factor, 0))
 			if (dropdownMode != context) {
 				return;
 			}
@@ -98,8 +108,14 @@
 	function recordClick() {
 		dropdownOpen = false;
 		isRecording = true;
+		view_factor = 10;
+		view = data.filter((_, idx) => idx % view_factor == 0)
 	}
-	function stopClick() {}
+	function stopClick() {
+		isRecording = false;
+		view_factor = 1
+		dropdownClick('IDLE')
+	}
 </script>
 
 <Navbar>
@@ -120,7 +136,7 @@
 		color="light"
 		enable={dropdownMode != 'IDLE'}
 		on:click={() => {
-			isRecording ? recordClick() : stopClick();
+			isRecording ? stopClick() : recordClick();
 		}}
 	>
 		{#if isRecording}
@@ -132,7 +148,7 @@
 </Navbar>
 
 <div class="chart-container mx-auto rounded border p-8">
-	<LayerCake data={points} x="x" y="y">
+	<LayerCake data={view} x="x" y="y">
 		<Svg>
 			<AxisX ticks={6} format={(t) => new Date(t / 1000).toLocaleTimeString()} />
 			<AxisY ticks={4} />
@@ -142,12 +158,14 @@
 </div>
 
 <div class="mx-auto p-8">
-	{#if points.length > 10}
-	{points.length} Measurements
-	<br />
-	{(1e-6 * (points[points.length - 1].x - points[0].x)).toFixed(4)}s Duration
-	<br />
-	{((1e6 * points.length) / (points[points.length - 1].x - points[0].x)).toFixed(2)}Hz Frequency
+	{#if data.length > 10}
+		{data.length} Measurements
+		<br />
+		{view.length} Points Plotted
+		<br />
+		{(1e-6 * (data[data.length - 1].x - data[0].x)).toFixed(4)}s Duration
+		<br />
+		{((1e6 * data.length) / (data[data.length - 1].x - data[0].x)).toFixed(2)}Hz Frequency
 	{/if}
 </div>
 

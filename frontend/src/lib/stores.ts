@@ -35,9 +35,8 @@ export class ArduinoInterface {
 
   public async setMode(
     mode: arduinoModes,
-    callback: (progress: 'invalid-response' | 'ioerror') => void
+    callback: (progress: 'invalid-response' | 'ioerror', details: any) => void
   ) {
-
     let SEND_MESSAGES = true;
 
     let writerPromise = (async () => {
@@ -48,18 +47,15 @@ export class ArduinoInterface {
     })();
 
     let readerPromise = (async () => {
-      while (true) {
+     for (let i = 0; i < 5_000; i++) {
         try {
           let message = await this.readDecoded.next();
           if (message.value == mode) {
-            SEND_MESSAGES = false
-            return;
+            return (SEND_MESSAGES = false);
           }
-          callback('invalid-response');
-          console.log("invalid-response:", message.value)
-        } catch (e) {
-          console.log(e)
-          callback('ioerror');
+          callback('invalid-response', message.value);
+        } catch (error) {
+          callback('ioerror', error);
         }
       }
     })();
