@@ -35,33 +35,36 @@ export class ArduinoInterface {
 
   public async setMode(
     mode: arduinoModes,
-    callback: (progress: 'timeout' | 'invalid-response' | 'ioerror') => void
+    callback: (progress: 'invalid-response' | 'ioerror') => void
   ) {
-    const timeoutError = Symbol();
-    let message;
-    let nextMessage = this.readDecoded.next();
 
-    for (let i = 0; i < 10_000; i++) {
-      await this.write(mode);
-      try {
-        message = await timeout(nextMessage, 3000, timeoutError);
-      } catch (e) {
-        console.log(e)
-        if (e == timeoutError) {
-          callback('timeout')
-        } else {
+    let SEND_MESSAGES = true;
+
+    let writerPromise = (async () => {
+      while (SEND_MESSAGES) {
+        await this.write(mode);
+        await new Promise(r => setTimeout(r, 2000));
+      }
+    })();
+
+    let readerPromise = (async () => {
+      while (true) {
+        try {
+          let message = await this.readDecoded.next();
+          if (message.value == mode) {
+            SEND_MESSAGES = false
+            return;
+          }
+          callback('invalid-response');
+          console.log("invalid-response:", message.value)
+        } catch (e) {
+          console.log(e)
           callback('ioerror');
         }
-        continue
       }
-      if (message.value !== mode) {
-        callback('invalid-response');
-        console.log("invalid:", message.value)
-        nextMessage = this.readDecoded.next()
-      } else {
-        break;
-      }
-    }
+    })();
+    await readerPromise;
+    await writerPromise;
   }
 
   /**
