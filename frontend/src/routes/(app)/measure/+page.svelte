@@ -65,6 +65,19 @@
 		}
 	}
 
+	let pyodide: any;
+	let pyodide_loaded: boolean = false;
+	onMount(async () => {
+		//@ts-ignore: we use a script tag for this!
+		pyodide = await loadPyodide();
+		await pyodide.loadPackage('micropip');
+		const micropip = pyodide.pyimport('micropip');
+		await micropip.install('biosppy');
+		await pyodide.runPython(`
+print('hello world')`);
+		pyodide_loaded = true;
+	});
+
 	const dropdownMapping: { name: string; code: arduinoModes }[] = [
 		{ code: 'IDLE', name: 'Idle' },
 		{ code: 'LALL', name: 'Left Arm, Left Leg' },
@@ -95,10 +108,10 @@
 					view.push({ x, y });
 				}
 				data.push({ x, y });
-				i += 1
+				i += 1;
 			}
-			view = view.slice(Math.max(view.length - max_view, 0))
-			data = data.slice(Math.max(data.length - max_view * view_factor, 0))
+			view = view.slice(Math.max(view.length - max_view, 0));
+			data = data.slice(Math.max(data.length - max_view * view_factor, 0));
 			if (dropdownMode != context) {
 				return;
 			}
@@ -109,14 +122,18 @@
 		dropdownOpen = false;
 		isRecording = true;
 		view_factor = 10;
-		view = data.filter((_, idx) => idx % view_factor == 0)
+		view = data.filter((_, idx) => idx % view_factor == 0);
 	}
 	function stopClick() {
 		isRecording = false;
-		view_factor = 1
-		dropdownClick('IDLE')
+		view_factor = 1;
+		dropdownClick('IDLE');
 	}
 </script>
+
+<svelte:head>
+	<script async src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+</svelte:head>
 
 <Navbar>
 	{#if dropdownSideText}
