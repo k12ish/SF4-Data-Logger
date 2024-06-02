@@ -149,17 +149,25 @@ print('hello world')`);
 		// @ts-ignore
 		document.defaultView.sampleRate = (1e6 * data.length) / (data[data.length - 1].x - data[0].x);
 		await pyodide.runPython(`
-from js import measurements
+from js import measurements, sampleRate
 from scipy.stats import describe
 import numpy as np
 import matplotlib.pyplot as plt
-data = np.asarray(measurements.to_py())
-# print(repr(data))
-# print(describe(data))
-plt.plot(data)
-plt.savefig("out.png")
+import neurokit2 as nk
 `);
-		let file = pyodide.FS.readFile('out.png'); // Uint8Array
+		dropdownSideText = 'Running Analysis';
+		await new Promise((r) => setTimeout(r, 1));
+		await pyodide.runPython(`
+data = np.asarray(measurements.to_py())
+signals, info = nk.ecg_process(data, sampleRate)
+nk.ecg_plot(signals, info)
+plt.tight_layout()
+fig = plt.gcf()
+fig.set_size_inches(20, 12, forward=True)
+plt.tight_layout()
+fig.savefig("figure1.png", dpi=400)
+`);
+		let file = pyodide.FS.readFile('figure1.png'); // Uint8Array
 		imgUrl = URL.createObjectURL(new Blob([file], { type: 'image/png' }));
 		dropdownSideText = '';
 	}
@@ -233,9 +241,11 @@ plt.savefig("out.png")
 	</Social>
 {/if}
 
-{#if imgUrl}
-	<img src={imgUrl} alt="generated plot" />
-{/if}
+<div class="container mx-auto px-4">
+	{#if imgUrl}
+		<img class="w-full" src={imgUrl} alt="Generated Plot" />
+	{/if}
+</div>
 
 <PopupModal on:gotArduino={gotArduino} />
 
