@@ -47,7 +47,7 @@ export class ArduinoInterface {
     })();
 
     let readerPromise = (async () => {
-     for (let i = 0; i < 5_000; i++) {
+      for (let i = 0; i < 5_000; i++) {
         try {
           let message = await this.readDecoded.next();
           if (message.value == mode) {
