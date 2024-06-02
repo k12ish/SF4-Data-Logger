@@ -75,13 +75,22 @@
 	let pyodide: any;
 	let pyodide_loaded: boolean = false;
 	onMount(async () => {
+		await new Promise((resolve) => {
+			const interval = setInterval(() => {
+				if ('loadPyodide' in window) {
+					clearInterval(interval);
+					console.log('foo');
+					resolve();
+				}
+			}, 20);
+		});
+
 		//@ts-ignore: we use a script tag for this!
 		pyodide = await loadPyodide();
 		await pyodide.loadPackage('micropip');
 		const micropip = pyodide.pyimport('micropip');
 		await micropip.install('neurokit2');
-		await pyodide.runPython(`
-print('hello world')`);
+		await pyodide.runPython(`print('loaded Python!')`);
 		pyodide_loaded = true;
 	});
 
@@ -99,6 +108,7 @@ print('hello world')`);
 
 		data = [{ x: 0, y: 500 }];
 		view = data;
+		updateTickFormatter();
 
 		while (true) {
 			let i = 0;
@@ -136,7 +146,7 @@ print('hello world')`);
 		dropdownClick('IDLE');
 	}
 
-	let imgUrl = undefined;
+	let imgUrl: string;
 	async function analyseClick() {
 		dropdownSideText = 'Loading Variables';
 		await new Promise((r) => setTimeout(r, 1));
