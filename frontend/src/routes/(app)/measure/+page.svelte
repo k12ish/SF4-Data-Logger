@@ -136,8 +136,11 @@ print('hello world')`);
 		dropdownClick('IDLE');
 	}
 
+	let imgUrl = undefined;
 	async function analyseClick() {
-		let measurements = new Float32Array(data.length);
+		dropdownSideText = 'Loading Variables';
+		await new Promise((r) => setTimeout(r, 1));
+		let measurements = new Int16Array(data.length);
 		data.forEach((item, index) => {
 			measurements[index] = item.y;
 		});
@@ -145,16 +148,20 @@ print('hello world')`);
 		document.defaultView.measurements = measurements;
 		// @ts-ignore
 		document.defaultView.sampleRate = (1e6 * data.length) / (data[data.length - 1].x - data[0].x);
-
 		await pyodide.runPython(`
 from js import measurements
 from scipy.stats import describe
 import numpy as np
-print('measurement', type(measurements))
-data = np.asarray(measurements)
-print(repr(data))
-print(describe(data))
+import matplotlib.pyplot as plt
+data = np.asarray(measurements.to_py())
+# print(repr(data))
+# print(describe(data))
+plt.plot(data)
+plt.savefig("out.png")
 `);
+		let file = pyodide.FS.readFile('out.png'); // Uint8Array
+		imgUrl = URL.createObjectURL(new Blob([file], { type: 'image/png' }));
+		dropdownSideText = '';
 	}
 </script>
 
@@ -224,6 +231,10 @@ print(describe(data))
 			<dd class="font-light text-gray-500 dark:text-gray-400">Sampling Frequency</dd>
 		</div>
 	</Social>
+{/if}
+
+{#if imgUrl}
+	<img src={imgUrl} alt="generated plot" />
 {/if}
 
 <PopupModal on:gotArduino={gotArduino} />
