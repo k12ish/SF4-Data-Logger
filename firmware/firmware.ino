@@ -60,7 +60,7 @@ void enable_io(String mode){
     Serial.write(packer.data(), packer.size()); // Send data
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
-    digitalWrite(4, HIGH);
+    digitalWrite(4, LOW);
     idle = false;
     // delay(1000);
   }
@@ -71,7 +71,7 @@ void enable_io(String mode){
     Serial.write(packer.data(), packer.size()); // Send data
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
+    digitalWrite(4, LOW);
     idle = false;
     // delay(1000);
   }
@@ -80,7 +80,7 @@ void enable_io(String mode){
     MsgPack::Packer packer;
     packer.serialize(s);                        // Serialise data
     Serial.write(packer.data(), packer.size()); // Send data
-    digitalWrite(4, LOW);
+    digitalWrite(4, HIGH);
     idle = true;
     // delay(1000);
   }
