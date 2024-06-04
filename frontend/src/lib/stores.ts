@@ -5,8 +5,8 @@ import Joi from 'joi';
 
 export type arduinoModes = 'IDLE' | 'LALL' | 'RALL' | 'LARA';
 
-// check that packet is integer and less than 32 bits 
-const DATA_VALIDATOR = Joi.number().integer().positive().max(Math.pow(2, 32))
+// check that packet is integer and less than 64 bits 
+const DATA_VALIDATOR = Joi.number().integer().positive().max(Math.pow(2, 64))
 
 // Taken from https://advancedweb.hu/how-to-add-timeout-to-a-promise-in-javascript/
 const timeout = (prom: Promise<any>, time: number, exception: any): Promise<any> => {
@@ -45,7 +45,7 @@ export class ArduinoInterface {
     })();
 
     let readerPromise = (async () => {
-     for (let i = 0; i < 5_000; i++) {
+      for (let i = 0; i < 5_000; i++) {
         try {
           let message = await this.readDecoded.next();
           if (message.value == mode) {
@@ -73,8 +73,11 @@ export class ArduinoInterface {
       const message = await this.readDecoded.next();
       if (message.done) { break; }
       const parse = DATA_VALIDATOR.validate(message.value)
-      if (!parse.error) { 
-        items.push([parse.value & 0b1111111111, parse.value >> 10]) 
+      if (!parse.error) {
+        const first = [(parse.value >> 48) & 0xFFFF, (parse.value >> 32) & 0xFFFF];
+        const second = [(parse.value >> 16) & 0xFFFF, parse.value & 0xFFFF];
+        items.push(first, second)
+        // items must be in value, timestamp format
       }
     }
     return items

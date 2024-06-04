@@ -66,17 +66,17 @@
 	}
 
 	let pyodide: any;
-	let pyodide_loaded: boolean = false;
-	onMount(async () => {
-		//@ts-ignore: we use a script tag for this!
-		pyodide = await loadPyodide();
-		await pyodide.loadPackage('micropip');
-		const micropip = pyodide.pyimport('micropip');
-		await micropip.install('biosppy');
-		await pyodide.runPython(`
-print('hello world')`);
-		pyodide_loaded = true;
-	});
+// 	let pyodide_loaded: boolean = false;
+// 	onMount(async () => {
+// 		//@ts-ignore: we use a script tag for this!
+// 		pyodide = await loadPyodide();
+// 		await pyodide.loadPackage('micropip');
+// 		const micropip = pyodide.pyimport('micropip');
+// 		await micropip.install('biosppy');
+// 		await pyodide.runPython(`
+// print('hello world')`);
+// 		pyodide_loaded = true;
+// 	});
 
 	const dropdownMapping: { name: string; code: arduinoModes }[] = [
 		{ code: 'IDLE', name: 'Idle' },
@@ -98,6 +98,7 @@ print('hello world')`);
 			let i = 0;
 			for (const arr of await ard.batchRead(10)) {
 				let [y, modulus] = arr;
+				console.log(modulus)
 				if (modulus < prev_modulus) {
 					quotient += 1;
 				}
