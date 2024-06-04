@@ -79,7 +79,6 @@
 			const interval = setInterval(() => {
 				if ('loadPyodide' in window) {
 					clearInterval(interval);
-					console.log('foo');
 					resolve();
 				}
 			}, 20);

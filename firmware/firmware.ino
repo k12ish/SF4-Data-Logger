@@ -24,16 +24,14 @@ void setup() {
 
 void loop() {
     if(!idle){
-      // MsgPack Start byte: Begin 64 bit unsigned integer
-      Serial.write(0xcf);
-      for (int _index = 0; _index < 2; _index++) {
-          unsigned int read = analogRead(A0);
-          Serial.write((read >> 8) & 0xFF);
-          Serial.write((read & 0xFF)); 
-          unsigned int time = micros();
-          Serial.write((time >> 8) & 0xFF);
-          Serial.write((time & 0xFF)); 
-      }
+      // MsgPack Start byte: Begin 32 bit unsigned integer
+      Serial.write(0xce);
+      unsigned int read = analogRead(A0);
+      Serial.write((read >> 8) & 0xFF);
+      Serial.write((read & 0xFF)); 
+      unsigned int time = micros();
+      Serial.write((time >> 8) & 0xFF);
+      Serial.write((time & 0xFF)); 
     }
     if (Serial.available() != 0){               // Check for message from host computer
       mode = Serial.readString();               // Read change in mode
