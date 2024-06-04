@@ -39,6 +39,8 @@
 	"dependencies": {
 		"@msgpack/msgpack": "^3.0.0-beta2",
 		"@types/w3c-web-serial": "^1.0.6",
+		"flowbite-svelte-blocks": "^1.1.1",
+		"flowbite-typography": "^1.0.3",
 		"joi": "^17.13.1",
 		"layercake": "^8.1.4",
 		"postcss-load-config": "^5.1.0",

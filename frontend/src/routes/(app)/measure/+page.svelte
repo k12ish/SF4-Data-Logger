@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Button, Dropdown, DropdownItem, Spinner } from 'flowbite-svelte';
+	import { Section, Social } from 'flowbite-svelte-blocks';
+	import { Button, Dropdown, DropdownItem, Spinner, Card } from 'flowbite-svelte';
 	import { ChevronDownOutline, PlayOutline, StopSolid } from 'flowbite-svelte-icons';
 
 	import { onMount } from 'svelte';
@@ -14,6 +15,7 @@
 
 	import { ArduinoInterface } from 'lib/stores.ts';
 	import type { arduinoModes } from 'lib/stores.ts';
+	import { heartPyDataset } from 'lib/data.ts';
 
 	let ard: ArduinoInterface;
 
@@ -22,22 +24,27 @@
 	}
 
 	// Define some data
-	let data: { x: number; y: number }[] = [];
-	let view: { x: number; y: number }[] = [];
+	let data: { x: number; y: number }[] = heartPyDataset;
+	let view: { x: number; y: number }[] = data;
 	let max_view = 5000;
 	let view_factor = 1;
-
-	// setInterval(() => {
-	// 	const i = getRandomInt(0, points.length - 1);
-	// 	points[i].y = Math.random() * 20;
-	// 	points = points;
-	// }, 100);
 
 	let isRecording = false;
 
 	let dropdownMode: arduinoModes = 'IDLE';
 	let dropdownSideText = '';
 	let dropdownOpen = false;
+
+	function updateTickFormatter() {
+		const now = Date.now();
+		tickFormatter = function (micros: number) {
+			return new Date(now + micros / 1000).toLocaleTimeString();
+		};
+	}
+
+	let tickFormatter: (_: number) => string;
+
+	onMount(updateTickFormatter);
 
 	async function dropdownClick(mode: arduinoModes) {
 		dropdownOpen = false;
@@ -66,17 +73,26 @@
 	}
 
 	let pyodide: any;
-// 	let pyodide_loaded: boolean = false;
-// 	onMount(async () => {
-// 		//@ts-ignore: we use a script tag for this!
-// 		pyodide = await loadPyodide();
-// 		await pyodide.loadPackage('micropip');
-// 		const micropip = pyodide.pyimport('micropip');
-// 		await micropip.install('biosppy');
-// 		await pyodide.runPython(`
-// print('hello world')`);
-// 		pyodide_loaded = true;
-// 	});
+	let pyodide_loaded: boolean = false;
+	onMount(async () => {
+		await new Promise((resolve) => {
+			const interval = setInterval(() => {
+				if ('loadPyodide' in window) {
+					clearInterval(interval);
+					console.log('foo');
+					resolve();
+				}
+			}, 20);
+		});
+
+		//@ts-ignore: we use a script tag for this!
+		pyodide = await loadPyodide();
+		await pyodide.loadPackage('micropip');
+		const micropip = pyodide.pyimport('micropip');
+		await micropip.install('neurokit2');
+		await pyodide.runPython(`print('loaded Python!')`);
+		pyodide_loaded = true;
+	});
 
 	const dropdownMapping: { name: string; code: arduinoModes }[] = [
 		{ code: 'IDLE', name: 'Idle' },
@@ -86,24 +102,23 @@
 	];
 
 	async function plot(context: arduinoModes) {
-		const reference = Date.now() * 1_000;
 		const divisor = Math.pow(2, 16);
 		let prev_modulus = -(2 ** 15);
 		let quotient = 0;
 
-		data = [];
-		view = [];
+		data = [{ x: 0, y: 500 }];
+		view = data;
+		updateTickFormatter();
 
 		while (true) {
 			let i = 0;
 			for (const arr of await ard.batchRead(10)) {
 				let [y, modulus] = arr;
-				console.log(modulus)
 				if (modulus < prev_modulus) {
 					quotient += 1;
 				}
 				prev_modulus = modulus;
-				const x = reference + modulus + divisor * quotient;
+				const x = modulus + divisor * quotient;
 
 				if (i % view_factor === 0) {
 					view.push({ x, y });
@@ -111,11 +126,11 @@
 				data.push({ x, y });
 				i += 1;
 			}
-			view = view.slice(Math.max(view.length - max_view, 0));
-			data = data.slice(Math.max(data.length - max_view * view_factor, 0));
 			if (dropdownMode != context) {
 				return;
 			}
+			view = view.slice(Math.max(view.length - max_view, 0));
+			data = data.slice(Math.max(data.length - max_view * view_factor, 0));
 		}
 	}
 
@@ -129,6 +144,42 @@
 		isRecording = false;
 		view_factor = 1;
 		dropdownClick('IDLE');
+	}
+
+	let imgUrl: string;
+	async function analyseClick() {
+		dropdownSideText = 'Loading Variables';
+		await new Promise((r) => setTimeout(r, 1));
+		let measurements = new Int16Array(data.length);
+		data.forEach((item, index) => {
+			measurements[index] = item.y;
+		});
+		// @ts-ignore
+		document.defaultView.measurements = measurements;
+		// @ts-ignore
+		document.defaultView.sampleRate = (1e6 * data.length) / (data[data.length - 1].x - data[0].x);
+		await pyodide.runPython(`
+from js import measurements, sampleRate
+from scipy.stats import describe
+import numpy as np
+import matplotlib.pyplot as plt
+import neurokit2 as nk
+`);
+		dropdownSideText = 'Running Analysis';
+		await new Promise((r) => setTimeout(r, 1));
+		await pyodide.runPython(`
+data = np.asarray(measurements.to_py())
+signals, info = nk.ecg_process(data, sampleRate)
+nk.ecg_plot(signals, info)
+plt.tight_layout()
+fig = plt.gcf()
+fig.set_size_inches(20, 12, forward=True)
+plt.tight_layout()
+fig.savefig("figure1.png", dpi=400)
+`);
+		let file = pyodide.FS.readFile('figure1.png'); // Uint8Array
+		imgUrl = URL.createObjectURL(new Blob([file], { type: 'image/png' }));
+		dropdownSideText = '';
 	}
 </script>
 
@@ -150,47 +201,67 @@
 		</Dropdown>
 	</Button>
 	<div class="px-2" />
-	<Button
-		color="light"
-		enable={dropdownMode != 'IDLE'}
-		on:click={() => {
-			isRecording ? stopClick() : recordClick();
-		}}
-	>
-		{#if isRecording}
-			<StopSolid />
-		{:else}
-			<PlayOutline />
-		{/if}
-	</Button>
+	{#if dropdownMode != 'IDLE'}
+		<Button
+			color="light"
+			on:click={() => {
+				isRecording ? stopClick() : recordClick();
+			}}
+		>
+			{#if isRecording}
+				<StopSolid />
+			{:else}
+				<PlayOutline />
+			{/if}
+		</Button>
+	{:else}
+		<Button outline color="green" disabled={!pyodide_loaded} on:click={analyseClick}>Analyse</Button
+		>
+	{/if}
 </Navbar>
 
 <div class="chart-container mx-auto rounded border p-8">
 	<LayerCake data={view} x="x" y="y">
 		<Svg>
-			<AxisX ticks={6} format={(t) => new Date(t / 1000).toLocaleTimeString()} />
+			<AxisX ticks={6} format={tickFormatter} />
 			<AxisY ticks={4} />
 			<Line />
 		</Svg>
 	</LayerCake>
 </div>
 
-<div class="mx-auto p-8">
-	{#if data.length > 10}
-		{data.length} Measurements
-		<br />
-		{view.length} Points Plotted
-		<br />
-		{(1e-6 * (data[data.length - 1].x - data[0].x)).toFixed(4)}s Duration
-		<br />
-		{((1e6 * data.length) / (data[data.length - 1].x - data[0].x)).toFixed(2)}Hz Frequency
+{#if data.length > 10}
+	<Social>
+		<div class="flex flex-col items-center justify-center">
+			<dt class="mb-1 text-3xl font-semibold md:text-4xl">{data.length}</dt>
+			<dd class="font-light text-gray-500 dark:text-gray-400">Datapoints</dd>
+		</div>
+		<div class="flex flex-col items-center justify-center">
+			<dt class="mb-1 text-3xl font-semibold md:text-4xl">
+				{(1e-6 * (data[data.length - 1].x - data[0].x)).toFixed(2)}s
+			</dt>
+			<dd class="font-light text-gray-500 dark:text-gray-400">Total Duration</dd>
+		</div>
+		<div class="flex flex-col items-center justify-center">
+			<dt class="mb-1 text-3xl font-semibold md:text-4xl">
+				{((1e6 * data.length) / (data[data.length - 1].x - data[0].x)).toFixed(2)}Hz
+			</dt>
+			<dd class="font-light text-gray-500 dark:text-gray-400">Sampling Frequency</dd>
+		</div>
+	</Social>
+{/if}
+
+<div class="container mx-auto px-4">
+	{#if imgUrl}
+		<img class="w-full" src={imgUrl} alt="Generated Plot" />
 	{/if}
 </div>
 
 <PopupModal on:gotArduino={gotArduino} />
 
 <style>
-	/* The wrapper div needs to have an explicit width and height in CSS. */
+	/*
+	 The wrapper div needs to have an explicit width and height in CSS. */
 	.chart-container {
 		width: 96%;
 		height: calc(80vh - 1px);

@@ -61,19 +61,19 @@ void enable_io(String mode){
   else if (mode == "RALL"){                // Turn on routing for right arm - left leg lead positions
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
-    digitalWrite(4, HIGH);
+    digitalWrite(4, LOW);
     idle = false;
     // delay(1000);
   }
   else if (mode == "LARA"){                // Turn on routing for left arm - right arm lead positions
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
+    digitalWrite(4, LOW);
     idle = false;
     // delay(1000);
   }
   else if (mode == "IDLE"){                // Go to idle mode
-    digitalWrite(4, LOW);
+    digitalWrite(4, HIGH);
     idle = true;
     // delay(1000);
   }
