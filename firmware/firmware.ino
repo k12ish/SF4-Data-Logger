@@ -1,7 +1,6 @@
 #include <MsgPack.h>
 
 // input to msgpack
-MsgPack::arr_t<int> v {1, 2};             // Data stored as {reading1, reading2, reading3, time passed}
 String mode;
 bool idle = true;
 
@@ -25,13 +24,17 @@ void setup() {
 
 void loop() {
     if(!idle){
-      v[0] = analogRead(A0);                      // Read ports
-      v[1] = (unsigned int)micros();
-      MsgPack::Packer packer;                     // Package data
-      packer.serialize(v);                        // Serialise data
-      Serial.write(packer.data(), packer.size()); // Send data
+      // MsgPack Start byte: Begin 64 bit unsigned integer
+      Serial.write(0xcf);
+      for (int _index = 0; _index < 2; _index++) {
+          unsigned int read = analogRead(A0);
+          Serial.write((read >> 8) & 0xFF);
+          Serial.write((read & 0xFF)); 
+          unsigned int time = micros();
+          Serial.write((time >> 8) & 0xFF);
+          Serial.write((time & 0xFF)); 
+      }
     }
-    // Serial.println(v[3]);
     if (Serial.available() != 0){               // Check for message from host computer
       mode = Serial.readString();               // Read change in mode
       enable_io(mode);                          // Execute change in mode
@@ -42,11 +45,13 @@ void loop() {
 // Function to change IO states
 void enable_io(String mode){
   digitalWrite(5, HIGH);                        // Turn off inputs
+
+  MsgPack::str_t s = mode;
+  MsgPack::Packer packer;
+  packer.serialize(s);                        // Serialise data
+  Serial.write(packer.data(), packer.size()); // Send data
+
   if (mode == "LALL"){                       // Turn on routing for regular lead positions
-    MsgPack::str_t s = "LALL";
-    MsgPack::Packer packer;
-    packer.serialize(s);                        // Serialise data
-    Serial.write(packer.data(), packer.size()); // Send data
     digitalWrite(2, HIGH);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
@@ -54,10 +59,6 @@ void enable_io(String mode){
     // delay(1000);
   }
   else if (mode == "RALL"){                // Turn on routing for right arm - left leg lead positions
-    MsgPack::str_t s = "RALL";
-    MsgPack::Packer packer;
-    packer.serialize(s);                        // Serialise data
-    Serial.write(packer.data(), packer.size()); // Send data
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
@@ -65,10 +66,6 @@ void enable_io(String mode){
     // delay(1000);
   }
   else if (mode == "LARA"){                // Turn on routing for left arm - right arm lead positions
-    MsgPack::str_t s = "LARA";
-    MsgPack::Packer packer;
-    packer.serialize(s);                        // Serialise data
-    Serial.write(packer.data(), packer.size()); // Send data
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, LOW);
@@ -76,10 +73,6 @@ void enable_io(String mode){
     // delay(1000);
   }
   else if (mode == "IDLE"){                // Go to idle mode
-    MsgPack::str_t s = "IDLE";
-    MsgPack::Packer packer;
-    packer.serialize(s);                        // Serialise data
-    Serial.write(packer.data(), packer.size()); // Send data
     digitalWrite(4, HIGH);
     idle = true;
     // delay(1000);
