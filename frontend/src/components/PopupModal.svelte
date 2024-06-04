@@ -43,9 +43,8 @@
 			// limit selectable ports to only USB devices with Arduino's USB vendor ID
 			const filter = { usbVendorId: 0x2a03 };
 			// HACK: sort this out:
-			// const port = await navigator.serial.requestPort({ filters: [filter] });
-			const port = await navigator.serial.requestPort();
-			await port.open({ baudRate: 115_200 });
+			const port = await navigator.serial.requestPort({ filters: [filter] });
+			await port.open({ baudRate: 115_200});
 			// Continue connecting to the device attached to |port|.
 			return port;
 		} catch (e) {
