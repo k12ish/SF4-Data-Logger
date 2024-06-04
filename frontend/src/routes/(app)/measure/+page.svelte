@@ -210,7 +210,9 @@ fig.savefig("figure1.png", dpi=400)
 			{#if isRecording}
 				<StopSolid />
 			{:else}
-				<PlayOutline />
+				<svg height="24" width="25" xmlns="http://www.w3.org/2000/svg">
+					<circle r="7" cx="12" cy="12" fill="red" />
+				</svg>
 			{/if}
 		</Button>
 	{:else}
