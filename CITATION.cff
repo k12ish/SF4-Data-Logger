@@ -1,0 +1,29 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: SF4 Data Logger
+message: pls cite us
+type: software
+authors:
+  - given-names: Krish
+    family-names: Shah
+    affiliation: 'Girton College, Cambridge'
+  - given-names: Jeremias
+    family-names: Pohle
+    affiliation: 'Churchill College, Cambridge'
+repository-code: 'https://github.com/k12ish/SF4-Data-Logger'
+url: 'https://sf4-data-logger.netlify.app/'
+abstract: >-
+  A simple single channel ECG device with a browser based
+  frontend. Written for Cambridge Engineering Department
+  2024 IIB SF4 Project.
+keywords:
+  - ecg
+  - arduino
+  - electronics
+  - heart rate
+  - javascript
+  - webserial
+license: MIT
+
