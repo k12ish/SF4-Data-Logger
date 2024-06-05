@@ -11,7 +11,7 @@ void setup() {
     pinMode(2, OUTPUT);
     pinMode(3, OUTPUT);
     pinMode(4, OUTPUT);
-    digitalWrite(5, HIGH);
+    digitalWrite(4, HIGH);
     // Wait for start message to be sent
     while (Serial.available()==0){}
     if (Serial.available() != 0){               // Initilise IO for first readings
