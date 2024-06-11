@@ -3,6 +3,8 @@
 ![Build workflow status](https://github.com/k12ish/SF4-Data-Logger/actions/workflows/firmware.yml/badge.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4b0e29d3-de64-4ff9-9a18-12599fd163bb/deploy-status)](https://app.netlify.com/sites/sf4-data-logger/deploys)
 
+![Home Screenshot](documentation/screenshot-home.png)
+
 ## Features
 
 - **No Installation Required**: Simply plug and play on any machine with a web browser.
@@ -26,3 +28,7 @@ In our case, since all data is processed locally, we don't pay for any web hosti
 4. **Connect the Hardware**: Plug in the ECG device to your computer.
 5. **Start Measuring**: Begin taking measurements and analyzing data instantly through your web browser.
 
+## Screenshots 
+
+![Data Capture Screenshot](documentation/Simulated heartbeat from picoscope.png)
+![Analysis Screenshot](documentation/screenshot-analysis.png)
