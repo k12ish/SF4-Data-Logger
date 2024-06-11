@@ -30,5 +30,5 @@ In our case, since all data is processed locally, we don't pay for any web hosti
 
 ## Screenshots 
 
-![Data Capture Screenshot](documentation/Simulated heartbeat from picoscope.png)
+![Data Capture Screenshot](documentation/simulated-heartbeat-from-picoscope.png)
 ![Analysis Screenshot](documentation/screenshot-analysis.png)
